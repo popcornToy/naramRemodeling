@@ -1,6 +1,7 @@
-import { RouteObject, createBrowserRouter } from 'react-router-dom';
+import { RouteObject, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { navigationItems } from './navigation';
 import RootLayout from '@/components/layouts/RootLayout';
+import { HelmetProvider } from 'react-helmet-async';
 
 const routes: RouteObject[] = [
   {
@@ -11,4 +12,14 @@ const routes: RouteObject[] = [
   },
 ];
 
-export const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes);
+
+function Exercise() {
+  return (
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
+  );
+}
+
+export default Exercise;
