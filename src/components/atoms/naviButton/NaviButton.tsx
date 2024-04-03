@@ -1,14 +1,18 @@
 import { Link } from 'react-router-dom';
+import { GNBTitle } from '@/styles/components/naviButton/naviButton';
 
 type NaviButtonProps = {
   route: string;
   text: string;
+  isHeader?: boolean;
 };
 
-export default function NaviButton({ route, text }: NaviButtonProps) {
+export default function NaviButton({ route, text, isHeader = true }: NaviButtonProps) {
   return (
-    <Link to={route} className="navi-button">
-      <p>{text}</p>
-    </Link>
+    <GNBTitle isHeader={isHeader}>
+      <Link to={route} className="navi-button">
+        {text}
+      </Link>
+    </GNBTitle>
   );
 }
