@@ -5,7 +5,7 @@ type DropDown = {
   options: string[];
 };
 
-export const DropDown = ({ options }: DropDown) => {
+export function DropDown({ options }: DropDown) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -26,4 +26,4 @@ export const DropDown = ({ options }: DropDown) => {
       )}
     </div>
   );
-};
+}
