@@ -1,11 +1,11 @@
-import { StyledDiscription, StyledDivFlex } from '@/styles/components/Introduction';
+import { StyledDiscription, StyledDivFlex } from '@/styles/components/IntroductionPage/Introduction';
 import GREETING from '/introduction_GREETING.svg';
 import History from '/introduction_HISTORY.svg';
 import ORGANIZATION from '/introduction_ORGANIZATION.svg';
 import image_01 from '/introduction_image_01.svg';
 import image_02 from '/introduction_image_02.svg';
 import table from '/introduction_table.svg';
-import { StyledContent } from '@/styles/components/PageSubTitle';
+import { StyledContent } from '@/styles/components/PageSubTitle/PageSubTitle';
 
 function IntroductionContent() {
   return (

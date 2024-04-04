@@ -1,4 +1,4 @@
-import { StyledContent, StyledBar } from '@/styles/components/PageSubTitle';
+import { StyledContent, StyledBar } from '@/styles/components/PageSubTitle/PageSubTitle';
 
 type PageSubTitle = {
   firstTitle: string;

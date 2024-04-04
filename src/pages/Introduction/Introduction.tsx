@@ -1,14 +1,14 @@
-import { StyledFlexCenter } from '@/styles/components/Introduction';
+import { StyledFlexCenter } from '@/styles/components/IntroductionPage/Introduction';
 import IntroductionContent from './components/IntroductionContent';
 import PageLayout from '@/components/organisms/PageLayout/PageLayout';
-import PageMainImageType01 from '../../components/atoms/PageMainImageType01/PageMainImageType01';
+import mainImage from '/introduction_main.svg';
+import { StyledPageMainImageWrapper } from '@/styles/components/PageMainImageWrapper/PageMainImageWrapper';
 
 function Introduction() {
   return (
-    <div>
-      <div>
-        <PageMainImageType01 />
-      </div>
+    <StyledPageMainImageWrapper>
+      <img src={mainImage} alt="회사소개 페이지" />
+
       <StyledFlexCenter>
         <PageLayout
           firstTitle="COMPANY"
@@ -19,7 +19,7 @@ function Introduction() {
           <IntroductionContent />
         </PageLayout>
       </StyledFlexCenter>
-    </div>
+    </StyledPageMainImageWrapper>
   );
 }
 

@@ -1,5 +1,5 @@
 import PageSubTitle from '@/components/atoms/PageTitle/PageSubTitle';
-import { StyledFlexCenter } from '@/styles/components/Introduction';
+import { StyledFlexCenter } from '@/styles/components/IntroductionPage/Introduction';
 import { ReactNode } from 'react';
 
 type PageLayout = {
