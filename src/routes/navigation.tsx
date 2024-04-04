@@ -22,7 +22,7 @@ export const navigationItems = [
     path: '/Introduction',
     text: '회사소개 페이지',
     lazy: async () => {
-      const Module = await import('@/pages/Introduction');
+      const Module = await import('@/pages/Introduction/Introduction');
       return { Component: Module.default };
     },
   },
