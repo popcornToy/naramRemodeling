@@ -26,4 +26,13 @@ export const navigationItems = [
       return { Component: Module.default };
     },
   },
+  {
+    id: 'Board',
+    path: '/Board',
+    text: '공지사항 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/Board');
+      return { Component: Module.default };
+    },
+  },
 ];
