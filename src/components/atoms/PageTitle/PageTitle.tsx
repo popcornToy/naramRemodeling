@@ -1,15 +1,17 @@
-import { StyledPageEngTitle, StyledPageH2Title } from '@/styles/components/Board';
+import { StyledPageTitle } from '@/styles/components/Board/Board';
 
-// type
-export type TextType = {
-  text: string;
+type PageTitle = {
+  EngTitle: string;
+  KorTitle: string;
 };
 
-// component
-export function PageEngTitle({ text }: TextType): React.ReactNode {
-  return <StyledPageEngTitle>{text}</StyledPageEngTitle>;
+function PageTitle({ EngTitle, KorTitle }: PageTitle) {
+  return (
+    <StyledPageTitle>
+      <p className="EngTitle">{EngTitle}</p>
+      <h2 className="KorTitle">{KorTitle}</h2>
+    </StyledPageTitle>
+  );
 }
 
-export function PageH2Title({ text }: TextType): React.ReactNode {
-  return <StyledPageH2Title>{text}</StyledPageH2Title>;
-}
+export default PageTitle;

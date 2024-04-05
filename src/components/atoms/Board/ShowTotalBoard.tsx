@@ -1,4 +1,4 @@
-import { TotalBoard } from '@/styles/components/Board';
+import { TotalBoard } from '@/styles/components/Board/Board';
 
 function ShowTotalBoard(): React.ReactNode {
   // const BoardList = axios로 데이터 불러오기
