@@ -4,13 +4,13 @@ import { MenuButtonContainer } from '@/styles/components/MainMenuButton/MainMenu
 export default function MainMenuButton({ isHeader }: { isHeader: boolean }) {
   return (
     <MenuButtonContainer>
-      <NaviButton text="회사소개" route="/" isHeader={isHeader} />
+      <NaviButton text="회사소개" route="/CompanyIntroduction/Introduction" isHeader={isHeader} />
       <div className="divider" />
-      <NaviButton text="정보센터" route="/" isHeader={isHeader} />
+      <NaviButton text="정보센터" route="/InformationCenter" isHeader={isHeader} />
       <div className="divider" />
-      <NaviButton text="제품정보" route="/" isHeader={isHeader} />
+      <NaviButton text="제품정보" route="/ProductInformation" isHeader={isHeader} />
       <div className="divider" />
-      <NaviButton text="인재채용" route="/" isHeader={isHeader} />
+      <NaviButton text="인재채용" route="/Recruitment" isHeader={isHeader} />
       <div className="divider" />
       <NaviButton text="고객센터" route="/" isHeader={isHeader} />
     </MenuButtonContainer>
