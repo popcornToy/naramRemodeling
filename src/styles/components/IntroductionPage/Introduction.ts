@@ -28,6 +28,7 @@ export const StyledFlexCenter = styled.div`
   position: absolute;
   top: 170px;
   left: 50%;
+  position: absolute;
   padding-top: 4.991rem;
   transform: translate(-50%);
   background-color: white;
@@ -152,4 +153,11 @@ export const StyledTextDiv = styled.div<TextfontProps>`
   flex-direction: column;
   gap: 60px;
   text-align: ${(props) => (props.textPosition ? props.textPosition : 'left')};
+`;
+
+export const Wrapper = styled.div`
+  & .mainMenuPosition {
+    display: flex;
+    justify-content: center;
+  }
 `;
