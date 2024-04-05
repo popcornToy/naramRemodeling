@@ -11,7 +11,7 @@ import mainImage from '/introduction_main.svg';
 function CompanyIntroduction() {
   return (
     <>
-      <NaviBar isHeader={false} />
+      <NaviBar isHeader={false} color="black" />
       <PageTitle EngTitle={'COMPANY'} KorTitle={'회사소개'} />
       <Wrapper>
         <div className="mainMenuPosition">

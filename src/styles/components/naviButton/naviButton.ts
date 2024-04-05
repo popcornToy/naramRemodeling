@@ -21,8 +21,13 @@ export const GNBTitle = styled.p<GNBTitleProps>`
   }
 `;
 
-export const GNBContainer = styled.div`
+type GNBContainerProps = {
+  justifyContent: 'start' | 'end';
+};
+
+export const GNBContainer = styled.ul<GNBContainerProps>`
   display: flex;
   gap: 3.4375rem;
   white-space: nowrap;
+  justify-content: ${(props) => props.justifyContent};
 `;
