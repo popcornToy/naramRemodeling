@@ -1,6 +1,6 @@
 import { StoryObj } from '@storybook/react';
-import CompanyIntroduction from '@/pages/Introduction/CompanyIntroduction';
 import type { Meta } from '@storybook/react';
+import CompanyIntroduction from './CompanyIntroduction';
 
 const meta: Meta<typeof CompanyIntroduction> = {
   component: CompanyIntroduction,

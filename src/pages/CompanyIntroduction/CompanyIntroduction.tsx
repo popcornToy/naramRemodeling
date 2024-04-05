@@ -18,7 +18,7 @@ function CompanyIntroduction() {
           <MainMenuButton isHeader={false} />
         </div>
         <StyledPageMainImageWrapper>
-          <PageMainImage image={mainImage} alt="회사소개 페이지"></PageMainImage>
+          <PageMainImage image={mainImage} alt="회사소개 페이지" />
           <Outlet />
         </StyledPageMainImageWrapper>
       </Wrapper>
