@@ -27,11 +27,29 @@ export const navigationItems = [
     },
   },
   {
-    id: 'Board',
-    path: '/Board',
+    id: 'Notice',
+    path: '/Notice',
     text: '공지사항 페이지',
     lazy: async () => {
-      const Module = await import('@/pages/Board');
+      const Module = await import('@/pages/Notice/Notice');
+      return { Component: Module.default };
+    },
+  },
+  {
+    id: 'CustomerService',
+    path: '/CustomerService',
+    text: '고객센터 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/CustomerService/CustomerService');
+      return { Component: Module.default };
+    },
+  },
+  {
+    id: 'QnA',
+    path: '/QnA',
+    text: '질의응답 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/QnA/QnA');
       return { Component: Module.default };
     },
   },
