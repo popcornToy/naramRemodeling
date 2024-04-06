@@ -13,16 +13,89 @@ export const navigationItems = [
     path: '/Login',
     text: '로그인 페이지',
     lazy: async () => {
-      const Module = await import('@/pages/Login');
+      const Module = await import('@/pages/Login/Login');
       return { Component: Module.default };
     },
   },
   {
-    id: 'Introduction',
-    path: '/Introduction',
+    id: 'SearchId',
+    path: '/SearchId',
+    text: '아이디찾기 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/SearchId/SearchId');
+      return { Component: Module.default };
+    },
+  },
+  {
+    id: 'SearchPassword',
+    path: '/SearchPassword',
+    text: '비밀번호찾기 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/SearchPassword/SearchPassword');
+      return { Component: Module.default };
+    },
+  },
+  {
+    id: 'Join',
+    path: '/Join',
+    text: '회원가입 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/Join/Join');
+      return { Component: Module.default };
+    },
+  },
+  {
+    id: 'CompanyIntroduction',
+    path: '/CompanyIntroduction',
     text: '회사소개 페이지',
     lazy: async () => {
-      const Module = await import('@/pages/Introduction/Introduction');
+      const Module = await import('@/pages/CompanyIntroduction/CompanyIntroduction');
+      return { Component: Module.default };
+    },
+    children: [
+      {
+        text: '회사소개 CEO소개, 연혁 등등',
+        path: 'Introduction',
+        lazy: async () => {
+          const Module = await import('@/pages/CompanyIntroduction/SubPage/Instroduction');
+          return { Component: Module.default };
+        },
+      },
+      {
+        text: '찾아오시는 길',
+        path: 'Location',
+        lazy: async () => {
+          const Module = await import('@/pages/CompanyIntroduction/SubPage/Location');
+          return { Component: Module.default };
+        },
+      },
+    ],
+  },
+
+  {
+    id: 'InformationCenter',
+    path: '/InformationCenter',
+    text: '정보센터 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/InformationCenter/InformationCenter');
+      return { Component: Module.default };
+    },
+  },
+  {
+    id: 'ProductInformation',
+    path: '/ProductInformation',
+    text: '제품정보 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/ProductInformation/ProductInformation');
+      return { Component: Module.default };
+    },
+  },
+  {
+    id: 'Recruitment',
+    path: '/Recruitment',
+    text: '인재채용 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/Recruitment/Recruitment');
       return { Component: Module.default };
     },
   },
@@ -30,6 +103,7 @@ export const navigationItems = [
     id: 'Notice',
     path: '/Notice',
     text: '공지사항 페이지',
+
     lazy: async () => {
       const Module = await import('@/pages/Notice/Notice');
       return { Component: Module.default };

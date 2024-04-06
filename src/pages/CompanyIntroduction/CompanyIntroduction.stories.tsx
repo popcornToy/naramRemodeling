@@ -1,9 +1,9 @@
 import { StoryObj } from '@storybook/react';
-import Introduction from '@/pages/Introduction/Introduction';
+import CompanyIntroduction from '@/pages/Introduction/CompanyIntroduction';
 import type { Meta } from '@storybook/react';
 
-const meta: Meta<typeof Introduction> = {
-  component: Introduction,
+const meta: Meta<typeof CompanyIntroduction> = {
+  component: CompanyIntroduction,
   //👇 Enables auto-generated documentation for the component story
   tags: ['autodocs'],
   argTypes: {
@@ -12,7 +12,7 @@ const meta: Meta<typeof Introduction> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Introduction>;
+type Story = StoryObj<typeof CompanyIntroduction>;
 
 export const Primary: Story = {
   args: {

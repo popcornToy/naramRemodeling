@@ -4,13 +4,12 @@ import styled from 'styled-components';
 export const StyledPageTitle = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  padding: 160px 0 100px 0;
 
   & .EngTitle {
-    width: 100%;
     color: #999;
-    text-align: center;
+    margin-left: 18.2px;
     font-family: 'Noto Sans';
     font-size: 26px;
     font-style: normal;
@@ -22,7 +21,7 @@ export const StyledPageTitle = styled.div`
 
   & .KorTitle {
     color: #000;
-    text-align: center;
+
     font-family: 'Noto Sans';
     font-size: 60px;
     font-style: normal;
