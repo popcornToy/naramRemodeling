@@ -5,6 +5,7 @@ type NaviBarProps = {
   isHeader: boolean;
   color: 'gray' | 'black' | 'white';
   justifyContent: 'start' | 'end';
+  isLast?: boolean;
 };
 
 export default function NaviBar({ isHeader, color, justifyContent }: NaviBarProps) {
@@ -23,7 +24,7 @@ export default function NaviBar({ isHeader, color, justifyContent }: NaviBarProp
         <NaviButton text="인재채용" route="/Recruitment" isHeader={isHeader} color={color} />
       </li>
       <li>
-        <NaviButton text="고객센터" route="/" isHeader={isHeader} color={color} />
+        <NaviButton text="고객센터" route="/" isHeader={isHeader} color={color} isLast />
       </li>
     </GNBContainer>
   );

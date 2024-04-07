@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 type GNBTitleProps = {
-  fontSize?: string;
-  fontWeight?: string;
   isHeader?: boolean;
   color?: 'black' | 'gray' | 'white';
+  isLast?: boolean;
 };
 
 export const GNBTitle = styled.p<GNBTitleProps>`
@@ -21,7 +20,7 @@ export const GNBTitle = styled.p<GNBTitleProps>`
         return '#333';
     }
   }};
-  border-right: ${(props) => (props.isHeader ? 'none' : '1px solid #D1D1D1')};
+  border-right: ${(props) => (props.isLast ? 'none' : props.isHeader ? 'none' : '1px solid #D1D1D1')};
   padding: ${(props) => (props.isHeader ? '0 3.4375rem' : '0.96rem 3.9375rem')};
   line-height: normal;
   font-style: normal;
