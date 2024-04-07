@@ -4,12 +4,13 @@ import { useLocation } from 'react-router-dom';
 
 type NaviBarProps = {
   isHeader: boolean;
-  justifyContent: 'start' | 'end';
+  justifyContent: 'center' | 'end';
   isLast?: boolean;
   color?: 'gray' | 'black' | 'white';
+  isMain?: boolean;
 };
 
-export default function NaviBar({ isHeader, justifyContent, color }: NaviBarProps) {
+export default function NaviBar({ isHeader, justifyContent, color, isMain }: NaviBarProps) {
   // 현재페이지 pathname을 가져오기 위해 useLocation 사용
   const { pathname } = useLocation();
 
@@ -23,7 +24,7 @@ export default function NaviBar({ isHeader, justifyContent, color }: NaviBarProp
     return 'gray';
   };
   return (
-    <GNBContainer justifyContent={justifyContent}>
+    <GNBContainer justifyContent={justifyContent} isMain={isMain}>
       <li>
         <NaviButton text="회사소개" route="/Introduction" isHeader={isHeader} color={decideColor('/Introduction')} />
       </li>
@@ -47,7 +48,13 @@ export default function NaviBar({ isHeader, justifyContent, color }: NaviBarProp
         <NaviButton text="인재채용" route="/Recruitment" isHeader={isHeader} color={decideColor('/Recruitment')} />
       </li>
       <li>
-        <NaviButton text="고객센터" route="/" isHeader={isHeader} color={decideColor('/')} isLast />
+        <NaviButton
+          text="고객센터"
+          route="/CustomerService"
+          isHeader={isHeader}
+          color={decideColor('/CustomerService')}
+          isLast
+        />
       </li>
     </GNBContainer>
   );

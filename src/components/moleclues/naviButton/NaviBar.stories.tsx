@@ -12,7 +12,8 @@ const meta = {
   argTypes: {
     isHeader: { control: 'boolean' },
     color: { control: 'radio', options: ['black', 'gray', 'white'] },
-    justifyContent: { control: 'radio', options: ['start', 'end'] },
+    justifyContent: { control: 'radio', options: ['center', 'end'] },
+    isMain: { control: 'boolean' },
   },
   args: {},
   decorators: [
@@ -31,14 +32,14 @@ export const Header: Story = {
   args: {
     isHeader: true,
     color: 'black',
-    justifyContent: 'start',
+    justifyContent: 'center',
+    isMain: true,
   },
 };
 
 export const NotHeader: Story = {
   args: {
     isHeader: false,
-    color: 'gray',
-    justifyContent: 'start',
+    justifyContent: 'center',
   },
 };

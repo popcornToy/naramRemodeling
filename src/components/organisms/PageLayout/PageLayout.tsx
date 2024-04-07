@@ -38,9 +38,7 @@ function PageLayout({
     <>
       <PageTitle EngTitle={EngTitle} KorTitle={KorTitle} />
       <Wrapper>
-        <div className="mainMenuPosition">
-          <NaviBar isHeader={false} justifyContent="start" />
-        </div>
+        <NaviBar isHeader={false} justifyContent="center" />
         <StyledPageMainImageWrapper>
           <PageMainImage image={mainImage} alt={alt}></PageMainImage>
           <PageSubTitleLayout
