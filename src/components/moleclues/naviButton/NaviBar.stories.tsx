@@ -11,7 +11,7 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     isHeader: { control: 'boolean' },
-    color: { control: 'radio', options: ['black', 'white'] },
+    color: { control: 'radio', options: ['black', 'gray', 'white'] },
     justifyContent: { control: 'radio', options: ['start', 'end'] },
   },
   args: {},
@@ -38,7 +38,7 @@ export const Header: Story = {
 export const NotHeader: Story = {
   args: {
     isHeader: false,
-    color: 'black',
+    color: 'gray',
     justifyContent: 'start',
   },
 };

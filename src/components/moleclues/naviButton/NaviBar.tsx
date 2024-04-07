@@ -3,7 +3,7 @@ import { GNBContainer } from '@/styles/components/naviButton/naviButton';
 
 type NaviBarProps = {
   isHeader: boolean;
-  color: 'white' | 'black';
+  color: 'gray' | 'black' | 'white';
   justifyContent: 'start' | 'end';
 };
 

@@ -5,7 +5,7 @@ type NaviButtonProps = {
   route: string;
   text: string;
   isHeader?: boolean;
-  color: 'white' | 'black';
+  color: 'gray' | 'black' | 'white';
 };
 
 export default function NaviButton({ route, text, isHeader = true, color }: NaviButtonProps) {
