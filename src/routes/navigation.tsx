@@ -45,19 +45,19 @@ export const navigationItems = [
     },
   },
   {
-    id: 'CompanyIntroduction',
-    path: '/CompanyIntroduction',
+    id: 'Introduction',
+    path: '/Introduction',
     text: '회사소개 페이지',
     lazy: async () => {
-      const Module = await import('@/pages/CompanyIntroduction/CompanyIntroduction');
+      const Module = await import('@/pages/Introduction/Instroduction');
       return { Component: Module.default };
     },
     children: [
       {
+        index: true,
         text: '회사소개 CEO소개, 연혁 등등',
-        path: 'Introduction',
         lazy: async () => {
-          const Module = await import('@/pages/CompanyIntroduction/SubPage/Instroduction');
+          const Module = await import('@/pages/Introduction/components/IntroductionContent');
           return { Component: Module.default };
         },
       },
@@ -65,7 +65,7 @@ export const navigationItems = [
         text: '찾아오시는 길',
         path: 'Location',
         lazy: async () => {
-          const Module = await import('@/pages/CompanyIntroduction/SubPage/Location');
+          const Module = await import('@/pages/Introduction/components/Location');
           return { Component: Module.default };
         },
       },

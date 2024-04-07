@@ -20,13 +20,14 @@ export const StyledImageFromTop = styled.div`
   width: 100%;
 `;
 
+// Q&A, 회사소개, Notice 등 페이지에 쓰이는 PageLayout 위치 또는 스타일 조절
 export const StyledFlexCenter = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
   position: absolute;
-  top: 170px;
+  top: 350px;
   left: 50%;
   position: absolute;
   padding-top: 4.991rem;
