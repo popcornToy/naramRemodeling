@@ -52,6 +52,9 @@ devDependencies:
   '@storybook/addon-onboarding':
     specifier: ^8.0.5
     version: 8.0.5
+  '@storybook/addon-themes':
+    specifier: ^8.0.6
+    version: 8.0.6
   '@storybook/blocks':
     specifier: ^8.0.5
     version: 8.0.5(@types/react@18.2.73)(react-dom@18.2.0)(react@18.2.0)
@@ -2132,6 +2135,12 @@ packages:
     resolution: {integrity: sha512-ouQ4IOBw7AAyukkaQwNe2MRTpDbCv+j4z76BRE7qvu9PckifsWsm00pTQwvbNdjiogS8c3EPMV5aBGIPoK/zAQ==}
     dependencies:
       '@storybook/global': 5.0.0
+      ts-dedent: 2.2.0
+    dev: true
+
+  /@storybook/addon-themes@8.0.6:
+    resolution: {integrity: sha512-KwLwE8aP8Wg94cF+MuyqinUAQn6ZBhAWMv43YSZq+ixQVTVPOJ5w5ooFCnx7mJ5UhLbzpRS94iF9izSPRMlDNA==}
+    dependencies:
       ts-dedent: 2.2.0
     dev: true
 
@@ -6902,6 +6911,7 @@ packages:
       object-assign: 4.1.1
       prop-types: 15.8.1
     dev: false
+    bundledDependencies: false
 
   /react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}

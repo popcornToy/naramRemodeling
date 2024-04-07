@@ -5,11 +5,12 @@ type NaviButtonProps = {
   route: string;
   text: string;
   isHeader?: boolean;
+  color: 'white' | 'black';
 };
 
-export default function NaviButton({ route, text, isHeader = true }: NaviButtonProps) {
+export default function NaviButton({ route, text, isHeader = true, color }: NaviButtonProps) {
   return (
-    <GNBTitle isHeader={isHeader}>
+    <GNBTitle isHeader={isHeader} color={color}>
       <Link to={route} className="navi-button">
         {text}
       </Link>
