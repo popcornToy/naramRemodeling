@@ -1,7 +1,7 @@
 import PageMainImage from '@/components/atoms/PageMainImage/PageMainImage';
 import PageTitle from '@/components/atoms/PageTitle/PageTitle';
-import MainMenuButton from '@/components/moleclues/MainMenuButton/MainMenuButton';
 import PageSubTitleLayout from '@/components/moleclues/PageSubTitleLayout/PageSubTitleLayout';
+import NaviBar from '@/components/moleclues/naviButton/NaviBar';
 
 import { Wrapper } from '@/styles/components/IntroductionPage/Introduction';
 import { StyledPageMainImageWrapper } from '@/styles/components/PageMainImageWrapper/PageMainImageWrapper';
@@ -25,7 +25,6 @@ type PageLayoutProps = {
 function PageLayout({
   EngTitle,
   KorTitle,
-  isMainMenu,
   alt,
   children,
   mainImage,
@@ -39,9 +38,7 @@ function PageLayout({
     <>
       <PageTitle EngTitle={EngTitle} KorTitle={KorTitle} />
       <Wrapper>
-        <div className="mainMenuPosition">
-          <MainMenuButton isHeader={isMainMenu} />
-        </div>
+        <NaviBar isHeader={false} justifyContent="center" />
         <StyledPageMainImageWrapper>
           <PageMainImage image={mainImage} alt={alt}></PageMainImage>
           <PageSubTitleLayout
