@@ -16,6 +16,7 @@ export const StyledPageTitle = styled.div`
     font-weight: 400;
     line-height: normal;
     letter-spacing: 18.2px;
+    margin-left: 18.2px;
   }
 
   & .KorTitle {
@@ -112,4 +113,38 @@ export const StyledSearch = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
+`;
+
+export const StyledBoardTable = styled.table`
+  width: 1300px;
+
+  & .BoardTableTitle {
+    height: 70px;
+    background-color: #e7e7e7;
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr 1fr 1fr;
+    line-height: 70px;
+    text-align: center;
+  }
+  & .BoardTableList {
+    height: 70px;
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr 1fr 1fr;
+    line-height: 70px;
+    text-align: center;
+  }
+`;
+
+// 글쓰기 버튼
+interface ButtonProps {
+  $width?: string;
+  $height?: string;
+  $padding?: string;
+}
+
+export const StyledBasicButton = styled.a<ButtonProps>`
+  width: ${(props) => props.$width || '87px'};
+  height: ${(props) => props.$height || '39px'};
+  padding: ${(props) => props.$padding || '10px 20px'};
+  background: #e7e7e7;
 `;
