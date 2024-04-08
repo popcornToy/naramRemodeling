@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 // 제목
 export const StyledPageTitle = styled.div`
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   justify-content: center;
   padding: 160px 0 100px 0;
 
@@ -16,7 +16,6 @@ export const StyledPageTitle = styled.div`
     font-weight: 400;
     line-height: normal;
     letter-spacing: 18.2px;
-    margin-left: 18.2px;
   }
 
   & .KorTitle {

@@ -1,5 +1,4 @@
 import PageMainImage from '@/components/atoms/PageMainImage/PageMainImage';
-import PageTitle from '@/components/atoms/PageTitle/PageTitle';
 import PageSubTitleLayout from '@/components/moleclues/PageSubTitleLayout/PageSubTitleLayout';
 import NaviBar from '@/components/moleclues/naviButton/NaviBar';
 
@@ -23,8 +22,6 @@ type PageLayoutProps = {
 };
 
 function PageLayout({
-  EngTitle,
-  KorTitle,
   alt,
   children,
   mainImage,
@@ -36,9 +33,8 @@ function PageLayout({
 }: PageLayoutProps) {
   return (
     <>
-      <PageTitle EngTitle={EngTitle} KorTitle={KorTitle} />
       <Wrapper>
-        <NaviBar isHeader={false} justifyContent="center" />
+        <NaviBar color={'black'} isLogin={false} />
         <StyledPageMainImageWrapper>
           <PageMainImage image={mainImage} alt={alt}></PageMainImage>
           <PageSubTitleLayout

@@ -8,7 +8,7 @@ type PageTitle = {
 function PageTitle({ EngTitle, KorTitle }: PageTitle) {
   return (
     <StyledPageTitle>
-      <p className="EngTitle">{EngTitle}</p>
+      <span className="EngTitle">{EngTitle}</span>
       <h2 className="KorTitle">{KorTitle}</h2>
     </StyledPageTitle>
   );
