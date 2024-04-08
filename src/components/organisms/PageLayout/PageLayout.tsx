@@ -1,7 +1,6 @@
 import PageMainImage from '@/components/atoms/PageMainImage/PageMainImage';
 import PageTitle from '@/components/atoms/PageTitle/PageTitle';
 import PageSubTitleLayout from '@/components/moleclues/PageSubTitleLayout/PageSubTitleLayout';
-import NaviBar from '@/components/moleclues/naviButton/NaviBar';
 
 import { Wrapper } from '@/styles/components/IntroductionPage/Introduction';
 import { StyledPageMainImageWrapper } from '@/styles/components/PageMainImageWrapper/PageMainImageWrapper';
@@ -39,7 +38,7 @@ function PageLayout({
     <>
       <PageTitle EngTitle={EngTitle} KorTitle={KorTitle} />
       <Wrapper>
-        <Header isLogin={true} color="black" />
+        <Header isLogin={false} color="black" />
         <StyledPageMainImageWrapper>
           <PageMainImage image={mainImage} alt={alt}></PageMainImage>
           <PageSubTitleLayout

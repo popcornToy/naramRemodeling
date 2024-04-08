@@ -6,7 +6,7 @@ const meta = {
   title: 'Header/organisms',
   component: Header,
   parameters: {
-    layout: 'centered',
+    layout: 'padded',
   },
   tags: ['autodocs'],
   argTypes: {
