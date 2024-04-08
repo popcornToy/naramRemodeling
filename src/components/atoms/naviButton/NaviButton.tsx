@@ -4,14 +4,12 @@ import { GNBTitle } from '@/styles/components/naviButton/naviButton';
 type NaviButtonProps = {
   route: string;
   text: string;
-  isHeader?: boolean;
-  color: 'gray' | 'black' | 'white';
-  isLast?: boolean;
+  color: 'black' | 'white';
 };
 
-export default function NaviButton({ route, text, isHeader = true, color, isLast }: NaviButtonProps) {
+export default function NaviButton({ route, text, color }: NaviButtonProps) {
   return (
-    <GNBTitle isHeader={isHeader} color={color} isLast={isLast}>
+    <GNBTitle color={color}>
       <Link to={route} className="navi-button">
         {text}
       </Link>
