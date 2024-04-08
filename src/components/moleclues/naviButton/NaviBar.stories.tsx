@@ -26,16 +26,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const IsLogin: Story = {
-  args: {
-    color: 'black',
-    isLogin: true,
-  },
-};
-
 export const IsLogout: Story = {
   args: {
     color: 'black',
     isLogin: false,
+  },
+};
+
+export const IsLogin: Story = {
+  args: {
+    color: 'black',
+    isLogin: true,
   },
 };

@@ -24,7 +24,7 @@ export default function NaviBar({ color, isLogin }: NaviBarProps) {
       <li>
         <NaviButton text="고객센터" route="/CustomerService" color={color} />
       </li>
-      {!isLogin ? (
+      {isLogin ? (
         <GNBLi>
           <NaviButton text="로그아웃" route="/Login" color={color} isLogoutButton />
           <NaviButton text="/ 마이페이지" route="/MyPage" color={color} />
