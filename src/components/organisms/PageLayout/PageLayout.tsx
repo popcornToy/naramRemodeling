@@ -5,6 +5,7 @@ import NaviBar from '@/components/moleclues/naviButton/NaviBar';
 import { Wrapper } from '@/styles/components/IntroductionPage/Introduction';
 import { StyledPageMainImageWrapper } from '@/styles/components/PageMainImageWrapper/PageMainImageWrapper';
 import { ReactNode } from 'react';
+import Header from '../Header/Header';
 
 type PageLayoutProps = {
   EngTitle: string;
@@ -34,7 +35,7 @@ function PageLayout({
   return (
     <>
       <Wrapper>
-        <NaviBar color={'black'} isLogin={false} />
+        <Header isLogin={true} color="black" />
         <StyledPageMainImageWrapper>
           <PageMainImage image={mainImage} alt={alt}></PageMainImage>
           <PageSubTitleLayout

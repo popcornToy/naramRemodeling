@@ -1,13 +1,12 @@
-import NaviBar from '@/components/moleclues/naviButton/NaviBar';
+import { MainBannerContainer } from '@/styles/components/MainPage/MainPage';
 import mainBanner from '/mainBanner.png';
-import { HeaderContainer, MainBannerContainer } from '@/styles';
+
+import Header from '@/components/organisms/Header/Header';
 
 export default function Main() {
   return (
     <>
-      <HeaderContainer>
-        <NaviBar color="white" isHeader justifyContent="end" isMain />
-      </HeaderContainer>
+      <Header isLogin={true} color="black" />
       <MainBannerContainer>
         <img src={mainBanner} alt="메인 이미지" />
       </MainBannerContainer>

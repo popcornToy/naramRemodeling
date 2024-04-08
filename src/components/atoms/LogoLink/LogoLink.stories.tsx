@@ -1,19 +1,15 @@
 import { Meta, StoryObj } from '@storybook/react';
-import NaviButton from './NaviButton';
+import LogoLink from './LogoLink';
 import { MemoryRouter } from 'react-router-dom';
 
 const meta = {
-  title: 'GlobalNaviBar/atoms',
-  component: NaviButton,
+  title: 'Header/atoms',
+  component: LogoLink,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {
-    text: { control: 'text' },
-    route: { control: 'text' },
-    color: { control: 'radio', options: ['black', 'white'] },
-  },
+  argTypes: {},
   decorators: [
     (Story) => (
       <MemoryRouter>
@@ -21,15 +17,11 @@ const meta = {
       </MemoryRouter>
     ),
   ],
-} satisfies Meta<typeof NaviButton>;
+} satisfies Meta<typeof LogoLink>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    text: '회사소개',
-    route: '/',
-    color: 'black',
-  },
+  args: {},
 };
