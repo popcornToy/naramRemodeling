@@ -1,61 +1,39 @@
 import NaviButton from '@/components/atoms/naviButton/NaviButton';
-import { GNBContainer } from '@/styles/components/naviButton/naviButton';
-import { useLocation } from 'react-router-dom';
+import { GNBContainer, GNBLi } from '@/styles/components/naviButton/naviButton';
 
 type NaviBarProps = {
-  isHeader: boolean;
-  justifyContent: 'center' | 'end';
-  isLast?: boolean;
-  color?: 'gray' | 'black' | 'white';
-  isMain?: boolean;
+  color: 'black' | 'white';
+  isLogin: boolean;
 };
 
-export default function NaviBar({ isHeader, justifyContent, color, isMain }: NaviBarProps) {
-  // 현재페이지 pathname을 가져오기 위해 useLocation 사용
-  const { pathname } = useLocation();
-
-  // 현재페이지 pathname을 확인하여 색상을 결정하는 함수
-  const decideColor = (route: string) => {
-    if (isHeader) {
-      return color || 'black';
-    } else if (!isHeader && pathname === route) {
-      return 'black';
-    }
-    return 'gray';
-  };
+export default function NaviBar({ color, isLogin }: NaviBarProps) {
   return (
-    <GNBContainer justifyContent={justifyContent} isMain={isMain}>
+    <GNBContainer>
       <li>
-        <NaviButton text="회사소개" route="/Introduction" isHeader={isHeader} color={decideColor('/Introduction')} />
+        <NaviButton text="회사소개" route="/Introduction" color={color} />
       </li>
       <li>
-        <NaviButton
-          text="정보센터"
-          route="/InformationCenter"
-          isHeader={isHeader}
-          color={decideColor('/InformationCenter')}
-        />
+        <NaviButton text="정보센터" route="/InformationCenter" color={color} />
       </li>
       <li>
-        <NaviButton
-          text="제품정보"
-          route="/ProductInformation"
-          isHeader={isHeader}
-          color={decideColor('/ProductInformation')}
-        />
+        <NaviButton text="제품정보" route="/ProductInformation" color={color} />
       </li>
       <li>
-        <NaviButton text="인재채용" route="/Recruitment" isHeader={isHeader} color={decideColor('/Recruitment')} />
+        <NaviButton text="인재채용" route="/Recruitment" color={color} />
       </li>
       <li>
-        <NaviButton
-          text="고객센터"
-          route="/CustomerService"
-          isHeader={isHeader}
-          color={decideColor('/CustomerService')}
-          isLast
-        />
+        <NaviButton text="고객센터" route="/CustomerService" color={color} />
       </li>
+      {!isLogin ? (
+        <GNBLi>
+          <NaviButton text="로그아웃" route="/Login" color={color} isLogoutButton />
+          <NaviButton text="/ 마이페이지" route="/MyPage" color={color} />
+        </GNBLi>
+      ) : (
+        <li>
+          <NaviButton text="로그인" route="/Login" color={color} isLoginButton />
+        </li>
+      )}
     </GNBContainer>
   );
 }
