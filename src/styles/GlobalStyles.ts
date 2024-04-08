@@ -109,6 +109,10 @@ button {
   background: transparent;
 }
 
+li, ul {
+  list-style: none;
+}
+
 figure {
   margin: 0;
   padding: 0;

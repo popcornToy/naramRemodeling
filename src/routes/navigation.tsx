@@ -4,7 +4,7 @@ export const navigationItems = [
     path: '/',
     text: '메인 페이지',
     lazy: async () => {
-      const Module = await import('@/pages/Main');
+      const Module = await import('@/pages/Main/Main');
       return { Component: Module.default };
     },
   },
