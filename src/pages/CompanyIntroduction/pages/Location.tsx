@@ -1,6 +1,7 @@
 import PageLayout from '@/components/organisms/PageLayout/PageLayout';
 import contactUs from '/ContactUs_Image.svg';
 import LocationContent from '../components/LocationContent';
+import KakaoMap from '@/components/atoms/KakaoMap/KakaoMap';
 
 function Location() {
   return (
@@ -17,6 +18,7 @@ function Location() {
         thirdTitle="주식회사 나람에 찾아오시는 길입니다 "
       >
         <LocationContent />
+        <KakaoMap />
       </PageLayout>
     </>
   );
