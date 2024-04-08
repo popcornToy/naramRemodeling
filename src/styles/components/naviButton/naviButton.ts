@@ -19,23 +19,22 @@ export const GNBTitle = styled.p<GNBTitleProps>`
   }
 `;
 
-type GNBContainerProps = {
-  isMain?: boolean;
-};
-
-export const GNBContainer = styled.ul<GNBContainerProps>`
+export const GNBContainer = styled.ul`
   display: flex;
   gap: 3rem;
   white-space: nowrap;
   padding: 1.5625rem 0;
   justify-content: end;
+  align-items: center;
+`;
 
-  ${(props) =>
-    props.isMain &&
-    `
-  top: 0;
-  right: 0;
-  z-index: 10;
-  position: absolute;
-  `}
+export const GNBLi = styled.li`
+  display: flex;
+  gap: 0.375rem;
+`;
+
+export const NaviImage = styled.div`
+  display: flex;
+  gap: 0.375rem;
+  align-items: center;
 `;
