@@ -127,4 +127,13 @@ export const navigationItems = [
       return { Component: Module.default };
     },
   },
+  {
+    id: 'MyPage',
+    path: '/MyPage',
+    text: '마이페이지 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/MyPage/MyPage');
+      return { Component: Module.default };
+    },
+  },
 ];

@@ -1,19 +1,25 @@
 import { Link } from 'react-router-dom';
-import { GNBTitle } from '@/styles/components/naviButton/naviButton';
+import { GNBTitle, NaviImage } from '@/styles/components/naviButton/naviButton';
+import user from '/user.svg';
+import logout from '/logout.svg';
 
 type NaviButtonProps = {
   route: string;
   text: string;
-  isHeader?: boolean;
-  color: 'gray' | 'black' | 'white';
-  isLast?: boolean;
+  color: 'black' | 'white';
+  isLoginButton?: boolean;
+  isLogoutButton?: boolean;
 };
 
-export default function NaviButton({ route, text, isHeader = true, color, isLast }: NaviButtonProps) {
+export default function NaviButton({ route, text, color, isLoginButton, isLogoutButton }: NaviButtonProps) {
   return (
-    <GNBTitle isHeader={isHeader} color={color} isLast={isLast}>
-      <Link to={route} className="navi-button">
-        {text}
+    <GNBTitle color={color}>
+      <Link to={route}>
+        <NaviImage>
+          {isLoginButton && <img src={user} alt="로그인" />}
+          {isLogoutButton && <img src={logout} alt="로그아웃" />}
+          {text}
+        </NaviImage>
       </Link>
     </GNBTitle>
   );

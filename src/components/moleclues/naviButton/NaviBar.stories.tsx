@@ -10,10 +10,8 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    isHeader: { control: 'boolean' },
-    color: { control: 'radio', options: ['black', 'gray', 'white'] },
-    justifyContent: { control: 'radio', options: ['center', 'end'] },
-    isMain: { control: 'boolean' },
+    color: { control: 'radio', options: ['black', 'white'] },
+    isLogin: { control: 'boolean' },
   },
   args: {},
   decorators: [
@@ -28,18 +26,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Header: Story = {
+export const IsLogin: Story = {
   args: {
-    isHeader: true,
     color: 'black',
-    justifyContent: 'center',
-    isMain: true,
+    isLogin: true,
   },
 };
 
-export const NotHeader: Story = {
+export const IsLogout: Story = {
   args: {
-    isHeader: false,
-    justifyContent: 'center',
+    color: 'black',
+    isLogin: false,
   },
 };
