@@ -4,7 +4,6 @@ import { Wrapper } from '@/styles/components/IntroductionPage/Introduction';
 import { StyledPageMainImageWrapper } from '@/styles/components/PageMainImageWrapper/PageMainImageWrapper';
 import { ReactNode } from 'react';
 import Header from '../Header/Header';
-import Footer from '@/components/atoms/Footer/Footer';
 
 type PageLayoutProps = {
   alt: string;
@@ -29,7 +28,7 @@ function PageLayout({
 }: PageLayoutProps) {
   return (
     <>
-      <Header isLogin={true} color="black" />
+      <Header isLogin={true} isMain={false} />
       <Wrapper>
         <StyledPageMainImageWrapper>
           <PageMainImage image={mainImage} alt={alt} />

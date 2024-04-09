@@ -25,14 +25,14 @@ function BoardTable(): React.ReactNode {
       view: '5',
     },
     {
-      number: '3',
+      number: '2',
       title: '경화야 벚꽃보러갈래?',
       date: '2024.04.01',
       id: '진성',
       view: '72',
     },
     {
-      number: '2',
+      number: '3',
       title: '누나한테 까불지말라했지',
       date: '2024.04.01',
       id: '경화',
