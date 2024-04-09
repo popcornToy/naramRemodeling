@@ -7,9 +7,6 @@ function Introduction() {
   return (
     <>
       <PageLayout
-        isMainMenu={false}
-        EngTitle="COMPANY"
-        KorTitle="회사소개"
         alt="회사소개 페이지"
         mainImage={mainImage}
         firstTitle="COMPANY"

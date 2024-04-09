@@ -1,20 +1,15 @@
 import PageMainImage from '@/components/atoms/PageMainImage/PageMainImage';
 import PageSubTitleLayout from '@/components/moleclues/PageSubTitleLayout/PageSubTitleLayout';
-import NaviBar from '@/components/moleclues/naviButton/NaviBar';
-
 import { Wrapper } from '@/styles/components/IntroductionPage/Introduction';
 import { StyledPageMainImageWrapper } from '@/styles/components/PageMainImageWrapper/PageMainImageWrapper';
 import { ReactNode } from 'react';
 import Header from '../Header/Header';
+import Footer from '@/components/atoms/Footer/Footer';
 
 type PageLayoutProps = {
-  EngTitle: string;
-  KorTitle: string;
-  isMainMenu: boolean;
   alt: string;
   children: ReactNode;
   mainImage: string;
-
   firstTitle: string;
   firstSubTitle?: string;
   secondTitle: string;
@@ -34,10 +29,10 @@ function PageLayout({
 }: PageLayoutProps) {
   return (
     <>
+      <Header isLogin={true} color="black" />
       <Wrapper>
-        <Header isLogin={true} color="black" />
         <StyledPageMainImageWrapper>
-          <PageMainImage image={mainImage} alt={alt}></PageMainImage>
+          <PageMainImage image={mainImage} alt={alt} />
           <PageSubTitleLayout
             firstTitle={firstTitle}
             firstSubTitle={firstSubTitle}

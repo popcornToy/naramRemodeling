@@ -1,17 +1,18 @@
 import { Meta, StoryObj } from '@storybook/react';
+import AddressGrop from './AddressGrop';
 import { MemoryRouter } from 'react-router-dom';
-import MainMenuButton from './MainMenuButton';
 
 const meta = {
-  title: 'MainMenuButton/molecules',
-  component: MainMenuButton,
+  title: 'AddressGrop/molecules',
+  component: AddressGrop,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {
-    isHeader: { control: 'boolean' },
+    type: { control: 'radio', options: ['desktop', 'mobile'] },
   },
+
   args: {},
   decorators: [
     (Story) => (
@@ -20,19 +21,19 @@ const meta = {
       </MemoryRouter>
     ),
   ],
-} satisfies Meta<typeof MainMenuButton>;
+} satisfies Meta<typeof AddressGrop>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Header: Story = {
+export const Desktop: Story = {
   args: {
-    isHeader: true,
+    type: 'desktop',
   },
 };
 
-export const NotHeader: Story = {
+export const Mobile: Story = {
   args: {
-    isHeader: false,
+    type: 'Mobile',
   },
 };
