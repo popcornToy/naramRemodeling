@@ -1,16 +1,23 @@
-import PageTitle from '@/components/atoms/PageTitle/PageTitle';
-import Search from '@/components/moleclues/Search/Search';
-import BoardTable from '@/components/moleclues/BoardTable/BoardTable';
-import BasicButton from '@/components/atoms/Board/BasicButton';
+import PageLayout from '@/components/organisms/PageLayout/PageLayout';
+import mainImage from '/Notice_main.svg';
+import BoardLayout from '@/components/organisms/BoardLayout/BoardLayout';
 
 function Notice() {
   return (
-    <>
-      <PageTitle EngTitle="NOTICE" KorTitle="공지사항" />
-      <Search />
-      <BoardTable />
-      <BasicButton text="글쓰기" />
-    </>
+    <div>
+      <PageLayout
+        isMainMenu={false}
+        EngTitle="Notice"
+        KorTitle="공지사항"
+        alt="공지사항 페이지"
+        mainImage={mainImage}
+        firstTitle="NOTICE"
+        secondTitle="공지사항"
+        thirdTitle="고객을 위해 항상 노력하는 나람이 되겠습니다."
+      >
+        <BoardLayout />
+      </PageLayout>
+    </div>
   );
 }
 

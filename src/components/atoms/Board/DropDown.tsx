@@ -27,8 +27,8 @@ export function DropDown({ options }: DropDown) {
       {isOpen && (
         <ul className="DropDownList">
           {options.map((option) => (
-            <li className="DropDownOption" key={option} onClick={() => handleOptionSelect(option)}>
-              {option}
+            <li key={option} onClick={() => handleOptionSelect(option)}>
+              <button className="DropDownOption">{option}</button>
             </li>
           ))}
         </ul>

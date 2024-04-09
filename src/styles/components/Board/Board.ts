@@ -2,25 +2,27 @@ import styled from 'styled-components';
 
 // 제목
 export const StyledPageTitle = styled.div`
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 160px 0 100px 0;
 
   & .EngTitle {
+    width: 100%;
     color: #999;
-    margin-left: 18.2px;
+    text-align: center;
     font-family: 'Noto Sans';
     font-size: 26px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 18.2px;
+    margin-left: 18.2px;
   }
 
   & .KorTitle {
     color: #000;
-
+    text-align: center;
     font-family: 'Noto Sans';
     font-size: 60px;
     font-style: normal;
@@ -32,12 +34,12 @@ export const StyledPageTitle = styled.div`
 
 // 총?건
 export const StyledTotalBoard = styled.p`
-  color: #000;
+  color: #999;
   font-family: 'Noto Sans';
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: 250%;
+  line-height: 50px;
 `;
 
 // 드롭다운
@@ -65,7 +67,7 @@ export const StyledDropDown = styled.div<DropDownProps>`
   & .DropDownList {
     position: relative;
     width: ${(props) => props.$width || '40px'};
-    top: -31px;
+    top: -40px;
   }
   & .DropDownOption {
     width: 40px;
@@ -77,7 +79,7 @@ export const StyledDropDown = styled.div<DropDownProps>`
 `;
 
 // 서치바
-export const StyledSearchBar = styled.label`
+export const StyledSearchBar = styled.div`
   width: 240px;
   height: 40px;
   display: flex;
@@ -103,9 +105,19 @@ export const StyledSearchBar = styled.label`
     width: 18px;
     height: 20px;
     position: relative;
-    left: -25px;
-    top: 10px;
+    bottom: 30px;
+    left: 100px;
   }
+`;
+
+export const StyledTopBoard = styled.div`
+  width: 81.25rem;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 2px;
+  margin-bottom: 10px;
 `;
 
 export const StyledSearch = styled.div`
@@ -115,7 +127,10 @@ export const StyledSearch = styled.div`
 `;
 
 export const StyledBoardTable = styled.table`
-  width: 1300px;
+  width: 100%;
+  padding: 0;
+  border-spacing: 0;
+  border-bottom: 2px solid #000;
 
   & .BoardTableTitle {
     height: 70px;
@@ -131,6 +146,7 @@ export const StyledBoardTable = styled.table`
     grid-template-columns: 1fr 6fr 1fr 1fr 1fr;
     line-height: 70px;
     text-align: center;
+    border-bottom: 1px solid #d1d1d1;
   }
 `;
 
@@ -146,4 +162,21 @@ export const StyledBasicButton = styled.a<ButtonProps>`
   height: ${(props) => props.$height || '39px'};
   padding: ${(props) => props.$padding || '10px 20px'};
   background: #e7e7e7;
+`;
+
+// 페이지네이션바
+export const StyledPaginationBar = styled.div`
+  width: 81.25rem;
+  display: grid;
+  grid-template-columns: 15fr 1fr;
+  margin-top: 10px;
+`;
+
+// 보드레이아웃
+export const StyledBoardLayout = styled.div`
+  width: 81.25rem;
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  transform: translate(-50%);
 `;
