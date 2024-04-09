@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.header`
+type HeaderContainerProps = {
+  isMain: boolean;
+  isScrolled: boolean;
+};
+
+export const HeaderContainer = styled.header<HeaderContainerProps>`
   display: flex;
   align-items: center;
   padding: 0 4.0625rem;
@@ -9,5 +14,5 @@ export const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   z-index: 10;
-  background-color: #ffffff;
+  background-color: ${(props) => (props.isScrolled ? '#ffffff' : 'transparent')};
 `;

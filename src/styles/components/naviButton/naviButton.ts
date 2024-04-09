@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 type GNBTitleProps = {
-  color?: 'black' | 'white';
+  isMain: boolean;
+  isScrolled: boolean;
 };
 
 export const GNBTitle = styled.p<GNBTitleProps>`
   font-size: '1.125rem';
   font-weight: '700';
-  color: ${(props) => (props.color === 'white' ? '#FFFFFF' : '#333333')};
+  color: ${(props) => (props.isScrolled ? '#333333' : props.isMain ? '#ffffff' : '#333333')};
   padding: '0 1.71875rem'
   line-height: normal;
   font-style: normal;
@@ -31,10 +32,20 @@ export const GNBContainer = styled.ul`
 export const GNBLi = styled.li`
   display: flex;
   gap: 0.375rem;
+  flex-wrap: nowrap;
+  align-items: center;
 `;
 
 export const NaviImage = styled.div`
   display: flex;
   gap: 0.375rem;
   align-items: center;
+`;
+
+type ImageContainerProps = {
+  isScrolled: boolean;
+  isMain: boolean;
+};
+export const ImageContainer = styled.div<ImageContainerProps>`
+  color: ${(props) => (props.isScrolled ? '#3974CC' : props.isMain ? '#ffffff' : '#3974CC')};
 `;
