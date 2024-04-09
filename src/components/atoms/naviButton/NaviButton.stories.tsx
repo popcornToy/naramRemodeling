@@ -12,7 +12,8 @@ const meta = {
   argTypes: {
     text: { control: 'text' },
     route: { control: 'text' },
-    color: { control: 'radio', options: ['black', 'white'] },
+    isMain: { control: 'boolean' },
+    isScrolled: { control: 'boolean' },
   },
   decorators: [
     (Story) => (
@@ -30,6 +31,7 @@ export const Default: Story = {
   args: {
     text: '회사소개',
     route: '/',
-    color: 'black',
+    isMain: false,
+    isScrolled: false,
   },
 };
