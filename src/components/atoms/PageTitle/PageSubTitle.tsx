@@ -11,6 +11,7 @@ type PageSubTitle = {
 function PageSubTitle({ firstTitle, firstSubTitle, secondTitle, thirdTitle, thirdSubTitle }: PageSubTitle) {
   return (
     <StyledContent>
+      {/* // Q&A, 회사소개, Notice 등 페이지에 쓰이는 PageLayout 전체 가로 넓이  StyledContent */}
       <div>
         <p className="firstTitle">{firstTitle ? firstTitle : 'COMPANY'}</p>
         {firstSubTitle ? <p className="firstTitle">{firstSubTitle}</p> : ''}

@@ -1,8 +1,9 @@
+import { StyledContainer } from '@/styles/components/KakaoMap/KakaoMap';
 import { Map, MapMarker, ZoomControl, MapTypeControl } from 'react-kakao-maps-sdk';
 
 type KakaoMapProps = {
   width?: string;
-  level?: string;
+  level?: number;
   title?: string;
   firstContent?: string;
   secondContent?: string;
@@ -20,9 +21,11 @@ function KakaoMap({ width, level, title, firstContent, secondContent }: KakaoMap
         }}
         style={{
           width: '100%',
-          height: '800px',
+          height: '600px',
         }}
-        level={level ? level : 5} // 지도의 확대 레벨
+        level={level ? level : 4} // 지도의 확대 레벨
+        draggable={false}
+        zoomable={false}
       >
         <MapTypeControl position={'TOPRIGHT'} />
         <ZoomControl position={'RIGHT'} />
@@ -32,25 +35,25 @@ function KakaoMap({ width, level, title, firstContent, secondContent }: KakaoMap
             lng: 127.517545,
           }}
         >
-          <div style={{ padding: '5px', color: '#000' }}>
-            {title ? title : '나람사료'} <br />
+          <StyledContainer>
+            {/* {title ? title : '나람사료'} <br /> */}
             <a
-              href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667"
+              href="https://map.kakao.com/link/map/나람사료,36.966125,127.517545"
               style={{ color: 'blue' }}
               target="_blank"
               rel="noreferrer"
             >
-              {firstContent}
+              {firstContent ? firstContent : '(주) 나람사료'}
             </a>{' '}
             <a
-              href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667"
+              href="https://map.kakao.com/link/to/Hello World!,36.966125,127.517545"
               style={{ color: 'blue' }}
               target="_blank"
               rel="noreferrer"
             >
               {secondContent}
             </a>
-          </div>
+          </StyledContainer>
         </MapMarker>
       </Map>
     </div>

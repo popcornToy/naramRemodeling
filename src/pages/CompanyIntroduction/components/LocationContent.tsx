@@ -1,8 +1,13 @@
+import KakaoMap from '@/components/atoms/KakaoMap/KakaoMap';
+import AddressGroup from '@/components/moleclues/AddressGrop/AddressGrop';
+import { StyledContainer } from '@/styles/components/Location/Location';
+
 function LocationContent() {
   return (
-    <>
-      <div>찾아오시는 길</div>
-    </>
+    <StyledContainer>
+      <KakaoMap firstContent="(주) 나람사료" />
+      <AddressGroup type={'desktop'} />
+    </StyledContainer>
   );
 }
 

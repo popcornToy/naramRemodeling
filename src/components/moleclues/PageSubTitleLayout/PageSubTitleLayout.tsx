@@ -22,6 +22,7 @@ function PageSubTitleLayout({
   return (
     <div>
       <StyledFlexCenter>
+        {/* // Q&A, 회사소개, Notice 등 페이지에 쓰이는 PageLayout 전체 가로 넓이  PageSubTitle > StyledContent */}
         <PageSubTitle
           firstTitle={firstTitle}
           firstSubTitle={firstSubTitle}
