@@ -7,6 +7,7 @@ type HeaderContainerProps = {
 
 export const HeaderContainer = styled.header<HeaderContainerProps>`
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 0 4.0625rem;
   width: 100%;
@@ -15,4 +16,11 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
   top: 0;
   z-index: 10;
   background-color: ${(props) => (props.isScrolled ? '#ffffff' : 'transparent')};
+`;
+
+export const HeaderFlexContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 `;

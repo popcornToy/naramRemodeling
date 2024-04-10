@@ -34,7 +34,7 @@ function PageLayout({
   return (
     <>
       <Wrapper>
-        <Header isLogin={false} color="black" />
+        <Header isLogin={false} isMain={false} />
         <StyledPageMainImageWrapper>
           <PageMainImage image={mainImage} alt={alt}></PageMainImage>
           <PageSubTitleLayout

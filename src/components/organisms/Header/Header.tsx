@@ -1,7 +1,8 @@
 import LogoLink from '@/components/atoms/LogoLink/LogoLink';
 import NaviBar from '@/components/moleclues/naviButton/NaviBar';
-import { HeaderContainer } from '@/styles/components/Header/Header';
+import { HeaderContainer, HeaderFlexContainer } from '@/styles/components/Header/Header';
 import { useEffect, useState } from 'react';
+import DropdownMenuNav from '../Dropdown/DropdownMenuNav';
 
 type HeaderProps = {
   isMain: boolean;
@@ -10,6 +11,7 @@ type HeaderProps = {
 
 export default function Header({ isLogin, isMain }: HeaderProps) {
   const [isScroll, setIsScroll] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,9 +22,14 @@ export default function Header({ isLogin, isMain }: HeaderProps) {
   }, []);
 
   return (
-    <HeaderContainer isScrolled={isScroll} isMain={isMain}>
-      <LogoLink />
-      <NaviBar isLogin={isLogin} isMain={isMain} isScrolled={isScroll} />
-    </HeaderContainer>
+    <>
+      <HeaderContainer isScrolled={isScroll} isMain={isMain}>
+        <HeaderFlexContainer>
+          <LogoLink />
+          <NaviBar isLogin={isLogin} isMain={isMain} isScrolled={isScroll} />
+        </HeaderFlexContainer>
+        {/* <DropdownMenuNav isClicked={handleClick} /> */}
+      </HeaderContainer>
+    </>
   );
 }

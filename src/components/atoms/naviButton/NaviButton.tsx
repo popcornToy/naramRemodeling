@@ -4,7 +4,7 @@ import Login from '@/../public/user.svg?react';
 import Logout from '@/../public/logout.svg?react';
 
 type NaviButtonProps = {
-  route: string;
+  route?: string;
   text: string;
   isMain: boolean;
   isLoginButton?: boolean;
@@ -20,23 +20,27 @@ export default function NaviButton({
   isLogoutButton,
   isScrolled,
 }: NaviButtonProps) {
+  const renderButtonContent = () => {
+    return (
+      <ImageContainer isScrolled={isScrolled} isMain={isMain}>
+        {isLoginButton && <Login />}
+        {isLogoutButton && <Logout />}
+      </ImageContainer>
+    );
+  };
+
   return (
     <GNBTitle isMain={isMain} isScrolled={isScrolled}>
-      <Link to={route}>
+      {route ? (
         <NaviImage>
-          {isLoginButton && (
-            <ImageContainer isScrolled={isScrolled} isMain={isMain}>
-              <Login />
-            </ImageContainer>
-          )}
-          {isLogoutButton && (
-            <ImageContainer isScrolled={isScrolled} isMain={isMain}>
-              <Logout />
-            </ImageContainer>
-          )}
-          {text}
+          <Link to={route}>
+            {renderButtonContent()}
+            {text}
+          </Link>
         </NaviImage>
-      </Link>
+      ) : (
+        <button>{text}</button>
+      )}
     </GNBTitle>
   );
 }
