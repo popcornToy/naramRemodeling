@@ -10,8 +10,9 @@ interface TextfontProps {
   paddingTop?: string;
 }
 
+// Q&A, 회사소개, Notice 등 페이지에 쓰이는 PageLayout 전체 가로 넓이
 export const StyledContent = styled.div<TextfontProps>`
-  width: 1300px;
+  width: 81.25rem;
   height: auto;
   display: flex;
   padding-left: 1.25rem;
@@ -19,7 +20,6 @@ export const StyledContent = styled.div<TextfontProps>`
   flex-direction: column;
   gap: 51px;
   background-color: ${(props) => props.color};
-  background-image:;
   position: relative;
 
   & .firstTitle {
