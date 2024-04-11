@@ -23,7 +23,7 @@ export const GNBContainer = styled.ul`
   display: flex;
   gap: 3rem;
   white-space: nowrap;
-  /* padding: 1.5625rem 0; */
+  padding: 1.5625rem 0;
   justify-content: end;
   align-items: center;
 `;
