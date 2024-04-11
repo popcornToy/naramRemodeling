@@ -1,42 +1,45 @@
-import { Link } from 'react-router-dom';
-import { GNBTitle, ImageContainer, NaviImage } from '@/styles/components/naviButton/naviButton';
+import { GNBTitle, ImageContainer, NaviImageLink } from '@/styles/components/naviButton/naviButton';
 import Login from '@/../public/user.svg?react';
 import Logout from '@/../public/logout.svg?react';
+import { useAtom } from 'jotai';
+import { isClicked } from '@/store/store';
+import useBackground from '@/components/organisms/Header/useBackground';
 
 type NaviButtonProps = {
-  route: string;
+  route?: string;
   text: string;
   isMain: boolean;
   isLoginButton?: boolean;
   isLogoutButton?: boolean;
-  isScrolled: boolean;
 };
 
-export default function NaviButton({
-  route,
-  text,
-  isMain,
-  isLoginButton,
-  isLogoutButton,
-  isScrolled,
-}: NaviButtonProps) {
+export default function NaviButton({ route, text, isMain, isLoginButton, isLogoutButton }: NaviButtonProps) {
+  const [isClick, setIsClick] = useAtom(isClicked);
+  const { textColor, iconColor } = useBackground(isMain);
+
+  const renderButtonContent = () => {
+    return (
+      <ImageContainer color={iconColor}>
+        {isLoginButton && <Login />}
+        {isLogoutButton && <Logout />}
+      </ImageContainer>
+    );
+  };
+
+  const handleClick = () => {
+    setIsClick(!isClick);
+  };
+
   return (
-    <GNBTitle isMain={isMain} isScrolled={isScrolled}>
-      <Link to={route}>
-        <NaviImage>
-          {isLoginButton && (
-            <ImageContainer isScrolled={isScrolled} isMain={isMain}>
-              <Login />
-            </ImageContainer>
-          )}
-          {isLogoutButton && (
-            <ImageContainer isScrolled={isScrolled} isMain={isMain}>
-              <Logout />
-            </ImageContainer>
-          )}
+    <GNBTitle color={textColor}>
+      {route ? (
+        <NaviImageLink to={route}>
+          {renderButtonContent()}
           {text}
-        </NaviImage>
-      </Link>
+        </NaviImageLink>
+      ) : (
+        <button onClick={handleClick}>{text}</button>
+      )}
     </GNBTitle>
   );
 }

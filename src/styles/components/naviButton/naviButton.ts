@@ -1,15 +1,15 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 type GNBTitleProps = {
-  isMain: boolean;
-  isScrolled: boolean;
+  color: string;
 };
 
 export const GNBTitle = styled.p<GNBTitleProps>`
   font-size: '1.125rem';
   font-weight: '700';
-  color: ${(props) => (props.isScrolled ? '#333333' : props.isMain ? '#ffffff' : '#333333')};
-  padding: '0 1.71875rem'
+  color: ${(prpos) => prpos.color};
+  padding: '0 1.71875rem';
   line-height: normal;
   font-style: normal;
   text-decoration: none;
@@ -36,16 +36,16 @@ export const GNBLi = styled.li`
   align-items: center;
 `;
 
-export const NaviImage = styled.div`
+export const NaviImageLink = styled(Link)`
   display: flex;
   gap: 0.375rem;
   align-items: center;
 `;
 
 type ImageContainerProps = {
-  isScrolled: boolean;
-  isMain: boolean;
+  color: string;
 };
+
 export const ImageContainer = styled.div<ImageContainerProps>`
-  color: ${(props) => (props.isScrolled ? '#3974CC' : props.isMain ? '#ffffff' : '#3974CC')};
+  color: ${(props) => props.color};
 `;

@@ -107,6 +107,12 @@ button {
   cursor: pointer;
   border: 0;
   background: transparent;
+  color: inherit;
+}
+
+button:focus-visible {
+  border: none;
+  outline: none;
 }
 
 li, ul {

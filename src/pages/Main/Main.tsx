@@ -6,7 +6,7 @@ import Header from '@/components/organisms/Header/Header';
 export default function Main() {
   return (
     <>
-      <Header isLogin={true} isMain />
+      <Header isLogin={false} isMain />
       <MainBannerContainer>
         <img src={mainBanner} alt="메인 이미지" />
       </MainBannerContainer>
