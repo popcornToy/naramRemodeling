@@ -3,9 +3,11 @@ import styled, { css, keyframes } from 'styled-components';
 const expandMenu = keyframes`
   from {
     height: 0;
+    padding: 0;
     }
   to {
     height: 16.5rem;
+    padding: 1.75rem 0;
   }
 `;
 
@@ -22,6 +24,7 @@ const collapseMenu = keyframes`
 
 type DropdownMenuNavContainerProps = {
   isClicked: boolean;
+  isAnimated: boolean;
 };
 
 export const DropdownMenuNavContainer = styled.div<DropdownMenuNavContainerProps>`
@@ -35,12 +38,13 @@ export const DropdownMenuNavContainer = styled.div<DropdownMenuNavContainerProps
   height: 0;
   overflow: hidden;
   ${(props) =>
-    props.isClicked
+    props.isClicked && props.isAnimated
       ? css`
           animation: ${expandMenu} 0.5s forwards;
-          padding: 1.75rem 0;
         `
-      : css`
-          animation: ${collapseMenu} 0.5s forwards;
-        `}
+      : props.isAnimated
+        ? css`
+            animation: ${collapseMenu} 0.5s forwards;
+          `
+        : ''}
 `;
