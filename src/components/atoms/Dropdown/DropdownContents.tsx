@@ -1,3 +1,5 @@
+import { isClicked } from '@/store/store';
+import { useAtom } from 'jotai';
 import { Link } from 'react-router-dom';
 
 export type DropdownContentsProps = {
@@ -6,6 +8,11 @@ export type DropdownContentsProps = {
 };
 
 export default function DropdownContents({ content, route }: DropdownContentsProps) {
+  const [isClick, setIsClick] = useAtom(isClicked);
+
+  const handleClick = () => {
+    setIsClick(!isClick);
+  };
   return (
     <li
       style={{
@@ -13,7 +20,9 @@ export default function DropdownContents({ content, route }: DropdownContentsPro
         fontWeight: 500,
       }}
     >
-      <Link to={route}>{content}</Link>
+      <Link to={route} onClick={handleClick}>
+        {content}
+      </Link>
     </li>
   );
 }

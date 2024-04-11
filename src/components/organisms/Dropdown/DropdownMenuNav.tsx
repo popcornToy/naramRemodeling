@@ -29,7 +29,7 @@ const CUSTOMER_CENTER = [
 ];
 
 type DropdownMenuNavProps = {
-  isClicked: () => boolean;
+  isClicked: boolean;
 };
 
 export default function DropdownMenuNav({ isClicked }: DropdownMenuNavProps) {
