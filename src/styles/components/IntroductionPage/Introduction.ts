@@ -160,7 +160,7 @@ export const StyledTextDiv = styled.div<TextfontProps>`
 
 export const Wrapper = styled.div`
   position: relative;
-  padding-top: 65px;
+  padding-top: 60px;
   & .mainMenuPosition {
     display: flex;
     justify-content: center;
