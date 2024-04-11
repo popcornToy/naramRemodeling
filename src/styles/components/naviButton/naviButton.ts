@@ -6,10 +6,9 @@ type GNBTitleProps = {
 };
 
 export const GNBTitle = styled.p<GNBTitleProps>`
-  font-size: '1.125rem';
-  font-weight: '700';
+  font-size: 1.125rem;
+  font-weight: 700;
   color: ${(prpos) => prpos.color};
-  padding: '0 1.71875rem';
   line-height: normal;
   font-style: normal;
   text-decoration: none;
@@ -24,14 +23,13 @@ export const GNBContainer = styled.ul`
   display: flex;
   gap: 3rem;
   white-space: nowrap;
-  padding: 1.5625rem 0;
+  /* padding: 1.5625rem 0; */
   justify-content: end;
   align-items: center;
 `;
 
 export const GNBLi = styled.li`
   display: flex;
-  gap: 0.375rem;
   flex-wrap: nowrap;
   align-items: center;
 `;
