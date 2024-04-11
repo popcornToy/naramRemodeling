@@ -1,13 +1,29 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from '/logo.png';
 import { useAtom } from 'jotai';
-import { isClicked } from '@/store/store';
+import { animate, isClicked } from '@/store/store';
 
 export default function LogoLink() {
+  const navigate = useNavigate();
   const [, setIsClick] = useAtom(isClicked);
+  const [, setIsAnimated] = useAtom(animate);
 
-  const handleClick = () => {
-    setIsClick(false);
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
+    setIsClick((prev) => {
+      if (prev) {
+        return false;
+      }
+      return prev;
+    });
+    setIsAnimated((prev) => {
+      if (prev) {
+        return false;
+      }
+      return prev;
+    });
+
+    navigate('/');
   };
   return (
     <Link to="/" onClick={handleClick}>

@@ -2,7 +2,7 @@ import { GNBTitle, ImageContainer, NaviImageLink } from '@/styles/components/nav
 import Login from '@/../public/user.svg?react';
 import Logout from '@/../public/logout.svg?react';
 import { useAtom } from 'jotai';
-import { isClicked } from '@/store/store';
+import { animate, isClicked } from '@/store/store';
 import useBackground from '@/components/organisms/Header/useBackground';
 
 type NaviButtonProps = {
@@ -15,6 +15,7 @@ type NaviButtonProps = {
 
 export default function NaviButton({ route, text, isMain, isLoginButton, isLogoutButton }: NaviButtonProps) {
   const [isClick, setIsClick] = useAtom(isClicked);
+  const [, setIsAnimated] = useAtom(animate);
   const { textColor, iconColor } = useBackground(isMain);
 
   const renderButtonContent = () => {
@@ -28,6 +29,7 @@ export default function NaviButton({ route, text, isMain, isLoginButton, isLogou
 
   const handleClick = () => {
     setIsClick(!isClick);
+    setIsAnimated(true);
   };
 
   return (

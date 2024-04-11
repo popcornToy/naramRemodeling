@@ -24,6 +24,7 @@ const collapseMenu = keyframes`
 
 type DropdownMenuNavContainerProps = {
   isClicked: boolean;
+  isAnimated: boolean;
 };
 
 export const DropdownMenuNavContainer = styled.div<DropdownMenuNavContainerProps>`
@@ -37,11 +38,13 @@ export const DropdownMenuNavContainer = styled.div<DropdownMenuNavContainerProps
   height: 0;
   overflow: hidden;
   ${(props) =>
-    props.isClicked
+    props.isClicked && props.isAnimated
       ? css`
           animation: ${expandMenu} 0.5s forwards;
         `
-      : css`
-          animation: ${collapseMenu} 0.5s forwards;
-        `}
+      : props.isAnimated
+        ? css`
+            animation: ${collapseMenu} 0.5s forwards;
+          `
+        : ''}
 `;

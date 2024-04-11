@@ -18,7 +18,8 @@ export default function Header({ isLogin, isMain }: HeaderProps) {
 
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
-      if (!e.target.closest('.click-container')) {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.click-container')) {
         setIsClick(false);
       }
     };

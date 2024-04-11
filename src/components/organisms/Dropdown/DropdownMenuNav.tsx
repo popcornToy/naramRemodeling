@@ -1,5 +1,7 @@
 import DropdownMenu from '@/components/moleclues/Dropdown/DropdownMenu';
+import { animate } from '@/store/store';
 import { DropdownMenuNavContainer } from '@/styles/components/DropdownMenu/Dropdown';
+import { useAtom } from 'jotai';
 
 const INTRODUCE = [
   { content: 'CEO인사말', route: '/Introduction/#hello' },
@@ -33,8 +35,9 @@ type DropdownMenuNavProps = {
 };
 
 export default function DropdownMenuNav({ isClicked }: DropdownMenuNavProps) {
+  const [isAnimated] = useAtom(animate);
   return (
-    <DropdownMenuNavContainer isClicked={isClicked}>
+    <DropdownMenuNavContainer isClicked={isClicked} isAnimated={isAnimated}>
       <DropdownMenu title="회사소개" items={INTRODUCE} />
       <DropdownMenu title="정보센터" items={INFORMATION} />
       <DropdownMenu title="제품정보" items={PRODUCT} />

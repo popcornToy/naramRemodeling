@@ -8,6 +8,11 @@ export default function useBackground(isMain: boolean) {
   const [iconColor, setIconColor] = useState<string>('#3974CC');
   const [isScroll, setIsScroll] = useState(false);
   const [isClick] = useAtom(isClicked);
+  const [isFirstMount, setIsFirstMount] = useState(true);
+
+  useEffect(() => {
+    setIsFirstMount(false);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,17 +25,19 @@ export default function useBackground(isMain: boolean) {
   }, []);
 
   useEffect(() => {
-    if (isClick) {
-      setChangeColor('#ffffff');
-    } else if (isScroll) {
+    if (isClick || isScroll) {
       setChangeColor('#ffffff');
     } else {
-      const timeoutId = setTimeout(() => {
+      if (isFirstMount) {
         setChangeColor('transparent');
-      }, 500);
-      return () => clearTimeout(timeoutId);
+      } else {
+        const timeoutId = setTimeout(() => {
+          setChangeColor('transparent');
+        }, 500);
+        return () => clearTimeout(timeoutId);
+      }
     }
-  }, [isClick, isScroll]);
+  }, [isClick, isFirstMount, isScroll]);
 
   useEffect(() => {
     if (isClick || isScroll) {
