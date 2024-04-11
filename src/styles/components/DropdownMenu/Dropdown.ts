@@ -3,9 +3,11 @@ import styled, { css, keyframes } from 'styled-components';
 const expandMenu = keyframes`
   from {
     height: 0;
+    padding: 0;
     }
   to {
     height: 16.5rem;
+    padding: 1.75rem 0;
   }
 `;
 
@@ -38,7 +40,6 @@ export const DropdownMenuNavContainer = styled.div<DropdownMenuNavContainerProps
     props.isClicked
       ? css`
           animation: ${expandMenu} 0.5s forwards;
-          padding: 1.75rem 0;
         `
       : css`
           animation: ${collapseMenu} 0.5s forwards;
