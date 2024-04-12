@@ -8,7 +8,6 @@ function BoardLayout() {
     <StyledBoardLayout>
       <Search />
       <BoardTable />
-      <PaginationBar />
     </StyledBoardLayout>
   );
 }
