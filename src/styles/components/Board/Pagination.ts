@@ -11,7 +11,7 @@ export const StyledPagination = styled(ReactPaginate).attrs({
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   color: gray;
 
   & .currentPage {

@@ -169,7 +169,7 @@ export const StyledPaginationBar = styled.div`
   width: 81.25rem;
   display: grid;
   grid-template-columns: 15fr 1fr;
-  margin-top: 10px;
+  margin-top: 20px;
 `;
 
 // 보드레이아웃

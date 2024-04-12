@@ -2,16 +2,17 @@ import { StyledPagination } from '@/styles/components/Board/Pagination';
 
 type pagination = {
   handlePageClick: any;
+  pageCount: number;
 };
 
-const Pagination = ({ handlePageClick }: pagination) => {
+const Pagination = ({ handlePageClick, pageCount }: pagination) => {
   return (
     <StyledPagination
-      pageCount={Math.ceil(100 / 10)}
+      pageCount={pageCount}
       pageRangeDisplayed={3}
       breakLabel="..."
-      previousLabel={'이전'}
-      nextLabel={'다음'}
+      previousLabel={'<'}
+      nextLabel={'>'}
       onPageChange={handlePageClick}
       containerClassName={'pagination-ul'}
       activeClassName={'currentPage'}
