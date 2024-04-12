@@ -28,12 +28,8 @@ export const StyledFlexCenter = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
-  position: absolute;
-  top: 350px;
-  left: 50%;
-  position: absolute;
-  padding-top: 4.991rem;
-  transform: translate(-50%);
+  margin-top: -10.5rem;
+  padding-top: 4.99rem;
   background-color: white;
 `;
 
