@@ -16,25 +16,34 @@ export const navigationItems = [
       const Module = await import('@/pages/Login/Login');
       return { Component: Module.default };
     },
+    children: [
+      {
+        index: true,
+        text: '로그인 페이지',
+        lazy: async () => {
+          const Module = await import('@/pages/Login/pages/Login');
+          return { Component: Module.default };
+        },
+      },
+      {
+        text: '아이디 찾기',
+        path: 'FindId',
+        lazy: async () => {
+          const Module = await import('@/pages/Login/pages/FindId');
+          return { Component: Module.default };
+        },
+      },
+      {
+        text: '비밀번호 찾기',
+        path: 'FindPassword',
+        lazy: async () => {
+          const Module = await import('@/pages/Login/pages/FindPassword');
+          return { Component: Module.default };
+        },
+      },
+    ],
   },
-  {
-    id: 'SearchId',
-    path: '/SearchId',
-    text: '아이디찾기 페이지',
-    lazy: async () => {
-      const Module = await import('@/pages/SearchId/SearchId');
-      return { Component: Module.default };
-    },
-  },
-  {
-    id: 'SearchPassword',
-    path: '/SearchPassword',
-    text: '비밀번호찾기 페이지',
-    lazy: async () => {
-      const Module = await import('@/pages/SearchPassword/SearchPassword');
-      return { Component: Module.default };
-    },
-  },
+
   {
     id: 'Join',
     path: '/Join',
