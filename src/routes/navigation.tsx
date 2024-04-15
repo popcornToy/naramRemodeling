@@ -82,13 +82,32 @@ export const navigationItems = [
   },
 
   {
-    id: 'InformationCenter',
-    path: '/InformationCenter',
+    id: 'Information',
+    path: '/Information',
     text: '정보센터 페이지',
     lazy: async () => {
-      const Module = await import('@/pages/InformationCenter/InformationCenter');
+      const Module = await import('@/pages/Notice/Information');
       return { Component: Module.default };
     },
+    children: [
+      {
+        index: true,
+        text: '공지사항 페이지',
+        path: 'notice',
+        lazy: async () => {
+          const Module = await import('@/pages/Notice/pages/Notice');
+          return { Component: Module.default };
+        },
+      },
+      {
+        text: '홍포 게시물 페이지',
+        path: 'ad',
+        lazy: async () => {
+          const Module = await import('@/pages/Notice/pages/Promotion');
+          return { Component: Module.default };
+        },
+      },
+    ],
   },
   {
     id: 'ProductInformation',
@@ -105,16 +124,6 @@ export const navigationItems = [
     text: '인재채용 페이지',
     lazy: async () => {
       const Module = await import('@/pages/Recruitment/Recruitment');
-      return { Component: Module.default };
-    },
-  },
-  {
-    id: 'Notice',
-    path: '/Notice',
-    text: '공지사항 페이지',
-
-    lazy: async () => {
-      const Module = await import('@/pages/Notice/Notice');
       return { Component: Module.default };
     },
   },

@@ -111,7 +111,6 @@ export const StyledSearchBar = styled.div`
 `;
 
 export const StyledTopBoard = styled.div`
-  width: 81.25rem;
   height: 40px;
   display: flex;
   flex-direction: row;
@@ -166,10 +165,10 @@ export const StyledBasicButton = styled.a<ButtonProps>`
 
 // 페이지네이션바
 export const StyledPaginationBar = styled.div`
-  width: 81.25rem;
   display: grid;
   grid-template-columns: 15fr 1fr;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  padding: 20px 0px 40px 0px;
 `;
 
 // 보드레이아웃
