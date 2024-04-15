@@ -23,7 +23,7 @@ export const GNBContainer = styled.ul`
   display: flex;
   gap: 3rem;
   white-space: nowrap;
-  /* padding: 1.5625rem 0; */
+  padding: 1.5625rem 0;
   justify-content: end;
   align-items: center;
 `;
@@ -46,4 +46,8 @@ type ImageContainerProps = {
 
 export const ImageContainer = styled.div<ImageContainerProps>`
   color: ${(props) => props.color};
+`;
+
+export const LogoLinkContainer = styled(Link)`
+  min-width: 14.375rem;
 `;
