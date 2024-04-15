@@ -47,3 +47,7 @@ type ImageContainerProps = {
 export const ImageContainer = styled.div<ImageContainerProps>`
   color: ${(props) => props.color};
 `;
+
+export const LogoLinkContainer = styled(Link)`
+  min-width: 14.375rem;
+`;

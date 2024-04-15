@@ -1,7 +1,8 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Logo from '/logo.png';
 import { useAtom } from 'jotai';
 import { animate, isClicked } from '@/store/store';
+import { LogoLinkContainer } from '@/styles/components/naviButton/naviButton';
 
 export default function LogoLink() {
   const navigate = useNavigate();
@@ -26,8 +27,8 @@ export default function LogoLink() {
     navigate('/');
   };
   return (
-    <Link to="/" onClick={handleClick}>
+    <LogoLinkContainer to="/" onClick={handleClick}>
       <img src={Logo} alt="주식회사 나람" />
-    </Link>
+    </LogoLinkContainer>
   );
 }
