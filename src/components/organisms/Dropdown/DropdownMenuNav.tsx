@@ -11,8 +11,8 @@ const INTRODUCE = [
 ];
 
 const INFORMATION = [
-  { content: '공지사항', route: '/Introduction/#notice' },
-  { content: '나람 홍보 게시물', route: '/Introduction/#ad' },
+  { content: '공지사항', route: '/Information/notice' },
+  { content: '나람 홍보 게시물', route: '/Information/ad' },
 ];
 
 const PRODUCT = [

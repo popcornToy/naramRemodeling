@@ -21,7 +21,7 @@ export default function Main() {
       </MainBannerContainer>
       <MainContentsBox>
         <MainContentsFlexBox>
-          <MainBoardBox title="공지사항" path="/notice" isNotice />
+          <MainBoardBox title="공지사항" path="/Information/notice" isNotice />
           <MainBox alt="고객센터" img="/cs.png" path="/CS" />
           <MainBox alt="제품정보" img="/product.png" path="/product" />
         </MainContentsFlexBox>
