@@ -27,7 +27,9 @@ type DropdownMenuNavContainerProps = {
   isAnimated: boolean;
 };
 
-export const DropdownMenuNavContainer = styled.div<DropdownMenuNavContainerProps>`
+export const DropdownMenuNavContainer = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['isClicked', 'isAnimated'].includes(prop),
+})<DropdownMenuNavContainerProps>`
   display: flex;
   gap: 9.375rem;
   flex-wrap: nowrap;
@@ -40,11 +42,11 @@ export const DropdownMenuNavContainer = styled.div<DropdownMenuNavContainerProps
   ${(props) =>
     props.isClicked && props.isAnimated
       ? css`
-          animation: ${expandMenu} 0.5s forwards;
+          animation: ${expandMenu} 0.2s forwards;
         `
       : props.isAnimated
         ? css`
-            animation: ${collapseMenu} 0.5s forwards;
+            animation: ${collapseMenu} 0.2s forwards;
           `
         : ''}
 `;

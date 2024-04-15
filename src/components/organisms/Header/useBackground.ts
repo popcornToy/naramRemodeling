@@ -33,7 +33,7 @@ export default function useBackground(isMain: boolean) {
       } else {
         const timeoutId = setTimeout(() => {
           setChangeColor('transparent');
-        }, 500);
+        }, 200);
         return () => clearTimeout(timeoutId);
       }
     }
@@ -48,7 +48,7 @@ export default function useBackground(isMain: boolean) {
         const timeoutId = setTimeout(() => {
           setTextColor('#ffffff');
           setIconColor('#ffffff');
-        }, 500);
+        }, 200);
         return () => clearTimeout(timeoutId);
       } else {
         setTextColor('#333333');

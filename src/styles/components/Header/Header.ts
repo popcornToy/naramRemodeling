@@ -4,7 +4,9 @@ type HeaderContainerProps = {
   backgroundColor: string;
 };
 
-export const HeaderContainer = styled.header<HeaderContainerProps>`
+export const HeaderContainer = styled.header.withConfig({
+  shouldForwardProp: (prop) => !['backgroundColor'].includes(prop),
+})<HeaderContainerProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
