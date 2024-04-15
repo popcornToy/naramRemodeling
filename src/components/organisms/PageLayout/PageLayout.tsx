@@ -29,7 +29,7 @@ function PageLayout({
 }: PageLayoutProps) {
   return (
     <>
-      <Header isLogin={true} isMain={false} />
+      {/* <Header isLogin={true} isMain={false} /> */}
       <Wrapper>
         <StyledPageMainImageWrapper>
           <PageMainImage image={mainImage} alt={alt} />
@@ -44,7 +44,7 @@ function PageLayout({
           </PageSubTitleLayout>
         </StyledPageMainImageWrapper>
       </Wrapper>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

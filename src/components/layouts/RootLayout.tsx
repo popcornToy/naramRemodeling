@@ -1,11 +1,13 @@
 import { Outlet } from 'react-router-dom';
+import Header from '../organisms/Header/Header';
+import Footer from '../atoms/Footer/Footer';
 
 function RootLayout() {
   return (
     <div>
-      <main>
-        <Outlet />
-      </main>
+      <Header isLogin={true} isMain={false} />
+      <Outlet />
+      <Footer />
     </div>
   );
 }
