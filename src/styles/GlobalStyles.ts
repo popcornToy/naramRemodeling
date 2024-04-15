@@ -84,6 +84,7 @@ a {
   color: inherit;
   &:hover {
     text-decoration: underline;
+    text-decoration-line: none;
   }
 }
 
@@ -111,9 +112,13 @@ button {
 }
 
 button:focus-visible {
-  border: none;
-  outline: none;
+  
+  /* border: none;
+  outline: none; */
 }
+
+
+
 
 li, ul {
   list-style: none;
@@ -122,6 +127,12 @@ li, ul {
 figure {
   margin: 0;
   padding: 0;
+}
+
+.widthFull{
+
+width: 100%;
+
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
