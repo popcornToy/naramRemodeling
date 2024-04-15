@@ -137,6 +137,8 @@ export const MainContentsFlexBox = styled.div`
   justify-content: space-around;
 `;
 
+// 오시는 길
+
 export const MainPathContainer = styled.div`
   background-color: rgba(9, 9, 9, 0.5);
   height: 60rem;
@@ -145,6 +147,7 @@ export const MainPathContainer = styled.div`
     mix-blend-mode: multiply;
     width: 100%;
     object-fit: cover;
+    height: 60rem;
   }
 `;
 
@@ -161,8 +164,9 @@ export const MainPathSpan = styled.span`
   color: #fff;
   font-weight: 700;
   line-height: normal;
+  transform: translateX(-50%);
   letter-spacing: -0.005rem;
-  text-align: center;
+
   position: absolute;
   top: 9.125rem;
   left: 50%;

@@ -5,7 +5,7 @@ import DropdownMenuNav from '../Dropdown/DropdownMenuNav';
 import useBackground from './useBackground';
 import { useAtom } from 'jotai';
 import { isClicked } from '@/store/store';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 type HeaderProps = {
   isMain: boolean;
@@ -13,27 +13,30 @@ type HeaderProps = {
 };
 
 export default function Header({ isLogin, isMain }: HeaderProps) {
+  const headerRef = useRef<HTMLElement>(null);
   const [, setIsClick] = useAtom(isClicked);
   const { changeColor, isClick } = useBackground(isMain);
 
   useEffect(() => {
-    const handleOutsideClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (!target.closest('.click-container')) {
-        setIsClick(false);
-      }
+    const handleOutsideClick = () => {
+      setIsClick(false);
     };
 
-    document.addEventListener('click', handleOutsideClick);
+    const headerEl = headerRef.current;
+    if (headerEl) {
+      headerEl.addEventListener('mouseleave', handleOutsideClick);
+    }
 
     return () => {
-      document.removeEventListener('click', handleOutsideClick);
+      if (headerEl) {
+        headerEl.removeEventListener('mouseleave', handleOutsideClick);
+      }
     };
   }, [setIsClick]);
 
   return (
     <>
-      <HeaderContainer backgroundColor={changeColor} className="click-container">
+      <HeaderContainer backgroundColor={changeColor} ref={headerRef}>
         <HeaderFlexContainer>
           <LogoLink />
           <NaviBar isLogin={isLogin} isMain={isMain} />

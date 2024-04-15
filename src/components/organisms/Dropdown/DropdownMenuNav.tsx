@@ -2,12 +2,14 @@ import DropdownMenu from '@/components/moleclues/Dropdown/DropdownMenu';
 import { animate } from '@/store/store';
 import { DropdownMenuNavContainer } from '@/styles/components/DropdownMenu/Dropdown';
 import { useAtom } from 'jotai';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const INTRODUCE = [
-  { content: 'CEO인사말', route: '/Introduction/#CEO' },
-  { content: '연혁', route: '/Introduction/#year' },
+  { content: 'CEO인사말', route: '/Introduction#CEO' },
+  { content: '연혁', route: '/Introduction#year' },
   { content: '경영이념', route: '/Introduction/#idle' },
-  { content: '찾아오시는 길', route: '/Introduction/#location' },
+  { content: '찾아오시는 길', route: '/Introduction/Location' },
 ];
 
 const INFORMATION = [
@@ -36,6 +38,26 @@ type DropdownMenuNavProps = {
 
 export default function DropdownMenuNav({ isClicked }: DropdownMenuNavProps) {
   const [isAnimated] = useAtom(animate);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const { hash } = location;
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 100;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition - offset + window.scrollY;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
+    }
+  }, [location]);
   return (
     <DropdownMenuNavContainer isClicked={isClicked} isAnimated={isAnimated}>
       <DropdownMenu title="회사소개" items={INTRODUCE} />
