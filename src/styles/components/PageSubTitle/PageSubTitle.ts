@@ -18,7 +18,7 @@ export const StyledContent = styled.div<TextfontProps>`
   padding-left: 1.25rem;
 
   flex-direction: column;
-  gap: 51px;
+  gap: ${(props) => parseInt(props.gap || '16') / 16}rem;
   background-color: ${(props) => props.color};
   position: relative;
 
@@ -70,7 +70,7 @@ export const StyledContent = styled.div<TextfontProps>`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: ${(props) => parseInt(props.gap || '15') / 16}rem;
+    gap: ${(props) => parseInt(props.gap || '16') / 16}rem;
     padding-top: ${(props) => parseInt(props.paddingTop || '16') / 16}rem;
   }
 `;
