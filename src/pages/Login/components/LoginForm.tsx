@@ -1,12 +1,13 @@
-import React from 'react';
-
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import Logo from 'public/logo_mark.svg';
+import Logo from '/logo_mark.svg';
 import Button from '@/components/atoms/Login/Button';
-import Input from '@/components/atoms/Input/Input';
+import LoginInput from '@/components/atoms/Input/LoginInput';
 import Form from '@/components/atoms/Form/Form';
 import { Link } from 'react-router-dom';
 import { StyledLoginForm } from '@/styles/components/Login/LoginForm';
+import DangerIcon from '/danger-circle.svg';
+import Find_user from 'public/find_user.svg';
+import Find_password from 'public/find_password.svg';
 
 export type LoginFormProps = {
   onSubmit: SubmitHandler<FieldValues>;
@@ -29,22 +30,29 @@ function LoginForm({ onSubmit, isError }: LoginFormProps) {
         <h2>로그인</h2>
         <p>언제나 고객님의 만족을 추구합니다.</p>
       </div>
+      <div className="dangerText">
+        <img src={DangerIcon} alt="경고 아이콘" />
+        <p>
+          가입 시 입력한 <span>이메일 </span> 정보로 회원 아이디를 조회할 수 있습니다.{' '}
+        </p>
+      </div>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          // label="이메일"
-          id="email"
-          type="email"
-          placeholder="이메일"
-          error={errors.email ? errors.email.message : ''}
+        <LoginInput
+          // label="아이디"
+          id="id"
+          type="id"
+          placeholder="아이디"
+          error={errors.id ? errors.id.message : ''}
           register={register('email', {
-            required: '이메일을 필수 입력입니다.',
-            pattern: {
-              value: /^[a-zA-Z]+[!#$%&'*+-/=?^_`(){|}~]*[a-zA-Z0-9]*@[\w]+\.[a-zA-Z0-9-]+[.]*[a-zA-Z0-9]+$/,
-              message: '이메일 형식이 아닙니다.',
+            required: '아이디는 필수 입력입니다.',
+
+            minLength: {
+              value: 2,
+              message: '아이디는 최소 2글자 이상이어야 합니다.',
             },
           })}
         />
-        <Input
+        <LoginInput
           // label="비밀번호"
           id="password"
           type="password"
@@ -59,13 +67,29 @@ function LoginForm({ onSubmit, isError }: LoginFormProps) {
           })}
         />
 
-        <Button type="submit" styledType={'login'}>
-          {'로그인'}
-        </Button>
-        {isError && <p className="text-red-500">{'아이디 또는 비밀번호를 확인해주세요.'}</p>}
+        <div className="ButtonGap">
+          <Button styledType={'login'} type="submit">
+            {'로그인'}
+          </Button>
+          {isError && <p className="text-red-500">{'아이디 또는 비밀번호를 확인해주세요.'}</p>}
+          <div className="divider"></div>
+          <Link to="/Join">
+            <Button styledType="signUp" type="button">
+              회원가입
+            </Button>
+          </Link>
+        </div>
       </Form>
-      <Link to={'/login/FindId'}>아이디 찾기</Link>
-      <Link to={'/login/FindPassword'}>비밀번호 찾기</Link>
+      <div className="Find">
+        <Link to={'/login/FindId'} className="link">
+          <img src={Find_user} alt="아이디 찾기 아이콘" />
+          아이디 찾기
+        </Link>
+        <Link to={'/login/FindPassword'} className="link">
+          <img src={Find_password} alt="비밀번호 찾기 아이콘" />
+          비밀번호 찾기
+        </Link>
+      </div>
     </StyledLoginForm>
   );
 }

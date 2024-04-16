@@ -18,7 +18,7 @@ function Button({ onClick, children, type, ariaLabel, styledType, ...restProps }
           {children}
         </button>
       ) : (
-        <button className="singUp" onClick={onClick} type={type} aria-label={ariaLabel} {...restProps}>
+        <button className="signUp" onClick={onClick} type={type} aria-label={ariaLabel} {...restProps}>
           {children}
         </button>
       )}

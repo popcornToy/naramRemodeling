@@ -7,7 +7,7 @@ export type FormProps = {
 
 function Form({ onSubmit, children }: FormProps) {
   return (
-    <form onSubmit={onSubmit}>
+    <form className="widthFull" onSubmit={onSubmit}>
       <div>{children}</div>
     </form>
   );

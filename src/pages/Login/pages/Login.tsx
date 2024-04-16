@@ -1,11 +1,5 @@
-import { useState } from 'react';
-// import { Form, Input } from '@/components/atoms/Form/Form';
-
-// import Logo from 'public/logo_mark.svg';
 import { useNavigate } from 'react-router-dom';
 import LoginForm from '../components/LoginForm';
-import Header from '@/components/organisms/Header/Header';
-import Footer from '@/components/atoms/Footer/Footer';
 
 export type Login = {
   isError?: boolean;
@@ -17,10 +11,10 @@ function Login({ isError }: Login) {
 
   const onSubmit = async (data) => {
     try {
-      const email = data.email;
+      const id = data.id;
       const password = data.password;
 
-      console.log('email', email);
+      console.log('id', id);
       console.log('password', password);
       // 로그인 요청
 
@@ -33,9 +27,7 @@ function Login({ isError }: Login) {
 
   return (
     <>
-      <Header isLogin={true} isMain={false} />
       <LoginForm onSubmit={onSubmit} isError={isError} />
-      <Footer />
     </>
   );
 }

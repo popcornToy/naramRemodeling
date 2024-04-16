@@ -64,7 +64,7 @@ function BoardTable(): React.ReactNode {
       </StyledBoardTable>
       <StyledPaginationBar>
         <Pagination handlePageClick={handlePageClick} pageCount={pageCount} />
-        <BasicButton text="글쓰기" />
+        <BasicButton text="글쓰기" href="/Write" />
       </StyledPaginationBar>
     </>
   );
