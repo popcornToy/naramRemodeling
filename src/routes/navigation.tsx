@@ -154,4 +154,13 @@ export const navigationItems = [
       return { Component: Module.default };
     },
   },
+  {
+    id: 'Write',
+    path: '/Write',
+    text: '게시글 작성 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/NoticeDetail/WritePage');
+      return { Component: Module.default };
+    },
+  },
 ];

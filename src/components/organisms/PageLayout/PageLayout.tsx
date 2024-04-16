@@ -10,10 +10,10 @@ type PageLayoutProps = {
   alt: string;
   children: ReactNode;
   mainImage: string;
-  firstTitle: string;
+  firstTitle?: string;
   firstSubTitle?: string;
-  secondTitle: string;
-  thirdTitle: string;
+  secondTitle?: string;
+  thirdTitle?: string;
   thirdSubTitle?: string;
 };
 

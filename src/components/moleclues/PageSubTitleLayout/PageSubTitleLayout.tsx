@@ -3,10 +3,10 @@ import { StyledFlexCenter } from '@/styles/components/IntroductionPage/Introduct
 import { ReactNode } from 'react';
 
 type PageLayout = {
-  firstTitle: string;
+  firstTitle?: string;
   firstSubTitle?: string;
-  secondTitle: string;
-  thirdTitle: string;
+  secondTitle?: string;
+  thirdTitle?: string;
   thirdSubTitle?: string;
   children: ReactNode;
 };
