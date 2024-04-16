@@ -1,10 +1,10 @@
 import { StyledContent, StyledBar } from '@/styles/components/PageSubTitle/PageSubTitle';
 
 type PageSubTitle = {
-  firstTitle: string;
+  firstTitle?: string;
   firstSubTitle?: string;
-  secondTitle: string;
-  thirdTitle: string;
+  secondTitle?: string;
+  thirdTitle?: string;
   thirdSubTitle?: string;
 };
 
