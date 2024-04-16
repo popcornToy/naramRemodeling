@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 function IntroductionContent() {
   return (
-    <StyledContent>
+    <StyledContent gap="51px">
       <StyledDivFlex>
         <div className="flexColumn">
           <img src={GREETING} alt="회사소개 페이지에 GREETING 배경 이미지" />

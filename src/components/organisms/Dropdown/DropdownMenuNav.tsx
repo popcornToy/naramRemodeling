@@ -7,7 +7,7 @@ const INTRODUCE = [
   { content: 'CEO인사말', route: '/Introduction/#CEO' },
   { content: '연혁', route: '/Introduction/#year' },
   { content: '경영이념', route: '/Introduction/#idle' },
-  { content: '찾아오시는 길', route: '/Introduction/#location' },
+  { content: '찾아오시는 길', route: '/Introduction/location/#location' },
 ];
 
 const INFORMATION = [
