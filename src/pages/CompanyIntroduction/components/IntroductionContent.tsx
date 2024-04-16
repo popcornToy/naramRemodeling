@@ -6,7 +6,6 @@ import image_01 from '/introduction_image_01.svg';
 import image_02 from '/introduction_image_02.svg';
 import table from '/introduction_table.svg';
 import { StyledContent } from '@/styles/components/PageSubTitle/PageSubTitle';
-import { Link } from 'react-router-dom';
 
 function IntroductionContent() {
   return (
@@ -38,7 +37,7 @@ function IntroductionContent() {
           </p>
         </StyledDiscription>
       </StyledDivFlex>
-      <StyledDivFlex>
+      <StyledDivFlex id="year">
         <StyledDiscription>
           <div>
             <p className="mainText">2021</p>

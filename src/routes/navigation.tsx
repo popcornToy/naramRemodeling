@@ -111,7 +111,7 @@ export const navigationItems = [
   },
   {
     id: 'ProductInformation',
-    path: '/ProductInformation',
+    path: '/Product/:productType',
     text: '제품정보 페이지',
     lazy: async () => {
       const Module = await import('@/pages/ProductInformation/ProductInformation');

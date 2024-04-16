@@ -26,7 +26,7 @@ export default function Main() {
           <MainBox alt="제품정보" img="/product.png" path="/product" />
         </MainContentsFlexBox>
         <MainContentsFlexBox>
-          <MainBox alt="오시는길" img="/path.png" path="/path" />
+          <MainBox alt="오시는길" img="/path.png" path="/Introduction/Location" />
           <MainBox alt="인재채용" img="/recruit.png" path="/recruit" />
           <MainBoardBox title="나람 홍보 게시물" path="/ad" isNotice={true} />
         </MainContentsFlexBox>

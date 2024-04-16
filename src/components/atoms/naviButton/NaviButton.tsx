@@ -4,6 +4,7 @@ import Logout from '@/../public/logout.svg?react';
 import { useAtom } from 'jotai';
 import { animate, isClicked } from '@/store/store';
 import useBackground from '@/components/organisms/Header/useBackground';
+import { useEffect, useRef } from 'react';
 
 type NaviButtonProps = {
   route?: string;
@@ -14,9 +15,28 @@ type NaviButtonProps = {
 };
 
 export default function NaviButton({ route, text, isMain, isLoginButton, isLogoutButton }: NaviButtonProps) {
-  const [isClick, setIsClick] = useAtom(isClicked);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [, setIsClick] = useAtom(isClicked);
   const [, setIsAnimated] = useAtom(animate);
   const { textColor, iconColor } = useBackground(isMain);
+
+  useEffect(() => {
+    const handleInsideClick = () => {
+      setIsClick(true);
+      setIsAnimated(true);
+    };
+
+    const buttonEl = buttonRef.current;
+    if (buttonEl) {
+      buttonEl.addEventListener('mouseenter', handleInsideClick);
+    }
+
+    return () => {
+      if (buttonEl) {
+        buttonEl.removeEventListener('mouseenter', handleInsideClick);
+      }
+    };
+  });
 
   const renderButtonContent = () => {
     return (
@@ -27,11 +47,6 @@ export default function NaviButton({ route, text, isMain, isLoginButton, isLogou
     );
   };
 
-  const handleClick = () => {
-    setIsClick(!isClick);
-    setIsAnimated(true);
-  };
-
   return (
     <GNBTitle color={textColor}>
       {route ? (
@@ -40,7 +55,7 @@ export default function NaviButton({ route, text, isMain, isLoginButton, isLogou
           {text}
         </NaviImageLink>
       ) : (
-        <button onClick={handleClick}>{text}</button>
+        <button ref={buttonRef}>{text}</button>
       )}
     </GNBTitle>
   );
