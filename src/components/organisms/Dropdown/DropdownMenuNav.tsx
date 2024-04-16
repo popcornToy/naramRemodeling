@@ -18,9 +18,9 @@ const INFORMATION = [
 ];
 
 const PRODUCT = [
-  { content: '양돈', route: '/Product/#pork' },
-  { content: '계육', route: '/Product/#chicken' },
-  { content: '오리', route: '/Product/#duck' },
+  { content: '양돈', route: '/Product/pork' },
+  { content: '계육', route: '/Product/chicken' },
+  { content: '오리', route: '/Product/duck' },
 ];
 
 const RECRUITMENT = [{ content: '채용정보', route: '/Recruitment/#info' }];
