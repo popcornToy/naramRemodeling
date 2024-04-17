@@ -1,12 +1,7 @@
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import {
-  EditorLayout,
-  EditorTitleBox,
-  EditorInputWrapper,
-  EditorTitle,
-  StyledCKEditor,
-} from '@/styles/components/Editor/Editor';
+import { EditorLayout, EditorTitleBox, EditorInputWrapper, EditorTitle } from '@/styles/components/Editor/Editor';
+import FormButton from '../FormButton/FormButton';
 
 function Editor() {
   return (
@@ -54,6 +49,7 @@ function Editor() {
       `}</style>
         </div>
       </div>
+      <FormButton />
     </EditorLayout>
   );
 }

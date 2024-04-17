@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 
-export const EditorLayout = styled.div`
+export const EditorLayout = styled.form`
   padding: 50px 0 100px 0;
 `;
 
@@ -10,10 +10,10 @@ export const EditorTitleBox = styled.div`
   height: 72px;
   background-color: #e7e7e7;
   font-family: 'Noto Sans';
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: 32px;
+  line-height: 36px;
   text-align: left;
   padding: 20px;
   margin-bottom: 40px;
@@ -27,7 +27,7 @@ export const EditorInputWrapper = styled.div`
     display: inline-block;
     width: 100%;
     font-family: 'Noto Sans';
-    font-size: 22px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -47,7 +47,7 @@ export const EditorInputWrapper = styled.div`
 export const EditorTitle = styled.p`
   width: 100%;
   font-family: 'Noto Sans';
-  font-size: 22px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
