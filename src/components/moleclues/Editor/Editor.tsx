@@ -49,7 +49,14 @@ function Editor() {
       `}</style>
         </div>
       </div>
-      <FormButton />
+      <FormButton
+        formText="문의하기"
+        text="돌아가기"
+        to="/Information/notice"
+        padding="20px 107px"
+        fontSize="18px"
+        fontWeight="700"
+      />
     </EditorLayout>
   );
 }

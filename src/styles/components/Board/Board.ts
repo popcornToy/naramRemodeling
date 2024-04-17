@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 // 제목
 export const StyledPageTitle = styled.div`
@@ -116,7 +117,7 @@ export const StyledTopBoard = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding-right: 2px;
-  margin-bottom: 10px;
+  margin-top: 20px;
 `;
 
 export const StyledSearch = styled.div`
@@ -156,7 +157,7 @@ interface ButtonProps {
   fontWeight?: string;
 }
 
-export const StyledBasicButton = styled.a<ButtonProps>`
+export const StyledBasicButton = styled(Link)<ButtonProps>`
   padding: ${(props) => props.padding || '10px 15px'};
   font-size: ${(props) => props.fontSize || '16px'};
   font-weight: ${(props) => props.fontWeight || 'normal'};

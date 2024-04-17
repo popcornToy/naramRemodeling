@@ -1,10 +1,15 @@
 import { StyledBoardTable, StyledPaginationBar } from '@/styles/components/Board/Board';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Pagination from '@/components/atoms/Board/Pagination';
 import BasicButton from '@/components/atoms/Board/BasicButton';
 
-function BoardTable(): React.ReactNode {
+type BoardTableProps = {
+  to: string;
+};
+
+function BoardTable({ to }: BoardTableProps): React.ReactNode {
   type List = {
     userId: number;
     id: number;
@@ -37,13 +42,13 @@ function BoardTable(): React.ReactNode {
     const endIndex = Math.min(startIndex + itemsPerPage, data.length);
     return data.slice(startIndex, endIndex).map((item) => (
       <StyledBoardTable key={item.id} className="BoardTableList">
-        <td>{item.id}</td>
-        <td>
-          <a href="/">{item.title}</a>
+        <td className="postNum">{item.id}</td>
+        <td className="title">
+          <Link to="/post/${item.id}">{item.title}</Link>
         </td>
-        <td>{item.id}</td>
-        <td>{item.id}</td>
-        <td>{item.id}</td>
+        <td className="date">{item.id}</td>
+        <td className="id">{item.id}</td>
+        <td className="view">{item.id}</td>
       </StyledBoardTable>
     ));
   };
@@ -64,7 +69,7 @@ function BoardTable(): React.ReactNode {
       </StyledBoardTable>
       <StyledPaginationBar>
         <Pagination handlePageClick={handlePageClick} pageCount={pageCount} />
-        <BasicButton text="글쓰기" href="/Write" />
+        <BasicButton text="글쓰기" to={to} />
       </StyledPaginationBar>
     </>
   );
