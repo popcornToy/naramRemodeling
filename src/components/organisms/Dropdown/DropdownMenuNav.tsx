@@ -6,8 +6,8 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const INTRODUCE = [
-  { content: 'CEO인사말', route: '/Introduction#CEO' },
-  { content: '연혁', route: '/Introduction#year' },
+  { content: 'CEO인사말', route: '/Introduction' },
+  { content: '연혁', route: '/Introduction/#year' },
   { content: '경영이념', route: '/Introduction/#idle' },
   { content: '찾아오시는 길', route: '/Introduction/Location' },
 ];
@@ -42,8 +42,18 @@ export default function DropdownMenuNav({ isClicked }: DropdownMenuNavProps) {
   const location = useLocation();
 
   useEffect(() => {
-    const { hash } = location;
-    if (hash) {
+    // 스크롤 초기화 페이지목록, 스크롤 이동할 페이지목록
+    const { pathname, hash } = location;
+
+    // 스크롤 초기화 페이지목록 작업
+    const resetScrollPages = ['/Introduction', '/Introduction/notice', '/Introduction/ad'];
+
+    // pathname이 초기화 페이지목록에 포함되어있으면 스크롤을 초기화
+    if (resetScrollPages.includes(pathname)) {
+      window.scrollTo(0, 0);
+
+      // hash가 존재하면 해당 id로 스크롤 이동
+    } else if (hash) {
       const id = hash.replace('#', '');
       const element = document.getElementById(id);
       if (element) {
