@@ -46,7 +46,7 @@ export default function DropdownMenuNav({ isClicked }: DropdownMenuNavProps) {
     const { pathname, hash } = location;
 
     // 스크롤 초기화 페이지목록 작업
-    const resetScrollPages = ['/Introduction', '/Introduction/notice', '/Introduction/ad'];
+    const resetScrollPages = ['/Introduction', '/Introduction/notice', '/Introduction/ad', '/Introduction/Location'];
 
     // pathname이 초기화 페이지목록에 포함되어있으면 스크롤을 초기화
     if (resetScrollPages.includes(pathname)) {

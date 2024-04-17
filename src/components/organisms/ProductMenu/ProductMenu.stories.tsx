@@ -1,15 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react';
-import ProductTitle from './ProductTitle';
 import { MemoryRouter } from 'react-router-dom';
+import ProductMenu from './ProductMenu';
 
 const meta = {
-  title: 'Product/atoms/title',
-  component: ProductTitle,
+  title: 'Product/organisms/ProductMenu',
+  component: ProductMenu,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: { title: { control: 'text' } },
   decorators: [
     (Story) => (
       <MemoryRouter>
@@ -17,14 +16,9 @@ const meta = {
       </MemoryRouter>
     ),
   ],
-} satisfies Meta<typeof ProductTitle>;
+} satisfies Meta<typeof ProductMenu>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {
-    title: '양돈',
-    route: '/product/pork',
-  },
-};
+export const Default: Story = {};
