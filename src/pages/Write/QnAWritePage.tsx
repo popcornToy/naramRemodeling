@@ -5,10 +5,18 @@ import mainImage from '/Notice_main.svg';
 
 function QnAWritePage() {
   return (
-    <WritePageLayout alt={'게시글 작성 페이지'} children={undefined} mainImage={mainImage}>
+    <WritePageLayout alt={'문의하기 작성 페이지'} children={undefined} mainImage={mainImage}>
       <p>QnAWritePage</p>
       <StyledContent>
-        <Editor />
+        <Editor
+          title="Q&A 작성하기"
+          formText="문의하기"
+          text="돌아가기"
+          to="/CustomerCenter/QnA"
+          padding="20px 107px"
+          fontSize="18px"
+          fontWeight="700"
+        />
       </StyledContent>
     </WritePageLayout>
   );

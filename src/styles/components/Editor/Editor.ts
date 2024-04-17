@@ -22,26 +22,26 @@ export const EditorTitleBox = styled.div`
 export const EditorInputWrapper = styled.div`
   width: 1280px;
   margin-bottom: 30px;
+`;
 
-  & .EditorInputLabel {
-    display: inline-block;
-    width: 100%;
-    font-family: 'Noto Sans';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-align: left;
-    padding-left: 5px;
-    padding-bottom: 15px;
-  }
+export const EditorInput = styled.input`
+  width: 100%;
+  height: 65px;
+  padding: 10px;
+  font-size: 20px;
+`;
 
-  & .EditorInput {
-    width: 100%;
-    height: 65px;
-    padding: 10px;
-    font-size: 20px;
-  }
+export const EditorInputLabel = styled.label`
+  display: inline-block;
+  width: 100%;
+  font-family: 'Noto Sans';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: left;
+  padding-left: 5px;
+  padding-bottom: 15px;
 `;
 
 export const EditorTitle = styled.p`
