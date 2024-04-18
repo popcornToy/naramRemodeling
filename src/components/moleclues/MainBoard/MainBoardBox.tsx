@@ -40,10 +40,6 @@ export default function MainBoardBox({ title, path, isNotice }: { title: string;
             <MainBoardText text={item.date} />
           </MainBoardTextContainer>
         ))}
-        {/* <MainBoardTextContainer>
-          <MainBoardText text={titleText} route="/" />
-          <MainBoardText text={date} />
-        </MainBoardTextContainer> */}
       </MainBoardTextWrapper>
     </MainBoardContainer>
   );
