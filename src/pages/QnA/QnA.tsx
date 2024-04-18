@@ -1,5 +1,24 @@
+import PageLayout from '@/components/organisms/PageLayout/PageLayout';
+import mainImage from '/Notice_main.svg';
+import BoardLayout from '@/components/organisms/BoardLayout/BoardLayout';
+
 function QnA() {
-  return 'qna 페이지 입니다.';
+  return (
+    <div>
+      <PageLayout
+        isMainMenu={false}
+        EngTitle="Q&A"
+        KorTitle="문의사항"
+        alt="문의사항 페이지"
+        mainImage={mainImage}
+        firstTitle="Q&A"
+        secondTitle="문의사항"
+        thirdTitle="나람에 궁금한 점을 알려주세요."
+      >
+        <BoardLayout to="/QnAWrite" />
+      </PageLayout>
+    </div>
+  );
 }
 
 export default QnA;

@@ -15,7 +15,7 @@ function Notice() {
         secondTitle="공지사항"
         thirdTitle="고객을 위해 항상 노력하는 나람이 되겠습니다."
       >
-        <BoardLayout />
+        <BoardLayout to="/NoticeWrite" />
       </PageLayout>
     </div>
   );
