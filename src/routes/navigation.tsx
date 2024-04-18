@@ -93,7 +93,7 @@ export const navigationItems = [
       {
         index: true,
         text: '공지사항 페이지',
-        path: 'notice',
+        path: 'Notice',
         lazy: async () => {
           const Module = await import('@/pages/Notice/pages/Notice');
           return { Component: Module.default };
@@ -101,7 +101,7 @@ export const navigationItems = [
       },
       {
         text: '홍포 게시물 페이지',
-        path: 'ad',
+        path: 'Promotion',
         lazy: async () => {
           const Module = await import('@/pages/Notice/pages/Promotion');
           return { Component: Module.default };
@@ -178,6 +178,15 @@ export const navigationItems = [
     text: '게시글 작성 페이지',
     lazy: async () => {
       const Module = await import('@/pages/Write/RecruitmentPage');
+      return { Component: Module.default };
+    },
+  },
+  {
+    id: 'PromotionWrite',
+    path: '/PromotionWrite',
+    text: '게시글 작성 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/Write/PromotionWrite');
       return { Component: Module.default };
     },
   },
