@@ -138,7 +138,7 @@ export const navigationItems = [
   },
   {
     id: 'QnA',
-    path: '/QnA',
+    path: '/CustomerCenter/QnA',
     text: '질의응답 페이지',
     lazy: async () => {
       const Module = await import('@/pages/QnA/QnA');
@@ -155,11 +155,29 @@ export const navigationItems = [
     },
   },
   {
-    id: 'Write',
-    path: '/Write',
+    id: 'NoticeWrite',
+    path: '/NoticeWrite',
     text: '게시글 작성 페이지',
     lazy: async () => {
-      const Module = await import('@/pages/NoticeDetail/WritePage');
+      const Module = await import('@/pages/Write/NoticeWritePage');
+      return { Component: Module.default };
+    },
+  },
+  {
+    id: 'QnAWrite',
+    path: '/QnAWrite',
+    text: '게시글 작성 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/Write/QnAWritePage');
+      return { Component: Module.default };
+    },
+  },
+  {
+    id: 'RecruitmentWrite',
+    path: '/RecruitmentWrite',
+    text: '게시글 작성 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/Write/RecruitmentPage');
       return { Component: Module.default };
     },
   },

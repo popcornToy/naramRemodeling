@@ -28,7 +28,7 @@ const RECRUITMENT = [{ content: '채용정보', route: '/Recruitment/#info' }];
 const CUSTOMER_CENTER = [
   {
     content: 'Q&A',
-    route: '/CustomerCenter/#qna',
+    route: '/CustomerCenter/QnA',
   },
 ];
 

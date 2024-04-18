@@ -1,5 +1,24 @@
-function InformationCenter() {
-  return <div>인재채용 페이지입니다</div>;
+import PageLayout from '@/components/organisms/PageLayout/PageLayout';
+import mainImage from '/Notice_main.svg';
+import BoardLayout from '@/components/organisms/BoardLayout/BoardLayout';
+
+function Recruitment() {
+  return (
+    <div>
+      <PageLayout
+        isMainMenu={false}
+        EngTitle="Recruitment"
+        KorTitle="인재채용"
+        alt="인재채용 페이지"
+        mainImage={mainImage}
+        firstTitle="Recruitment"
+        secondTitle="인재채용"
+        thirdTitle="나람과 함께 성장할 인재를 찾습니다."
+      >
+        <BoardLayout to="/RecruitmentWrite" />
+      </PageLayout>
+    </div>
+  );
 }
 
-export default InformationCenter;
+export default Recruitment;

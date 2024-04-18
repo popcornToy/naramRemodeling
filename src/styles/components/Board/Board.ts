@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 // 제목
 export const StyledPageTitle = styled.div`
@@ -116,7 +117,7 @@ export const StyledTopBoard = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding-right: 2px;
-  margin-bottom: 10px;
+  margin-top: 20px;
 `;
 
 export const StyledSearch = styled.div`
@@ -149,18 +150,44 @@ export const StyledBoardTable = styled.table`
   }
 `;
 
-// 글쓰기 버튼
+// 링크(글쓰기) 버튼
 interface ButtonProps {
-  $width?: string;
-  $height?: string;
-  $padding?: string;
+  padding?: string;
+  fontSize?: string;
+  fontWeight?: string;
 }
 
-export const StyledBasicButton = styled.a<ButtonProps>`
-  width: ${(props) => props.$width || '87px'};
-  height: ${(props) => props.$height || '39px'};
-  padding: ${(props) => props.$padding || '10px 20px'};
+export const StyledBasicButton = styled(Link)<ButtonProps>`
+  padding: ${(props) => props.padding || '10px 15px'};
+  font-size: ${(props) => props.fontSize || '16px'};
+  font-weight: ${(props) => props.fontWeight || 'normal'};
   background: #e7e7e7;
+`;
+
+// 폼(제출하기) 버튼
+interface ButtonProps {
+  padding?: string;
+  fontSize?: string;
+  fontWeight?: string;
+  color?: string;
+}
+
+export const StyleFormButton = styled.button<ButtonProps>`
+  padding: ${(props) => props.padding || '20px 107px'};
+  font-size: ${(props) => props.fontSize || '18px'};
+  font-weight: ${(props) => props.fontWeight || '700'};
+  color: ${(props) => props.color || 'white'};
+  background: #3974cc;
+`;
+
+// 버튼 wrapper
+export const ButtonWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 50px;
 `;
 
 // 페이지네이션바
