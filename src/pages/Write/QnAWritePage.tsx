@@ -16,6 +16,7 @@ function QnAWritePage() {
           padding="20px 107px"
           fontSize="18px"
           fontWeight="700"
+          label="비공개"
         />
       </StyledContent>
     </WritePageLayout>

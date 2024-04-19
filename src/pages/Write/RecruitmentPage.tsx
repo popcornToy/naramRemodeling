@@ -16,6 +16,7 @@ function RecruitementWritePage() {
           padding="20px 107px"
           fontSize="18px"
           fontWeight="700"
+          label="중요공지"
         />
       </StyledContent>
     </WritePageLayout>

@@ -1,11 +1,14 @@
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { EditorLayout, EditorTitleBox, EditorTitle } from '@/styles/components/Editor/Editor';
+import { StyledEditorLayout, StyledEditorTitleBox, StyledEditorTitle } from '@/styles/components/Editor/Editor';
 import FormButton from '../FormButton/FormButton';
 import EditorInputContainer from '../EditorInput/EditorInputContainer';
+import NormalCheckBox from '../NormalCheckBox/NormalCheckBox';
+import QnACheckBox from '../QnACheckBox/QnACheckBox';
 
 type EditorProps = {
   title: string;
+  label?: string;
   formText: string;
   padding?: string;
   fontSize?: string;
@@ -15,19 +18,19 @@ type EditorProps = {
   fontWeight?: string;
 };
 
-function Editor({ title = '문의글 작성하기', formText, text, to, padding, fontSize, fontWeight }: EditorProps) {
-  const label = {
+function Editor({ title = '문의글 작성하기', label, formText, text, to, padding, fontSize, fontWeight }: EditorProps) {
+  const inputProps = {
     writer: '작성자',
     title: '제목',
   };
 
   return (
-    <EditorLayout>
-      <EditorTitleBox>{title}</EditorTitleBox>
-      <EditorInputContainer label={label.writer} />
-      <EditorInputContainer label={label.title} />
+    <StyledEditorLayout>
+      <StyledEditorTitleBox>{title}</StyledEditorTitleBox>
+      <EditorInputContainer label={inputProps.writer} />
+      <EditorInputContainer label={inputProps.title} />
       <div>
-        <EditorTitle>내용</EditorTitle>
+        <StyledEditorTitle>내용</StyledEditorTitle>
         <div className="custom-ckeditor">
           <CKEditor
             editor={ClassicEditor}
@@ -54,6 +57,11 @@ function Editor({ title = '문의글 작성하기', formText, text, to, padding,
       `}</style>
         </div>
       </div>
+      {label === '비공개' ? (
+        <QnACheckBox label={label} />
+      ) : label === '중요공지' ? (
+        <NormalCheckBox label={label} />
+      ) : null}
       <FormButton
         formText={formText}
         text={text}
@@ -62,7 +70,7 @@ function Editor({ title = '문의글 작성하기', formText, text, to, padding,
         fontSize={fontSize}
         fontWeight={fontWeight}
       />
-    </EditorLayout>
+    </StyledEditorLayout>
   );
 }
 
