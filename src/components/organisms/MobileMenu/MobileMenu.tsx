@@ -2,12 +2,10 @@ import MobileMenuHeader from '@/components/moleclues/MobileMenu/MobileMenuHeader
 import MobileMenuTitleText from '@/components/moleclues/MobileMenu/MobileMenuTitleText';
 import {
   MobileMenuBackground,
-  MobileMenuButton,
   MobileMenuButtonContainer,
   MobileMenuContainer,
 } from '@/styles/components/MobileMenu/MobileMenu';
-import Cancel from '/cancel.svg';
-import { useState } from 'react';
+
 import useClick from './useClick';
 
 const INTRODUCTION = {
@@ -70,13 +68,10 @@ const CUSTOMER_CENTER = {
 };
 
 export default function MobileMenu({ isClicked }: { isClicked: boolean }) {
-  const { isClick, handleToggle } = useClick();
+  const { isClick } = useClick();
   return (
     <MobileMenuBackground isClick={isClick}>
       <MobileMenuButtonContainer isClick={isClicked}>
-        <MobileMenuButton onClick={handleToggle}>
-          <img src={Cancel} alt="" />
-        </MobileMenuButton>
         <MobileMenuContainer>
           <MobileMenuHeader isLogin={false} />
           <MobileMenuTitleText title="회사소개" items={INTRODUCTION} />

@@ -41,7 +41,7 @@ export default function NaviBar({ isLogin, isMain }: NaviBarProps) {
           </li>
         )}
         <GNBButton color={iconColor} onClick={handleToggle} isClick={isClick}>
-          <Menu />
+          <Menu width={'30'} height={'26'} />
         </GNBButton>
       </GNBContainer>
     </>
