@@ -31,6 +31,7 @@ export const StyledFlexCenter = styled.div`
   margin-top: ${(props) => parseInt(props.margin || '-168') / 16}rem;
   padding-top: 4.99rem;
   background-color: white;
+  /* border: 1px solid black; */
 `;
 
 export const StyledDivFlex = styled.div<{ gap?: string; paddingBottom?: string }>`

@@ -117,7 +117,7 @@ export const StyledTopBoard = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding-right: 2px;
-  margin-top: 20px;
+  margin-top: 80px;
 `;
 
 export const StyledSearch = styled.div`

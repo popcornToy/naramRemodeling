@@ -13,8 +13,8 @@ const INTRODUCE = [
 ];
 
 const INFORMATION = [
-  { content: '공지사항', route: '/Information/notice' },
-  { content: '나람 홍보 게시물', route: '/Information/ad' },
+  { content: '공지사항', route: '/Information/Notice' },
+  { content: '나람 홍보 게시물', route: '/Information/Promotion' },
 ];
 
 const PRODUCT = [
@@ -23,7 +23,7 @@ const PRODUCT = [
   { content: '오리', route: '/Product/duck' },
 ];
 
-const RECRUITMENT = [{ content: '채용정보', route: '/Recruitment/#info' }];
+const RECRUITMENT = [{ content: '채용정보', route: '/Recruitment/#Info' }];
 
 const CUSTOMER_CENTER = [
   {
