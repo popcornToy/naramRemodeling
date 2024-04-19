@@ -72,7 +72,7 @@ export const MobileMenuHeaderContainer = styled.div`
 // MobileTitleText.tsx
 
 export const AnimatedContainer = styled.div<{ isOpen: boolean }>`
-  max-height: ${(props) => (props.isOpen ? '100vh' : '0')};
+  max-height: ${(props) => (props.isOpen ? '15vh' : '0')};
   overflow: hidden;
   transition: max-height 0.2s ease-in-out;
   border-bottom: ${(props) => (props.isOpen ? '1px solid #d1d1d1' : 'none')};
@@ -94,7 +94,7 @@ export const MobileMenuButtonContainer = styled.div<{ isClick: boolean }>`
   right: 0;
   top: 4.75rem;
   transform: translateX(${(props) => (props.isClick ? '0%' : '100%')});
-  transition: transform 0.3s ease-out;
+  transition: transform 0.2s ease-out;
 
   & > button {
     align-self: left;

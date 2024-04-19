@@ -7,7 +7,6 @@ export default function useClick() {
   const handleToggle = (e) => {
     e.stopPropagation();
     setIsClick((prev) => !prev);
-    console.log(e.target);
   };
 
   return {
