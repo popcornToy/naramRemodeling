@@ -23,7 +23,9 @@ type MainBoxTitleProps = {
   isBox: boolean;
 };
 
-export const MainBoxTitleContainer = styled.span<MainBoxTitleProps>`
+export const MainBoxTitleContainer = styled.span.withConfig({
+  shouldForwardProp: (prop) => !['isBox'].includes(prop),
+})<MainBoxTitleProps>`
   font-size: 1.875rem;
   color: ${(props) => props.color};
   font-weight: 600;
@@ -51,7 +53,9 @@ export const MainBoxImgContainer = styled.div`
   }
 `;
 
-export const MainBoxLinkContainer = styled(Link)<MainBoxTitleProps>`
+export const MainBoxLinkContainer = styled(Link).withConfig({
+  shouldForwardProp: (prop) => !['isBox'].includes(prop),
+})<MainBoxTitleProps>`
   font-size: 1.25rem;
   font-weight: 500;
   line-height: normal;
@@ -135,6 +139,7 @@ export const MainContentsBox = styled.div`
 export const MainContentsFlexBox = styled.div`
   display: flex;
   justify-content: space-around;
+  gap: 20px;
 `;
 
 // 오시는 길

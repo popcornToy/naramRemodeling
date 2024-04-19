@@ -11,8 +11,11 @@ import Header from '@/components/organisms/Header/Header';
 import MainBoardBox from '@/components/moleclues/MainBoard/MainBoardBox';
 import MainBox from '@/components/moleclues/MainMenuBox/MainBox';
 import KakaoMap from '@/components/atoms/KakaoMap/KakaoMap';
+import MobileMenu from '@/components/organisms/MobileMenu/MobileMenu';
+import useClick from '@/components/organisms/MobileMenu/useClick';
 
 export default function Main() {
+  const { isClick } = useClick();
   return (
     <>
       <Header isLogin={true} isMain />
@@ -38,6 +41,7 @@ export default function Main() {
           <KakaoMap firstContent="(주) 나람사료" />
         </MainKakaoMapContainer>
       </MainPathContainer>
+      <MobileMenu isClicked={isClick} />
     </>
   );
 }
