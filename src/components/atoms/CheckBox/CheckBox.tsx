@@ -1,14 +1,12 @@
-// import { StyledCheckBoxInput, StyledCheckBoxLabel, StyledCheckBoxP } from '@/styles/components/Editor/Editor';
+import { StyledCheckBoxLabel, StyledCheckBoxImg } from '@/styles/components/Editor/Editor';
 
-// type CheckBoxProps = {
-//   text: string;
-//   checked: boolean;
-//   onChange: (checked: boolean) => void;
-// };
+type CheckBoxProps = {
+  label: string;
+};
 
 import { useState } from 'react';
 
-const Checkbox = () => {
+const Checkbox = ({ label }: CheckBoxProps) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleChange = () => {
@@ -20,11 +18,11 @@ const Checkbox = () => {
     unchecked: '../../../../public/checkBoxBefore.svg',
   };
   return (
-    <label>
-      비공개
-      <img src={isChecked ? CheckboxImgSrc.checked : CheckboxImgSrc.unchecked} alt="" />
+    <StyledCheckBoxLabel>
+      <StyledCheckBoxImg src={isChecked ? CheckboxImgSrc.checked : CheckboxImgSrc.unchecked} alt="" />
       <input type="checkbox" checked={isChecked} onChange={handleChange} style={{ display: 'none' }} />
-    </label>
+      {label}
+    </StyledCheckBoxLabel>
   );
 };
 

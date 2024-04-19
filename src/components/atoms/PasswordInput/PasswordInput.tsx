@@ -1,7 +1,9 @@
+import { StyledPasswordInput } from '@/styles/components/Editor/Editor';
+
 function PasswordInput() {
   return (
     <label htmlFor="password">
-      <input id="password" type="password"></input>
+      <StyledPasswordInput id="password" type="text"></StyledPasswordInput>
     </label>
   );
 }

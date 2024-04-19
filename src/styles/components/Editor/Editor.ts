@@ -62,30 +62,55 @@ export const StyledCKEditor = styled(CKEditor)`
 `;
 
 // 비공개 체크박스 버튼
-
 export const StyledCheckBoxLabel = styled.label`
   display: flex;
   align-items: center;
   user-select: none;
-  background: url('/checkboxBefore.svg') no-repeat;
-`;
-
-export const StyledCheckBoxInput = styled.input`
-  appearance: none;
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-
-  &:checked + ${StyledCheckBoxLabel} {
-    background: url('/checkBoxAfter.svg') no-repeat;
-  }
-`;
-
-export const StyledCheckBoxP = styled.p`
-  margin-left: 5px;
-  font-family: 'Noto Sans';
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+`;
+
+export const StyledCheckBoxImg = styled.img`
+  padding-right: 10px;
+`;
+
+// 비공개 비밀번호 인풋
+export const StyledPasswordInput = styled.input`
+  display: flex;
+  width: 220px;
+  height: 30px;
+  padding: 6px 10px;
+  align-items: center;
+  border: 1px solid var(--line-gray, #d1d1d1);
+`;
+
+export const StyledPrivateCheck = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding: 20px 0 0 3px;
+`;
+
+export const StyledCheckBoxP = styled.p`
+  color: var(--text-darkgray, #666);
+  height: 24px;
+  font-family: 'Noto Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+`;
+
+export const StyledCheckBoxWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 10px;
+`;
+
+export const StyledNormalCheckBox = styled.div`
+  padding-top: 20px;
 `;
