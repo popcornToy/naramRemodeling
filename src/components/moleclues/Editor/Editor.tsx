@@ -3,7 +3,8 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { StyledEditorLayout, StyledEditorTitleBox, StyledEditorTitle } from '@/styles/components/Editor/Editor';
 import FormButton from '../FormButton/FormButton';
 import EditorInputContainer from '../EditorInput/EditorInputContainer';
-import PrivateButtonContainer from '../PrivateButtonContainer/PrivateButtonContainer';
+import CheckBoxContainer from '../CheckBoxContainer/CheckBoxContainer';
+import Checkbox from '@/components/atoms/CheckBox/CheckBox';
 
 type EditorProps = {
   title: string;
@@ -55,7 +56,7 @@ function Editor({ title = '문의글 작성하기', formText, text, to, padding,
       `}</style>
         </div>
       </div>
-      <PrivateButtonContainer />
+      <Checkbox />
       <FormButton
         formText={formText}
         text={text}

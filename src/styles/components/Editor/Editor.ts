@@ -62,9 +62,30 @@ export const StyledCKEditor = styled(CKEditor)`
 `;
 
 // 비공개 체크박스 버튼
-export const StyledPrivateButton = styled.label``;
 
-export const StyledPrivateButtonContainer = styled.div`
+export const StyledCheckBoxLabel = styled.label`
+  display: flex;
+  align-items: center;
+  user-select: none;
+  background: url('/checkboxBefore.svg') no-repeat;
+`;
+
+export const StyledCheckBoxInput = styled.input`
+  appearance: none;
   display: inline-block;
-  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+
+  &:checked + ${StyledCheckBoxLabel} {
+    background: url('/checkBoxAfter.svg') no-repeat;
+  }
+`;
+
+export const StyledCheckBoxP = styled.p`
+  margin-left: 5px;
+  font-family: 'Noto Sans';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 `;
