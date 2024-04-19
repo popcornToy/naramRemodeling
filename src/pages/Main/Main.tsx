@@ -31,9 +31,9 @@ export default function Main() {
       <MainBannerContainer>
         <img src={Banner} alt="메인 이미지" />
         <div>
-          <p>
-            나<span>와 다른 사</span>람
-          </p>
+          <span className="dot">나</span>
+          <span>와 다른 사</span>
+          <span className="dot">람</span>
           <p>내가 소중하듯이</p>
           <p>다른 사람도 소중합니다</p>
         </div>

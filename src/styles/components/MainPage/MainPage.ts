@@ -18,7 +18,8 @@ export const MainBannerContainer = styled.div`
     text-shadow: 2px 2px 6px #000000;
   }
 
-  & > div :nth-child(1) {
+  & > div :nth-child(1),
+  & > div :nth-child(3) {
     color: #fff;
     font-size: 5rem;
     font-style: normal;
@@ -26,9 +27,18 @@ export const MainBannerContainer = styled.div`
     line-height: normal;
     letter-spacing: -0.16px;
     margin-bottom: 0.875rem;
+    position: relative;
   }
 
-  & > div :nth-child(1) > span {
+  & > div .dot::after {
+    content: '•';
+    position: absolute;
+    top: 0;
+    left: 40%;
+    transform: translate(-50%, -65%);
+  }
+
+  & > div :nth-child(2) {
     color: #fff;
     font-size: 3.75rem;
     font-style: normal;
@@ -37,8 +47,8 @@ export const MainBannerContainer = styled.div`
     letter-spacing: -0.12px;
   }
 
-  & > div :nth-child(2),
-  & > div :nth-child(3) {
+  & > div :nth-child(4),
+  & > div :nth-child(5) {
     color: #fff;
     font-size: 2.5rem;
     font-style: normal;
@@ -65,7 +75,8 @@ export const MainBannerContainer = styled.div`
     }
 
     & > div :nth-child(1),
-    & > div :nth-child(1) > span {
+    & > div :nth-child(2),
+    & > div :nth-child(3) {
       color: #fff;
       font-size: 1.875rem;
       font-style: normal;
@@ -75,8 +86,12 @@ export const MainBannerContainer = styled.div`
       margin-bottom: 0.4375rem;
     }
 
-    & > div :nth-child(2),
-    & > div :nth-child(3) {
+    & > div .dot::after {
+      display: none;
+    }
+
+    & > div :nth-child(4),
+    & > div :nth-child(5) {
       color: #fff;
       font-size: 1.125rem;
       font-style: normal;
