@@ -1,4 +1,4 @@
-import useClick from '@/components/organisms/MobileMenu/useClick';
+import useClick from '@/hook/useClick';
 import { MobileMenuTextContainer } from '@/styles/components/MobileMenu/MobileMenu';
 
 type MobileMenuTextProps = {

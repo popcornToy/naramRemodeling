@@ -6,7 +6,7 @@ import {
   MobileMenuContainer,
 } from '@/styles/components/MobileMenu/MobileMenu';
 
-import useClick from './useClick';
+import useClick from '../../../hook/useClick';
 
 const INTRODUCTION = {
   '1': {
@@ -29,11 +29,11 @@ const INTRODUCTION = {
 
 const INFORMATION = {
   '1': {
-    route: '/Information/notice',
+    route: '/Information/Notice',
     text: '공지사항',
   },
   '2': {
-    route: '/Information/ad',
+    route: '/Information/Promotion',
     text: '나람 홍보 게시물',
   },
 };
@@ -55,7 +55,7 @@ const PRODUCT = {
 
 const RECRUITMENT = {
   '1': {
-    route: '/Recruitment/#info',
+    route: '/Recruitment/#Info',
     text: '채용정보',
   },
 };

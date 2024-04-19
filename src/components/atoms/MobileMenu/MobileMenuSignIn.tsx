@@ -1,5 +1,5 @@
 import Login from '@/../public/mobileLogin.svg?react';
-import useClick from '@/components/organisms/MobileMenu/useClick';
+import useClick from '@/hook/useClick';
 import { MobileMenuSignInContainer } from '@/styles/components/MobileMenu/MobileMenu';
 
 export default function MobileMenuSignIn({ isLogin }: { isLogin: boolean }) {

@@ -15,8 +15,8 @@ import MainBoardBox from '@/components/moleclues/MainBoard/MainBoardBox';
 import MainBox from '@/components/moleclues/MainMenuBox/MainBox';
 import KakaoMap from '@/components/atoms/KakaoMap/KakaoMap';
 import MobileMenu from '@/components/organisms/MobileMenu/MobileMenu';
-import useClick from '@/components/organisms/MobileMenu/useClick';
-import useBackgroundImage from './useBackgroundImage';
+import useClick from '@/hook/useClick';
+import useBackgroundImage from '../../hook/useBackgroundImage';
 import MainMap from '@/components/atoms/MainMap/MainMap';
 
 export default function Main() {

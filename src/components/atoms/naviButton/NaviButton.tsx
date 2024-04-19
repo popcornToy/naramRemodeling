@@ -3,7 +3,7 @@ import Login from '@/../public/user.svg?react';
 import Logout from '@/../public/logout.svg?react';
 import { useAtom } from 'jotai';
 import { animate, isClicked } from '@/store/store';
-import useBackground from '@/components/organisms/Header/useBackground';
+import useBackground from '@/hook/useBackground';
 import { useEffect, useRef } from 'react';
 
 type NaviButtonProps = {

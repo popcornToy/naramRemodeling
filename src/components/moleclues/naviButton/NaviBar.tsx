@@ -1,8 +1,8 @@
 import NaviButton from '@/components/atoms/naviButton/NaviButton';
 import { GNBButton, GNBContainer, GNBLi } from '@/styles/components/naviButton/naviButton';
 import Menu from '@/../public/menu.svg?react';
-import useBackground from '@/components/organisms/Header/useBackground';
-import useClick from '@/components/organisms/MobileMenu/useClick';
+import useBackground from '@/hook/useBackground';
+import useClick from '@/hook/useClick';
 
 type NaviBarProps = {
   isLogin: boolean;
