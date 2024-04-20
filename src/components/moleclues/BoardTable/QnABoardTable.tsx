@@ -1,6 +1,6 @@
 import { StyledBoardTable, StyledPaginationBar } from '@/styles/components/Board/Board';
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Pagination from '@/components/atoms/Board/Pagination';
 import BasicButton from '@/components/atoms/Board/BasicButton';
@@ -16,10 +16,6 @@ function BoardTable({ to }: BoardTableProps): React.ReactNode {
     title: string;
     important: boolean;
   };
-
-  // QnA 페이지 경로에 따라 판단 후 상태값 렌더링
-  const location = useLocation();
-  const isQnAPage = location.pathname === '/CustomerCenter/QnA';
 
   const [data, setData] = useState<List[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
@@ -46,44 +42,28 @@ function BoardTable({ to }: BoardTableProps): React.ReactNode {
     const startIndex = currentPage * itemsPerPage;
     const endIndex = Math.min(startIndex + itemsPerPage, data.length);
     return data.slice(startIndex, endIndex).map((item) => (
-      <StyledBoardTable $isQnAPage key={item.id} className="BoardTableList">
-        <td style={{ width: 56 }} className="postNum">
-          {item.id}
-        </td>
-        <td style={{ width: 812, textAlign: 'left' }} className="title">
+      <StyledBoardTable key={item.id} className="BoardTableList">
+        <td className="postNum">{item.id}</td>
+        <td className="title">
           <Link to="/post/${item.id}">{item.title}</Link>
         </td>
-        {/* QnA 페이지에서만 상태 열을 표시 */}
-        {isQnAPage && (
-          <td style={{ width: 104 }} className="status">
-            {item.id}
-          </td>
-        )}
-        <td style={{ width: 103 }} className="date">
-          {item.id}
-        </td>
-        <td style={{ width: 56 }} className="id">
-          {item.id}
-        </td>
-        <td style={{ width: 56 }} className="view">
-          {item.id}
-        </td>
+        <td className="date">{item.id}</td>
+        <td className="id">{item.id}</td>
+        <td className="view">{item.id}</td>
       </StyledBoardTable>
     ));
   };
 
   return (
     <>
-      <StyledBoardTable $isQnAPage>
+      <StyledBoardTable>
         <thead>
           <tr className="BoardTableTitle">
-            <th style={{ width: 56 }}>번호</th>
-            <th style={{ width: 812 }}>제목</th>
-            {/* QnA 페이지에서만 상태 열 추가 */}
-            {isQnAPage && <th style={{ width: 104 }}>상태</th>}
-            <th style={{ width: 103 }}>작성일</th>
-            <th style={{ width: 56 }}>작성자</th>
-            <th style={{ width: 56 }}>조회수</th>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성일</th>
+            <th>작성자</th>
+            <th>조회수</th>
           </tr>
         </thead>
         <tbody>{renderData()}</tbody>
