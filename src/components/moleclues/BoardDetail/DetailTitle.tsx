@@ -3,30 +3,34 @@ import {
   StyledDetailTitleWrapper,
   StyledFileWrapper,
   StyledDetailSubTitle,
+  StyledDetailContent,
+  StyledDetailTitleText,
 } from '@/styles/components/Board/BoardDetail';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import MoveToPage from './MoveToPage';
 
-type List = {
+type DetailTitleProps = {
   userId: number;
   id: number;
   title: string;
+  body: string;
 };
 
 function DetailTitle() {
   const { id } = useParams();
-  console.log({ id });
-  const [data, setData] = useState<List[]>([]);
+  const [data, setData] = useState<DetailTitleProps>({ userId: 0, id: 0, title: '', body: '' });
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get<List[]>(`https://jsonplaceholder.typicode.com/posts/${id}`);
+        const response = await axios.get<DetailTitleProps>(`https://jsonplaceholder.typicode.com/posts/${id}`);
         setData(response.data);
+        console.log({ id });
       } catch (error) {
         console.log('error:', error);
-        setData([]);
+        setData({ userId: 0, id: 0, title: '', body: '' });
       }
     }
 
@@ -36,15 +40,17 @@ function DetailTitle() {
   return (
     <StyledDetailTitleContainer>
       <StyledDetailTitleWrapper>
-        <div>{data.title}</div>
-        <StyledDetailSubTitle key={data.id}>
+        <StyledDetailTitleText>{data.title}</StyledDetailTitleText>
+        <StyledDetailSubTitle>
           {data.id} | {data.userId} | {data.id}
         </StyledDetailSubTitle>
       </StyledDetailTitleWrapper>
       <StyledFileWrapper>
         <img src="/public/file.svg" alt="파일첨부" />
-        <div>첨부파일 제목</div>
+        <StyledDetailSubTitle>{data.title}</StyledDetailSubTitle>
       </StyledFileWrapper>
+      <StyledDetailContent>{data.body}</StyledDetailContent>
+      <MoveToPage />
     </StyledDetailTitleContainer>
   );
 }
