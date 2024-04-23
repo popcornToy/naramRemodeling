@@ -17,6 +17,7 @@ export const StyledDetailTitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  text-align: left;
 `;
 
 export const StyledDetailSubTitle = styled.div`

@@ -4,44 +4,42 @@ import {
   StyledFileWrapper,
   StyledDetailSubTitle,
 } from '@/styles/components/Board/BoardDetail';
-// import axios from 'axios';
-// import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 type List = {
   userId: number;
   id: number;
   title: string;
-  important: boolean;
 };
 
-// async function fetchData(): Promise<List[]> {
-//   try {
-//     const response = await axios.get('https://jsonplaceholder.typicode.com/posts/');
-//     return response.data;
-//   } catch (error) {
-//     console.log('error:', error);
-//     return [];
-//   }
-// }
-
 function DetailTitle() {
-  //   const [data, setData] = useState<List[]>([]);
+  const { id } = useParams();
+  console.log({ id });
+  const [data, setData] = useState<List[]>([]);
 
-  //   useEffect(() => {
-  //     fetchData().then((fetchedData) => {
-  //       setData(fetchedData);
-  //     });
-  //   }, []);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get<List[]>(`https://jsonplaceholder.typicode.com/posts/${id}`);
+        setData(response.data);
+      } catch (error) {
+        console.log('error:', error);
+        setData([]);
+      }
+    }
+
+    fetchData();
+  }, [id]);
 
   return (
     <StyledDetailTitleContainer>
       <StyledDetailTitleWrapper>
-        <div>제목이 들어가는 란입니다.</div>
-        {data.map((item) => (
-          <StyledDetailSubTitle key={item.id}>
-            {item.id} | {item.userId} | {item.id}
-          </StyledDetailSubTitle>
-        ))}
+        <div>{data.title}</div>
+        <StyledDetailSubTitle key={data.id}>
+          {data.id} | {data.userId} | {data.id}
+        </StyledDetailSubTitle>
       </StyledDetailTitleWrapper>
       <StyledFileWrapper>
         <img src="/public/file.svg" alt="파일첨부" />

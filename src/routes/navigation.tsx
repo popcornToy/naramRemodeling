@@ -192,7 +192,7 @@ export const navigationItems = [
   },
   {
     id: 'BoardDetail',
-    path: '/BoardDetail',
+    path: '/BoardDetail/:id',
     text: '게시글 상세 페이지',
     lazy: async () => {
       const Module = await import('@/pages/BoardDetail/BoardDetail');

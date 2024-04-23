@@ -51,7 +51,7 @@ function BoardTable({ to }: BoardTableProps): React.ReactNode {
           {item.id}
         </td>
         <td style={{ width: 812, textAlign: 'left' }} className="title">
-          <Link to="/post/${item.id}">{item.title}</Link>
+          <Link to={`/BoardDetail/${item.id}`}>{item.title}</Link>
         </td>
         {/* QnA 페이지에서만 상태 열을 표시 */}
         {isQnAPage && (
