@@ -25,6 +25,7 @@ export default function LogoLink() {
     });
 
     navigate('/');
+    window.scrollTo(0, 0);
   };
   return (
     <LogoLinkContainer to="/" onClick={handleClick}>

@@ -60,7 +60,8 @@ dd {
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul,
-ol, li {
+ol, 
+li {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -115,13 +116,6 @@ button:focus-visible {
   
   /* border: none;
   outline: none; */
-}
-
-
-
-
-li, ul {
-  list-style: none;
 }
 
 figure {

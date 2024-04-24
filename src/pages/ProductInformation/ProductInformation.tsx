@@ -1,7 +1,7 @@
-import ProductCollection from '@/components/moleclues/ProductMenu/ProductCollection';
+import ProductMenu from '@/components/organisms/ProductMenu/ProductMenu';
 
 function ProductInformation() {
-  return <ProductCollection />;
+  return <ProductMenu />;
 }
 
 export default ProductInformation;

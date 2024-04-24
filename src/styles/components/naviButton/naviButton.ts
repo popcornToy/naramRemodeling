@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-type GNBTitleProps = {
+interface GNBTitleProps {
   color: string;
-};
+}
 
 export const GNBTitle = styled.p<GNBTitleProps>`
   font-size: 1.125rem;
@@ -26,6 +26,29 @@ export const GNBContainer = styled.ul`
   padding: 1.5625rem 0;
   justify-content: end;
   align-items: center;
+
+  & > button {
+    display: none;
+  }
+
+  @media (max-width: 1200px) {
+    & li {
+      display: none;
+    }
+
+    & button {
+      display: flex;
+    }
+  }
+`;
+
+interface GNBButtonProps extends GNBTitleProps {
+  isClick: boolean;
+}
+
+export const GNBButton = styled.button<GNBButtonProps>`
+  color: ${(props) => props.color};
+  display: ${(props) => (props.isClick ? 'none' : 'block')};
 `;
 
 export const GNBLi = styled.li`

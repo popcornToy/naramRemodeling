@@ -1,4 +1,4 @@
-import { ButtonWrapper } from '@/styles/components/Board/Board';
+import { StyledButtonWrapper } from '@/styles/components/Board/Board';
 import BasicButton from '@/components/atoms/Board/BasicButton';
 import BasicFormButton from '@/components/atoms/Board/BasicFormButton';
 
@@ -14,10 +14,10 @@ type FormButtonProps = {
 
 function FormButton({ formText, text, to, padding, fontSize, fontWeight }: FormButtonProps) {
   return (
-    <ButtonWrapper>
+    <StyledButtonWrapper>
       <BasicFormButton formText={formText} />
       <BasicButton text={text} to={to} padding={padding} fontSize={fontSize} fontWeight={fontWeight} />
-    </ButtonWrapper>
+    </StyledButtonWrapper>
   );
 }
 

@@ -1,19 +1,22 @@
 import ProductTitle from '@/components/atoms/ProductMenu/ProductTitle';
 import { ProductTitleLi, ProductTitleUl } from '@/styles/components/Product/Product';
+import { useParams } from 'react-router-dom';
 
 export default function ProductCollection() {
+  const { productType } = useParams<{ productType: string }>();
+
   return (
     <nav>
       <ProductTitleUl>
-        <li>
+        <ProductTitleLi productType={productType === 'pork' ? 'pork' : undefined}>
           <ProductTitle title="양돈" route="/Product/pork" />
-        </li>
-        <li>
+        </ProductTitleLi>
+        <ProductTitleLi productType={productType === 'chicken' ? 'chicken' : undefined}>
           <ProductTitle title="계육" route="/Product/chicken" />
-        </li>
-        <li>
+        </ProductTitleLi>
+        <ProductTitleLi productType={productType === 'duck' ? 'duck' : undefined}>
           <ProductTitle title="오리" route="/Product/duck" />
-        </li>
+        </ProductTitleLi>
       </ProductTitleUl>
     </nav>
   );

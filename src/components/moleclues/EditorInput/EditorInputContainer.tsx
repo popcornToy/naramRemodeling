@@ -1,4 +1,4 @@
-import { EditorInputWrapper, EditorInputLabel, EditorInput } from '@/styles/components/Editor/Editor';
+import { StyledEditorInputWrapper, StyledEditorInputLabel, StyledEditorInput } from '@/styles/components/Editor/Editor';
 
 type EditorInputProps = {
   label: string;
@@ -11,11 +11,11 @@ function EditorInputContainer({ label }: EditorInputProps) {
   };
 
   return (
-    <EditorInputWrapper>
-      <EditorInputLabel htmlFor={InputProps.writer}>{label}</EditorInputLabel>
+    <StyledEditorInputWrapper>
+      <StyledEditorInputLabel htmlFor={InputProps.writer}>{label}</StyledEditorInputLabel>
       <br />
-      <EditorInput id={InputProps.writer} name={InputProps.writer}></EditorInput>
-    </EditorInputWrapper>
+      <StyledEditorInput id={InputProps.writer} name={InputProps.writer}></StyledEditorInput>
+    </StyledEditorInputWrapper>
   );
 }
 
