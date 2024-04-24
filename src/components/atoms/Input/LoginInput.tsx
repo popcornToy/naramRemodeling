@@ -1,15 +1,15 @@
-import { FieldError, UseFormRegisterReturn } from 'react-hook-form';
+import { FieldError, FieldErrorsImpl, Merge, UseFormRegisterReturn } from 'react-hook-form';
 import { useState } from 'react';
 import { StytledLoginInput } from '@/styles/components/Login/LoginForm';
 import HideIcon from '/hide.svg';
-import NothideIcon from 'public/nothide.svg';
+import NothideIcon from '/nothide.svg';
 
 export type InputProps = {
   label?: string;
   id: string;
   type: string;
   placeholder: string;
-  error?: string | FieldError;
+  error?: string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined;
   register?: UseFormRegisterReturn;
 };
 
@@ -39,7 +39,7 @@ function LoginInput({ label, id, type, placeholder, error, register }: InputProp
           </button>
         )}
       </div>
-      <span className="error"> {error && renderErrorMessage(error)}</span>
+      <span className="error"> {error && renderErrorMessage(error as string | FieldError)}</span>
     </StytledLoginInput>
   );
 }

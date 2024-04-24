@@ -4,12 +4,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 
-export type Login = {
-  isError?: boolean;
-};
-
-function Login({ isError }: Login) {
-  const [, setError] = useState<string>('');
+function Login() {
+  const [isError, setIsError] = useState(false);
   // error 상태 추가
   const navigate = useNavigate();
 
@@ -24,7 +20,7 @@ function Login({ isError }: Login) {
       navigate('/');
     } catch (error) {
       console.error('Error logging in:', error);
-      setError('아이디 또는 비밀번호를 확인해주세요.');
+      setIsError(true);
     }
   };
   return (

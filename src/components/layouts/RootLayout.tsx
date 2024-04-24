@@ -5,8 +5,9 @@ import Footer from '../atoms/Footer/Footer';
 function RootLayout() {
   return (
     <div>
-      <Header isLogin={true} isMain={false} />
-      <Outlet />
+      <Header isLogin={true} isMain={false}>
+        <Outlet />
+      </Header>
       <Footer />
     </div>
   );
