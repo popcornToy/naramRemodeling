@@ -19,6 +19,7 @@ const fontSizes = {
   spacing: '1.62rem',
   large: '1.5rem',
   medium: '1.25rem',
+  Smedium: '1.125rem',
   base: '1rem',
   smallRegular: '0.88rem',
   Mbase: '0.75rem',
@@ -48,6 +49,10 @@ const fontStyles = {
     font-weight:${fontWeights.regular};
     letter-spacing:7px;
   `,
+  textInput: `
+    font-size:${fontSizes.Smedium};
+    font-weight:${fontWeights.regular};
+  `,
   textBase: `
     font-size:${fontSizes.base};
     font-weight:${fontWeights.regular};
@@ -69,3 +74,4 @@ const theme = {
 };
 
 export default theme;
+export type ThemeType = typeof theme;
