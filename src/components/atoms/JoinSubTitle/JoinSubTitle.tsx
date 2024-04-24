@@ -5,16 +5,26 @@ import styled from 'styled-components';
 //type
 interface JoinSubTitleProps {
   children: string | ReactNode;
+  isRequired?: boolean;
 }
 
-const StyledJoinSubTitle = styled.div``;
+const StyledJoinSubTitle = styled.div`
+  & h2 {
+    ${(props) => props.theme.fontStyles.headingMedium};
+    color: ${(props) => props.theme.colors.TextBlack};
+  }
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 50px;
+`;
 
-function JoinSubTitle({ children }: JoinSubTitleProps) {
+function JoinSubTitle({ children, isRequired = false }: JoinSubTitleProps) {
   return (
     <StyledJoinSubTitle>
       <h2>{children}</h2>
       <StyledBar />
-      {required ? <p>필수 입력란입니다</p>}
+      {isRequired ? <p className="description">필수 입력란입니다</p> : ''}
     </StyledJoinSubTitle>
   );
 }
