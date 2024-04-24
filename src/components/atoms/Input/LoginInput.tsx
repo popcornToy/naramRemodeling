@@ -1,16 +1,15 @@
 import { FieldError, UseFormRegisterReturn } from 'react-hook-form';
-import { ReactNode, useState } from 'react';
+import { useState } from 'react';
 import { StytledLoginInput } from '@/styles/components/Login/LoginForm';
 import HideIcon from '/hide.svg';
 import NothideIcon from 'public/nothide.svg';
-import styled from 'styled-components';
 
 export type InputProps = {
   label?: string;
   id: string;
   type: string;
   placeholder: string;
-  error?: string | FieldError | undefined;
+  error?: string | FieldError;
   register?: UseFormRegisterReturn;
 };
 
@@ -45,7 +44,7 @@ function LoginInput({ label, id, type, placeholder, error, register }: InputProp
   );
 }
 
-function renderErrorMessage(error: string | FieldError): ReactNode {
+function renderErrorMessage(error: string | FieldError) {
   if (typeof error === 'string') {
     return <p>{error}</p>;
   } else if (error && error.message) {

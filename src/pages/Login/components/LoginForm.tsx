@@ -19,7 +19,7 @@ function LoginForm({ onSubmit, isError }: LoginFormProps) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<FieldValues>({
     mode: 'onChange',
   });
 
@@ -39,10 +39,10 @@ function LoginForm({ onSubmit, isError }: LoginFormProps) {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <LoginInput
           // label="아이디"
-          id="id"
-          type="id"
+          id="email"
+          type="email"
           placeholder="아이디"
-          error={errors.id ? errors.id.message : ''}
+          error={errors.email ? errors.email.message : ''}
           register={register('email', {
             required: '아이디는 필수 입력입니다.',
 
