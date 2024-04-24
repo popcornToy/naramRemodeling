@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Logo from '/mobileLogo.png';
 import MobileMenuSignIn from '@/components/atoms/MobileMenu/MobileMenuSignIn';
 import { MobileMenuHeaderContainer } from '@/styles/components/MobileMenu/MobileMenu';
-import useClick from '@/components/organisms/MobileMenu/useClick';
+import useClick from '@/hook/useClick';
 
 export default function MobileMenuHeader({ isLogin }: { isLogin: boolean }) {
   const { handleToggle } = useClick();

@@ -2,20 +2,24 @@ import LogoLink from '@/components/atoms/LogoLink/LogoLink';
 import NaviBar from '@/components/moleclues/naviButton/NaviBar';
 import { HeaderContainer, HeaderFlexContainer } from '@/styles/components/Header/Header';
 import DropdownMenuNav from '../Dropdown/DropdownMenuNav';
-import useBackground from './useBackground';
+import useBackground from '../../../hook/useBackground';
 import { useAtom } from 'jotai';
 import { isClicked } from '@/store/store';
 import { useEffect, useRef } from 'react';
+import MobileMenu from '../MobileMenu/MobileMenu';
+import useClick from '@/hook/useClick';
 
 type HeaderProps = {
   isMain: boolean;
   isLogin: boolean;
+  children?: React.ReactNode;
 };
 
-export default function Header({ isLogin, isMain }: HeaderProps) {
+export default function Header({ isLogin, isMain, children }: HeaderProps) {
   const headerRef = useRef<HTMLElement>(null);
   const [, setIsClick] = useAtom(isClicked);
   const { changeColor, isClick } = useBackground(isMain);
+  const { isClick: isMobileClick } = useClick();
 
   useEffect(() => {
     const handleOutsideClick = () => {
@@ -43,6 +47,8 @@ export default function Header({ isLogin, isMain }: HeaderProps) {
         </HeaderFlexContainer>
         <DropdownMenuNav isClicked={isClick} />
       </HeaderContainer>
+      {children}
+      <MobileMenu isClicked={isMobileClick} />
     </>
   );
 }
