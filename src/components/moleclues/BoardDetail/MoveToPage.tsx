@@ -1,7 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { StyledMoveToPageWrapper, StyledMoveTopageIcon } from '@/styles/components/Board/BoardDetail';
+import {
+  StyledMoveToPageWrapper,
+  StyledMoveTopageIcon,
+  StyledTest,
+  StyledTestWrapper,
+} from '@/styles/components/Board/BoardDetail';
 
 type MoveToPageProps = {
   id: string;
@@ -52,22 +57,26 @@ function MoveToPage() {
 
   return (
     <div>
-      <StyledMoveToPageWrapper>
-        <StyledMoveTopageIcon>
-          <img src="/public/up_icon.svg" alt="이전글" />
-          {prevPost && <Link to={`/BoardDetail/${prevPost.id}`}>이전글</Link>}
-        </StyledMoveTopageIcon>
-        <div>{prevPost && <Link to={`/BoardDetail/${prevPost.id}`}>{prevPost.title}</Link>}</div>
-        <div>{prevPost && <Link to={`/BoardDetail/${prevPost.id}`}>{prevPost.userId}</Link>}</div>
-      </StyledMoveToPageWrapper>
-      <StyledMoveToPageWrapper>
-        <StyledMoveTopageIcon>
-          <img src="/public/down_icon.svg" alt="다음글" />
-          {nextPost && <Link to={`/BoardDetail/${nextPost.id}`}>다음글</Link>}{' '}
-        </StyledMoveTopageIcon>
-        <div>{nextPost && <Link to={`/BoardDetail/${nextPost.id}`}>{nextPost.title}</Link>}</div>
-        <div>{nextPost && <Link to={`/BoardDetail/${nextPost.id}`}>{nextPost.userId}</Link>}</div>
-      </StyledMoveToPageWrapper>
+      {prevPost && (
+        <StyledTestWrapper to={`/BoardDetail/${prevPost.id}`}>
+          <StyledTest>
+            <img src="/public/up_icon.svg" alt="이전글" />
+            <div>이전글</div>
+          </StyledTest>
+          <div>{prevPost.title}</div>
+          <div>{prevPost.userId}</div>
+        </StyledTestWrapper>
+      )}
+      {nextPost && (
+        <StyledTestWrapper to={`/BoardDetail/${nextPost.id}`}>
+          <StyledTest>
+            <img src="/public/down_icon.svg" alt="다음글" />
+            <div>다음글</div>
+          </StyledTest>
+          <div>{nextPost.title}</div>
+          <div>{nextPost.userId}</div>
+        </StyledTestWrapper>
+      )}
     </div>
   );
 }

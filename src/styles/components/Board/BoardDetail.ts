@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 // 게시글 상세페이지 레이아웃
 
@@ -92,4 +93,34 @@ export const StyledMoveTopageIcon = styled.div`
     width: 30px;
     height: 30px;
   }
+`;
+
+export const StyledTest = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  height: 30px;
+  line-height: 30px;
+
+  & img {
+    width: 30px;
+    height: 30px;
+  }
+`;
+
+export const StyledTestWrapper = styled(Link)`
+  display: flex;
+  width: 1300px;
+  padding: 15px 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--line-gray, #d1d1d1);
+  border-bottom: 1px solid var(--line-gray, #d1d1d1);
+  background: var(--white, #fff);
+  color: var(--text-black, #333);
+  font-family: 'Noto Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 `;
