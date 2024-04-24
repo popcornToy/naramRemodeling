@@ -25,5 +25,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     title: '양돈',
+    route: '/product/pork',
   },
 };

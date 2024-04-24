@@ -9,9 +9,7 @@ export const HeaderContainer = styled.header.withConfig({
 })<HeaderContainerProps>`
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
-  justify-content: space-between;
   position: fixed;
   top: 0;
   z-index: 10;
@@ -24,4 +22,8 @@ export const HeaderFlexContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+
+  @media (max-width: 1200px) {
+    padding: 0 1.875rem;
+  }
 `;

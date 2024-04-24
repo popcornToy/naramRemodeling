@@ -24,7 +24,7 @@ function KakaoMap({ width, level, title, firstContent, secondContent }: KakaoMap
           height: '600px',
         }}
         level={level ? level : 4} // 지도의 확대 레벨
-        draggable={false}
+        draggable={true}
         zoomable={false}
       >
         <MapTypeControl position={'TOPRIGHT'} />

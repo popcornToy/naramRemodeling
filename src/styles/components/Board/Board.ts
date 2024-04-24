@@ -181,7 +181,7 @@ export const StyleFormButton = styled.button<ButtonProps>`
 `;
 
 // 버튼 wrapper
-export const ButtonWrapper = styled.div`
+export const StyledButtonWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;

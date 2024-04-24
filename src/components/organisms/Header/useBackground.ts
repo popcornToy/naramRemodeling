@@ -1,4 +1,4 @@
-import { isClicked } from '@/store/store';
+import { isClicked, mobileClick } from '@/store/store';
 import { useAtom } from 'jotai';
 import { useEffect, useState } from 'react';
 
@@ -9,6 +9,7 @@ export default function useBackground(isMain: boolean) {
   const [isScroll, setIsScroll] = useState(false);
   const [isClick] = useAtom(isClicked);
   const [isFirstMount, setIsFirstMount] = useState(true);
+  const [isMobile] = useAtom(mobileClick);
 
   useEffect(() => {
     setIsFirstMount(false);
@@ -25,7 +26,7 @@ export default function useBackground(isMain: boolean) {
   }, []);
 
   useEffect(() => {
-    if (isClick || isScroll) {
+    if (isClick || isScroll || isMobile) {
       setChangeColor('#ffffff');
     } else {
       if (isFirstMount) {
@@ -37,10 +38,10 @@ export default function useBackground(isMain: boolean) {
         return () => clearTimeout(timeoutId);
       }
     }
-  }, [isClick, isFirstMount, isScroll]);
+  }, [isClick, isFirstMount, isScroll, isMobile]);
 
   useEffect(() => {
-    if (isClick || isScroll) {
+    if (isClick || isScroll || isMobile) {
       setTextColor('#333333');
       setIconColor('#3974CC');
     } else {
@@ -55,7 +56,7 @@ export default function useBackground(isMain: boolean) {
         setIconColor('#3974CC');
       }
     }
-  }, [isClick, isScroll, isMain]);
+  }, [isClick, isScroll, isMain, isMobile]);
 
   return { changeColor, isScroll, isClick, textColor, iconColor };
 }
