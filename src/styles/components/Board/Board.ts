@@ -165,13 +165,19 @@ interface ButtonProps {
   padding?: string;
   fontSize?: string;
   fontWeight?: string;
+  background?: string;
+  color?: string;
+  borderColor?: string;
 }
 
 export const StyledBasicButton = styled(Link)<ButtonProps>`
   padding: ${(props) => props.padding || '10px 15px'};
   font-size: ${(props) => props.fontSize || '16px'};
   font-weight: ${(props) => props.fontWeight || 'normal'};
-  background: #e7e7e7;
+  background: ${(props) => props.background || '#e7e7e7'};
+  color: ${(props) => props.color || 'black'};
+  border: 1px solid;
+  border-color: ${(props) => props.borderColor || '#e7e7e7'};
 `;
 
 // 폼(제출하기) 버튼
