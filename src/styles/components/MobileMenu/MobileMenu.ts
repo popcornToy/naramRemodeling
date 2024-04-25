@@ -100,7 +100,7 @@ export const MobileMenuButtonContainer = styled.div<{ isClick: boolean }>`
     align-self: left;
   }
 
-  @media (max-width: 430px) {
+  @media (max-width: 768px) {
     width: 50%;
   }
 

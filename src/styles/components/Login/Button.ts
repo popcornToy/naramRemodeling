@@ -24,4 +24,14 @@ export const StyledButton = styled.div`
     width: 100%;
     height: 5.5rem;
   }
+
+  @media (max-width: 768px) {
+    & .login {
+      height: 4.5rem;
+    }
+
+    & .signUp {
+      height: 4.5rem;
+    }
+  }
 `;
