@@ -5,7 +5,7 @@ import Form from '@/components/atoms/Form/Form';
 import { Link } from 'react-router-dom';
 import { StyledLoginForm } from '@/styles/components/Login/LoginForm';
 import DangerIcon from '/danger-circle.svg';
-import Find_user from 'public/find_user.svg';
+import Find_user from '/find_user.svg';
 import Find_password from '/find_password.svg';
 
 export type LoginFormProps = {

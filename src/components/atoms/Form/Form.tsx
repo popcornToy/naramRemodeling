@@ -1,5 +1,3 @@
-import React from 'react';
-
 export type FormProps = {
   onSubmit: any;
   children: React.ReactNode;

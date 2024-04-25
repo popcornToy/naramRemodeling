@@ -1,5 +1,11 @@
+import FindIdPage from '../components/FindIdPage';
+
 function FindId() {
-  return <div>아이디 찾기</div>;
+  return (
+    <>
+      <FindIdPage />
+    </>
+  );
 }
 
 export default FindId;
