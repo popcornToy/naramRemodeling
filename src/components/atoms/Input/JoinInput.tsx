@@ -3,6 +3,9 @@ import styled from 'styled-components';
 //type
 interface JoinInputProps {
   type: string;
+  isRequired?: boolean;
+  id: string;
+  [key: string]: any;
 }
 
 const StyledJoinInput = styled.input`
@@ -13,8 +16,8 @@ const StyledJoinInput = styled.input`
   color: ${(props) => props.theme.colors.TextBlack};
 `;
 
-function JoinInput({ type }: JoinInputProps) {
-  return <StyledJoinInput type={type} required={isRequired} />;
+function JoinInput({ id, type, isRequired = false, ...restProps }: JoinInputProps) {
+  return <StyledJoinInput id={id} type={type} required={isRequired} {...restProps} />;
 }
 
 export default JoinInput;

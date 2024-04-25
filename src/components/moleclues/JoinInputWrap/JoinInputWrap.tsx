@@ -1,6 +1,7 @@
 import JoinInput from '../../atoms/Input/JoinInput';
 import styled from 'styled-components';
 import JoinButton from '@/components/atoms/JoinButton/JoinButton';
+import { useId } from 'react';
 
 //type
 interface JoinInputWrapProps {
@@ -9,6 +10,7 @@ interface JoinInputWrapProps {
   button?: boolean;
   valid?: boolean;
   validText?: 'id' | 'password' | 'pwConfirm' | 'birth' | 'birth';
+  isRequired?: boolean;
 }
 
 //styled component
@@ -43,6 +45,7 @@ function JoinInputWrap({
   button = false,
   valid = false,
   validText = 'id',
+  isRequired = false,
 }: JoinInputWrapProps) {
   const warning: { [key: string]: string } = {
     id: '아이디는 6자 이상의 소문자 알파벳으로 작성해주세요',
@@ -51,15 +54,16 @@ function JoinInputWrap({
     number: '생년월일은 6자리로 입력해주세요',
     valid: '사용가능',
   };
+  const id = useId();
 
   return (
     <StyledJoinInputWrap>
-      <p className="value">
+      <label className="value" htmlFor={id}>
         {title}
         {valid ? <span className="warning">{warning[validText]}</span> : ''}
-      </p>
+      </label>
       <div className="inner">
-        <JoinInput type={type} />
+        <JoinInput id={id} type={type} isRequired={isRequired} />
         {button ? <JoinButton>검사하기</JoinButton> : ''}
       </div>
     </StyledJoinInputWrap>
