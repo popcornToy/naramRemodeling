@@ -114,3 +114,17 @@ export const StyledCheckBoxWrapper = styled.div`
 export const StyledNormalCheckBox = styled.div`
   padding-top: 20px;
 `;
+
+export const StyledPasswordInputWrapper = styled.div`
+  position: relative;
+`;
+
+export const StyledValidationText = styled.div`
+  position: absolute;
+  color: #f44646;
+  font-family: 'Noto Sans';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+`;

@@ -190,4 +190,13 @@ export const navigationItems = [
       return { Component: Module.default };
     },
   },
+  {
+    id: 'BoardDetail',
+    path: '/BoardDetail/:id',
+    text: '게시글 상세 페이지',
+    lazy: async () => {
+      const Module = await import('@/pages/BoardDetail/BoardDetail');
+      return { Component: Module.default };
+    },
+  },
 ];

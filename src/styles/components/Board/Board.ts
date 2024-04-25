@@ -126,7 +126,7 @@ export const StyledSearch = styled.div`
   gap: 20px;
 `;
 
-export const StyledBoardTable = styled.table`
+export const StyledBoardTable = styled.table<{ $isQnAPage: boolean }>`
   width: 100%;
   padding: 0;
   border-spacing: 0;
@@ -135,18 +135,28 @@ export const StyledBoardTable = styled.table`
   & .BoardTableTitle {
     height: 70px;
     background-color: #e7e7e7;
-    display: grid;
-    grid-template-columns: 1fr 6fr 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-around;
+    /* display: grid; */
     line-height: 70px;
     text-align: center;
+    /* grid-template-columns: ${({ $isQnAPage }) =>
+      $isQnAPage ? '1fr 5fr 1fr 1fr 1fr 1fr' : '1fr 6fr 1fr 1fr 1fr'}; */
+    /* QnA 페이지에서는 그리드 칸을 하나 더 추가 */
   }
+
   & .BoardTableList {
     height: 70px;
-    display: grid;
-    grid-template-columns: 1fr 6fr 1fr 1fr 1fr;
+    /* display: grid; */
+    display: flex;
+
+    justify-content: space-around;
     line-height: 70px;
     text-align: center;
     border-bottom: 1px solid #d1d1d1;
+    /* grid-template-columns: ${({ $isQnAPage }) =>
+      $isQnAPage ? '1fr 5fr 1fr 1fr 1fr 1fr' : '1fr 6fr 1fr 1fr 1fr'}; */
+    /* QnA 페이지에서는 그리드 칸을 하나 더 추가 */
   }
 `;
 
@@ -155,13 +165,19 @@ interface ButtonProps {
   padding?: string;
   fontSize?: string;
   fontWeight?: string;
+  background?: string;
+  color?: string;
+  borderColor?: string;
 }
 
 export const StyledBasicButton = styled(Link)<ButtonProps>`
   padding: ${(props) => props.padding || '10px 15px'};
   font-size: ${(props) => props.fontSize || '16px'};
   font-weight: ${(props) => props.fontWeight || 'normal'};
-  background: #e7e7e7;
+  background: ${(props) => props.background || '#e7e7e7'};
+  color: ${(props) => props.color || 'black'};
+  border: 1px solid;
+  border-color: ${(props) => props.borderColor || '#e7e7e7'};
 `;
 
 // 폼(제출하기) 버튼
