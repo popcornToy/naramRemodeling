@@ -33,6 +33,7 @@ export const StyledLoginForm = styled.div`
 
     & .link {
       display: flex;
+      align-items: center;
     }
   }
 
@@ -55,6 +56,16 @@ export const StyledLoginForm = styled.div`
     margin-right: auto;
     & p span {
       color: red;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 1.25rem;
+
+    & .Find {
+      margin-right: auto;
+      gap: 3rem;
     }
   }
 `;

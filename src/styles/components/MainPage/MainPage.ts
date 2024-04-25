@@ -296,7 +296,7 @@ export const MainContentsBox = styled.div`
   padding: 8rem 3.6875rem;
 
   @media (max-width: 500px) {
-    padding: 8rem 1.5rem;
+    padding: 4rem 1.5rem;
   }
 `;
 

@@ -1,13 +1,12 @@
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import Logo from '/logo_mark.svg';
 import Button from '@/components/atoms/Login/Button';
 import LoginInput from '@/components/atoms/Input/LoginInput';
 import Form from '@/components/atoms/Form/Form';
 import { Link } from 'react-router-dom';
 import { StyledLoginForm } from '@/styles/components/Login/LoginForm';
 import DangerIcon from '/danger-circle.svg';
-import Find_user from 'public/find_user.svg';
-import Find_password from 'public/find_password.svg';
+import Find_user from '/find_user.svg';
+import Find_password from '/find_password.svg';
 
 export type LoginFormProps = {
   onSubmit: SubmitHandler<FieldValues>;
@@ -26,7 +25,6 @@ function LoginForm({ onSubmit, isError }: LoginFormProps) {
   return (
     <StyledLoginForm>
       <div className="titleForm">
-        <img className="logo" src={Logo} alt="로고페이지" />
         <h2>로그인</h2>
         <p>언제나 고객님의 만족을 추구합니다.</p>
       </div>
