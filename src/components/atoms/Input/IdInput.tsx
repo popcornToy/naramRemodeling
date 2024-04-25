@@ -1,14 +1,20 @@
-import { StyledFindInput } from '@/styles/components/Login/Find';
+import { UseFormRegisterReturn } from 'react-hook-form';
 
-export default function IdInput() {
+type InputProps = {
+  register?: UseFormRegisterReturn;
+  label: string;
+  error?: boolean;
+  id: 'name' | 'email';
+  type: 'text' | 'email';
+};
+
+export default function FindInput({ register, label, error, id, type }: InputProps) {
   return (
     <>
-      <StyledFindInput>
-        <label htmlFor="name" className="sr-only">
-          이름
-        </label>
-        <input type="text" name="username" id="name" placeholder="이름" />
-      </StyledFindInput>
+      <label htmlFor={id} className="sr-only">
+        {label}
+      </label>
+      <input type={type} name={id} id={id} placeholder={label} {...register} aria-invalid={error ? 'true' : 'false'} />
     </>
   );
 }
