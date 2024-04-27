@@ -4,7 +4,7 @@ type InputProps = {
   register?: UseFormRegisterReturn;
   label: string;
   error?: string | FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined;
-  id: 'name' | 'email';
+  id: 'name' | 'email' | 'id';
   type: 'text' | 'email';
 };
 
