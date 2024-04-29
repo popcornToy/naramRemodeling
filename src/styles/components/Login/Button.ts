@@ -35,3 +35,23 @@ export const StyledButton = styled.div`
     }
   }
 `;
+
+export const FindButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6875rem;
+
+  & .find {
+    color: #666;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.875rem; /* 125% */
+    letter-spacing: -0.0075rem;
+    padding: 1rem 10rem;
+    white-space: nowrap;
+    border-radius: 30px;
+    border: 1px solid #d1d1d1;
+    background: var(--white, #fff);
+  }
+`;

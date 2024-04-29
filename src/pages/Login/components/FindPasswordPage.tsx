@@ -18,7 +18,7 @@ export default function FindIdPage({ onSubmit }: { onSubmit: SubmitHandler<Field
     <>
       <StyledLoginForm>
         <div className="titleForm">
-          <h2>아이디 찾기</h2>
+          <h2>비밀번호 찾기</h2>
           <p>언제나 고객님의 만족을 추구합니다.</p>
         </div>
         <div className="dangerText">
@@ -35,6 +35,15 @@ export default function FindIdPage({ onSubmit }: { onSubmit: SubmitHandler<Field
               type="text"
               error={errors.name ? errors.name.message : ''}
               register={register('name', { required: '이름은 필수 입력입니다.' })}
+            />
+            <FindInput
+              label="아이디"
+              id="id"
+              type="text"
+              error={errors.id ? errors.id.message : ''}
+              register={register('id', {
+                required: '아이디는 필수 입력입니다.',
+              })}
             />
             <FindInput
               label="이메일"

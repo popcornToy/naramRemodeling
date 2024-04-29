@@ -41,6 +41,14 @@ export const navigationItems = [
           return { Component: Module.default };
         },
       },
+      {
+        text: '찾기 실패 페이지',
+        path: 'NotFound',
+        lazy: async () => {
+          const Module = await import('@/pages/Login/pages/NotFound');
+          return { Component: Module.default };
+        },
+      },
     ],
   },
 

@@ -24,7 +24,9 @@ function LoginInput({ label, id, type, placeholder, error, register }: InputProp
 
   return (
     <StytledLoginInput>
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id} className="sr-only">
+        {label}
+      </label>
       <div className="input-container">
         <input
           type={type === 'password' && showPassword ? 'text' : type}
