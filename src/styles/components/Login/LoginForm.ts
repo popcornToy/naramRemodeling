@@ -9,6 +9,16 @@ export const StyledLoginForm = styled.div`
   /* gap: 5.43rem; */
   margin: 7.75rem auto;
 
+  & .pGroup {
+    color: #000;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 3.125rem; /* 208.333% */
+    letter-spacing: -0.0075rem;
+    margin-top: 2.8125rem;
+  }
+
   & .titleForm {
     text-align: center;
     margin-bottom: 87px;
