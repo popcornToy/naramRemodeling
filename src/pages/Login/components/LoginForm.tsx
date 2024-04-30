@@ -37,11 +37,11 @@ function LoginForm({ onSubmit, isError }: LoginFormProps) {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <LoginInput
           label="아이디"
-          id="text"
+          id="username"
           type="text"
           placeholder="아이디"
-          error={errors.text ? errors.text.message : ''}
-          register={register('text', {
+          error={errors.username ? errors.username.message : ''}
+          register={register('username', {
             required: '아이디는 필수 입력입니다.',
 
             minLength: {

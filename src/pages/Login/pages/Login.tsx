@@ -5,24 +5,29 @@ import { useNavigate } from 'react-router-dom';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 
 function Login() {
-  const [isError, setIsError] = useState(false);
   // error 상태 추가
+  const [isError, setIsError] = useState(false);
   const navigate = useNavigate();
 
+  // 로그인 요청 함수
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
-      const { email, password } = data;
+      const { username, password } = data;
 
-      console.log('email', email);
-      console.log('password', password);
+      // FormData 생성
+      const formData = new FormData();
+      formData.append('username', username);
+      formData.append('password', password);
+
       // 로그인 요청
-      await axios.post('https://ip:10000/user/login', { email, password });
+      await axios.post('https://ip:10000/user/login', formData);
       navigate('/');
     } catch (error) {
       console.error('Error logging in:', error);
       setIsError(true);
     }
   };
+
   return (
     <>
       <LoginForm onSubmit={onSubmit} isError={isError} />
