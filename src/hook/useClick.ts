@@ -4,7 +4,7 @@ import { useAtom } from 'jotai';
 export default function useClick() {
   const [isClick, setIsClick] = useAtom(mobileClick);
 
-  const handleToggle = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleToggle = (e) => {
     e.stopPropagation();
     setIsClick((prev) => !prev);
   };
