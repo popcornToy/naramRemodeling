@@ -28,7 +28,7 @@ export const StyledFlexCenter = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
-  margin-top: ${(props) => parseInt(props.margin || '-168') / 16}rem;
+  /* margin-top: ${(props) => parseInt(props.margin || '-168') / 16}rem; */
   padding-top: 4.99rem;
   background-color: white;
   /* border: 1px solid black; */

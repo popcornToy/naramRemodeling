@@ -6,9 +6,6 @@ function Notice() {
   return (
     <div>
       <PageLayout
-        isMainMenu={false}
-        EngTitle="Notice"
-        KorTitle="공지사항"
         alt="공지사항 페이지"
         mainImage={mainImage}
         firstTitle="NOTICE"

@@ -5,7 +5,7 @@ import mainImage from '/Notice_main.svg';
 
 function RecruitementWritePage() {
   return (
-    <WritePageLayout alt={'채용하기 작성 페이지'} children={undefined} mainImage={mainImage}>
+    <WritePageLayout alt={'채용하기 작성 페이지'} mainImage={mainImage}>
       <p>RecritmentWritePage</p>
       <StyledContent>
         <Editor

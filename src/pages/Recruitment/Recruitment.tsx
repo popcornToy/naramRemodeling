@@ -6,9 +6,6 @@ function Recruitment() {
   return (
     <div>
       <PageLayout
-        isMainMenu={false}
-        EngTitle="Recruitment"
-        KorTitle="인재채용"
         alt="인재채용 페이지"
         mainImage={mainImage}
         firstTitle="Recruitment"

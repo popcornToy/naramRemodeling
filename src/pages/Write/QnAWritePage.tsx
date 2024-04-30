@@ -5,7 +5,7 @@ import mainImage from '/Notice_main.svg';
 
 function QnAWritePage() {
   return (
-    <WritePageLayout alt={'문의하기 작성 페이지'} children={undefined} mainImage={mainImage}>
+    <WritePageLayout alt={'문의하기 작성 페이지'} mainImage={mainImage}>
       <p>QnAWritePage</p>
       <StyledContent>
         <Editor

@@ -2,11 +2,10 @@ import Editor from '@/components/moleclues/Editor/Editor';
 import { StyledContent } from '@/styles/components/PageSubTitle/PageSubTitle';
 import WritePageLayout from '@/components/organisms/PageLayout/WritePageLayout';
 import mainImage from '/Notice_main.svg';
-import NoticeCheckBox from '@/components/moleclues/QnACheckBox/QnACheckBox';
 
 function PromotionWritePage() {
   return (
-    <WritePageLayout alt={'홍보게시물 작성 페이지'} children={undefined} mainImage={mainImage}>
+    <WritePageLayout alt={'홍보게시물 작성 페이지'} mainImage={mainImage}>
       <StyledContent>
         <Editor
           title="홍보게시물 작성하기"

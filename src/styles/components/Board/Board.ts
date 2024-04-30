@@ -44,7 +44,7 @@ export const StyledTotalBoard = styled.p`
 `;
 
 // 드롭다운
-interface DropDownProps {
+export interface DropDownProps {
   $width?: string;
   $height?: string;
 }

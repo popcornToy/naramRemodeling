@@ -5,7 +5,7 @@ import mainImage from '/Notice_main.svg';
 
 function NoticeWritePage() {
   return (
-    <WritePageLayout alt={'게시글 작성 페이지'} children={undefined} mainImage={mainImage}>
+    <WritePageLayout alt={'게시글 작성 페이지'} mainImage={mainImage}>
       <p>NoticeWritePage</p>
       <StyledContent>
         <Editor
