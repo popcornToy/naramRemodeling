@@ -153,12 +153,12 @@ export const StyledBoardTable = styled.table<{ isQnAPage: boolean }>`
     line-height: 70px;
     text-align: center;
     border-bottom: 1px solid #d1d1d1;
-    /* grid-template-columns: ${({ $isQnAPage }) =>
-      $isQnAPage ? '1fr 5fr 1fr 1fr 1fr 1fr' : '1fr 6fr 1fr 1fr 1fr'}; */
-    /* QnA 페이지에서는 그리드 칸을 하나 더 추가 */
   }
 `;
 
+/* grid-template-columns: ${({ $isQnAPage }) =>
+  $isQnAPage ? '1fr 5fr 1fr 1fr 1fr 1fr' : '1fr 6fr 1fr 1fr 1fr'}; */
+/* QnA 페이지에서는 그리드 칸을 하나 더 추가 */
 // 링크(글쓰기) 버튼
 interface ButtonProps {
   padding?: string;
