@@ -4,12 +4,11 @@ import { Map, MapMarker, ZoomControl, MapTypeControl } from 'react-kakao-maps-sd
 type KakaoMapProps = {
   width?: string;
   level?: number;
-  title?: string;
   firstContent?: string;
   secondContent?: string;
 };
 
-function KakaoMap({ width, level, title, firstContent, secondContent }: KakaoMapProps) {
+function KakaoMap({ width, level, firstContent, secondContent }: KakaoMapProps) {
   return (
     <div style={{ width: width ? width : '100%' }}>
       <Map // 지도를 표시할 Container

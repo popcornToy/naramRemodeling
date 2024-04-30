@@ -1,6 +1,5 @@
 import JoinInput from '../../atoms/Input/JoinInput';
 import styled from 'styled-components';
-import JoinButton from '@/components/atoms/JoinButton/JoinButton';
 import { useId } from 'react';
 
 //type

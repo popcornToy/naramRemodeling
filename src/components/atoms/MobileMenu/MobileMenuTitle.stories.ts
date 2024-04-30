@@ -18,5 +18,6 @@ export const Default: Story = {
   args: {
     title: '회사소개',
     isClicked: false,
+    onClick: () => console.log('clicked'),
   },
 };

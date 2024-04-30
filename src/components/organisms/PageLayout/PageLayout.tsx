@@ -3,8 +3,6 @@ import PageSubTitleLayout from '@/components/moleclues/PageSubTitleLayout/PageSu
 import { Wrapper } from '@/styles/components/IntroductionPage/Introduction';
 import { StyledPageMainImageWrapper } from '@/styles/components/PageMainImageWrapper/PageMainImageWrapper';
 import { ReactNode } from 'react';
-import Header from '../Header/Header';
-import Footer from '@/components/atoms/Footer/Footer';
 
 type PageLayoutProps = {
   alt: string;

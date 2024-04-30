@@ -13,7 +13,6 @@ const meta = {
     text: { control: 'text' },
     route: { control: 'text' },
     isMain: { control: 'boolean' },
-    isScrolled: { control: 'boolean' },
   },
   decorators: [
     (Story) => (
@@ -32,6 +31,5 @@ export const Default: Story = {
     text: '회사소개',
     route: '/',
     isMain: false,
-    isScrolled: false,
   },
 };

@@ -27,7 +27,6 @@ export const LayoutPage: Story = {
   args: {
     width: '100px',
     level: 5,
-    title: '나람사료',
     firstContent: '내용',
     secondContent: '내용2',
   },

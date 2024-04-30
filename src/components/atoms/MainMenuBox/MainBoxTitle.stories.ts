@@ -19,5 +19,6 @@ export const Default: Story = {
   args: {
     title: '고객센터',
     color: '#333',
+    isBox: true,
   },
 };
