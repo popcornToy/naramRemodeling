@@ -30,7 +30,7 @@ function DeleteButton() {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleDelete = () => {
-    onDelete(); // 삭제 함수 호출
+    // onDelete(); // 삭제 함수 호출
     setModalOpen(false); // 모달 닫기
   };
 

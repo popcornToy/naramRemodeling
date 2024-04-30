@@ -16,6 +16,7 @@ const meta = {
     path: {
       control: 'text',
     },
+    isNotice: { boolean: true },
   },
   decorators: [
     (Story) => (
@@ -31,6 +32,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    isNotice: true,
     title: '공지사항',
     path: '/path',
   },

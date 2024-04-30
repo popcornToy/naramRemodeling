@@ -12,7 +12,6 @@ const meta = {
   argTypes: {
     isLogin: { control: 'boolean' },
     isMain: { control: 'boolean' },
-    isScrolled: { control: 'boolean' },
   },
   args: {},
   decorators: [
@@ -31,7 +30,6 @@ export const IsLogout: Story = {
   args: {
     isMain: false,
     isLogin: false,
-    isScrolled: false,
   },
 };
 
@@ -39,6 +37,5 @@ export const IsLogin: Story = {
   args: {
     isMain: false,
     isLogin: true,
-    isScrolled: false,
   },
 };

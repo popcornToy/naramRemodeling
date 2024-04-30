@@ -2,17 +2,26 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@": ["src"],
-      "@/*": ["src/*"],
-      "types": ["kakao.maps.d.ts"]
+      "@": [
+        "src"
+      ],
+      "@/*": [
+        "src/*"
+      ],
+      "types": [
+        "kakao.maps.d.ts"
+      ]
     },
-
     // 컴파일된 JavaScript의 대상 버전을 최신 사양으로 설정합니다.
     "target": "ESNext",
     // 클래스 필드를 정의할 때 defineProperty를 사용하도록 설정합니다.
     "useDefineForClassFields": true,
     // 컴파일러에게 포함시킬 라이브러리 타입 정의를 명시
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
     // 모듈 코드 생성을 위한 설정입니다. 최신 모듈 시스템을 사용
     "module": "ESNext",
     // 선언 파일(*.d.ts)의 타입 체크를 건너뛰도록 설정
@@ -33,6 +42,7 @@
     /* Linting */
     // 모든 엄격한 타입 체킹 옵션을 활성화
     "strict": true,
+    "noImplicitAny": false,
     // 사용하지 않는 지역 변수와 매개변수에 대해 에러를 발생
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -40,7 +50,9 @@
     "noFallthroughCasesInSwitch": true
   },
   // 타입스크립트 컴파일러가 src 디렉토리 내의 파일들을 포함하도록 설정
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
   // 프로젝트 간 참조를 설정하는데 사용되며, 다른 tsconfig 파일(예: tsconfig.node.json)을 참조하도록 설정
   "references": [
     {

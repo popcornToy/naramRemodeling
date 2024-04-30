@@ -5,17 +5,12 @@ import type { Meta } from '@storybook/react';
 const meta: Meta<typeof PageSubTitle> = {
   component: PageSubTitle,
   tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof PageSubTitle>;
 
 export const Primary: Story = {
-  args: {
-    primary: true,
-    label: 'Button',
-  },
+  args: {},
 };

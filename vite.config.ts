@@ -20,6 +20,7 @@ export default defineConfig({
     outDir: 'docs',
     cssCodeSplit: true,
     rollupOptions: {
+      external: ['**/*.stories.*'],
       output: {
         manualChunks: {
           react: ['react'],
