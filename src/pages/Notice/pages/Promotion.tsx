@@ -6,9 +6,6 @@ function Promotion() {
   return (
     <div>
       <PageLayout
-        isMainMenu={false}
-        EngTitle="Promotion"
-        KorTitle="홍보게시판"
         alt="홍보게시판 페이지"
         mainImage={mainImage}
         firstTitle="Promotion"

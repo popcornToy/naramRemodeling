@@ -6,9 +6,6 @@ function QnA() {
   return (
     <div>
       <PageLayout
-        isMainMenu={false}
-        EngTitle="Q&A"
-        KorTitle="문의사항"
         alt="문의사항 페이지"
         mainImage={mainImage}
         firstTitle="Q&A"

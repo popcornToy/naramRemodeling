@@ -24,6 +24,7 @@ function PageLayout({
   secondTitle,
   thirdTitle,
   thirdSubTitle,
+  ...restProps
 }: PageLayoutProps) {
   return (
     <>
@@ -37,6 +38,7 @@ function PageLayout({
             secondTitle={secondTitle}
             thirdTitle={thirdTitle}
             thirdSubTitle={thirdSubTitle}
+            {...restProps}
           >
             {children}
           </PageSubTitleLayout>
