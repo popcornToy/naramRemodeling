@@ -42,6 +42,7 @@
     /* Linting */
     // 모든 엄격한 타입 체킹 옵션을 활성화
     "strict": true,
+    "noImplicitAny": false,
     // 사용하지 않는 지역 변수와 매개변수에 대해 에러를 발생
     "noUnusedLocals": true,
     "noUnusedParameters": true,

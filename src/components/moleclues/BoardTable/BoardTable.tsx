@@ -46,7 +46,7 @@ function BoardTable({ to }: BoardTableProps): React.ReactNode {
     const startIndex = currentPage * itemsPerPage;
     const endIndex = Math.min(startIndex + itemsPerPage, data.length);
     return data.slice(startIndex, endIndex).map((item) => (
-      <StyledBoardTable $isQnAPage key={item.id} className="BoardTableList">
+      <StyledBoardTable isQnAPage key={item.id} className="BoardTableList">
         <td style={{ width: 56 }} className="postNum">
           {item.id}
         </td>
@@ -74,7 +74,7 @@ function BoardTable({ to }: BoardTableProps): React.ReactNode {
 
   return (
     <>
-      <StyledBoardTable $isQnAPage>
+      <StyledBoardTable isQnAPage>
         <thead>
           <tr className="BoardTableTitle">
             <th style={{ width: 56 }}>번호</th>

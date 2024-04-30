@@ -126,7 +126,7 @@ export const StyledSearch = styled.div`
   gap: 20px;
 `;
 
-export const StyledBoardTable = styled.table<{ $isQnAPage: boolean }>`
+export const StyledBoardTable = styled.table<{ isQnAPage: boolean }>`
   width: 100%;
   padding: 0;
   border-spacing: 0;
@@ -140,8 +140,7 @@ export const StyledBoardTable = styled.table<{ $isQnAPage: boolean }>`
     /* display: grid; */
     line-height: 70px;
     text-align: center;
-    /* grid-template-columns: ${({ $isQnAPage }) =>
-      $isQnAPage ? '1fr 5fr 1fr 1fr 1fr 1fr' : '1fr 6fr 1fr 1fr 1fr'}; */
+    /* grid-template-columns: ${({ isQnAPage }) => (isQnAPage ? '1fr 5fr 1fr 1fr 1fr 1fr' : '1fr 6fr 1fr 1fr 1fr')}; */
     /* QnA 페이지에서는 그리드 칸을 하나 더 추가 */
   }
 

@@ -42,10 +42,10 @@ function Editor({ title = '문의글 작성하기', label, formText, text, to, p
             onChange={(event) => {
               console.log(event);
             }}
-            onBlur={(event, editor) => {
+            onBlur={(_event, editor) => {
               console.log('Blur.', editor);
             }}
-            onFocus={(event, editor) => {
+            onFocus={(_event, editor) => {
               console.log('Focus.', editor);
             }}
           />
