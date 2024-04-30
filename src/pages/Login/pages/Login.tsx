@@ -20,7 +20,7 @@ function Login() {
       formData.append('password', password);
 
       // 로그인 요청
-      await axios.post('https://ip:10000/user/login', formData);
+      await axios.post('https://34.47.88.186:10000/login', formData);
       navigate('/');
     } catch (error) {
       console.error('Error logging in:', error);

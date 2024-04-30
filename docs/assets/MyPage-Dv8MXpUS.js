@@ -1,0 +1,1 @@
+import{j as r}from"./index-BQNV57zS.js";import"./react-Cu9bd8lq.js";import"./reactDom-CkgO_r3j.js";import"./reactRouter-C8XkI_Et.js";function m(){return r.jsx("div",{children:"마이 페이지입니다"})}export{m as default};

@@ -1,0 +1,1 @@
+import{j as t}from"./index-BQNV57zS.js";import{O as r}from"./reactRouter-C8XkI_Et.js";import"./react-Cu9bd8lq.js";import"./reactDom-CkgO_r3j.js";function e(){return t.jsx(t.Fragment,{children:t.jsx(r,{})})}export{e as default};
