@@ -84,7 +84,7 @@ export const StytledLoginInput = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 1.56rem;
+  margin-bottom: 1.56rem;
   text-align: left;
 
   & input {
@@ -98,6 +98,7 @@ export const StytledLoginInput = styled.div`
 
   & .error {
     color: red;
+    gap: 0rem;
   }
 
   & .input-container {

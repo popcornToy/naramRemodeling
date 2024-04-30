@@ -1,4 +1,4 @@
-import { StyledLoginForm, StytledLoginInput } from '@/styles/components/Login/LoginForm';
+import { StyledLoginForm } from '@/styles/components/Login/LoginForm';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 
 import DangerIcon from '/danger-circle.svg';
@@ -28,27 +28,25 @@ export default function FindIdPage({ onSubmit }: { onSubmit: SubmitHandler<Field
           </p>
         </div>
         <Form onSubmit={handleSubmit(onSubmit)}>
-          <StytledLoginInput>
-            <FindInput
-              label="이름"
-              id="name"
-              type="text"
-              error={errors.name ? errors.name.message : ''}
-              register={register('name', { required: '이름은 필수 입력입니다.' })}
-            />
-            <FindInput
-              label="이메일"
-              id="email"
-              type="email"
-              error={errors.email ? errors.email.message : ''}
-              register={register('email', {
-                required: '이메일은 필수 입력입니다.',
-              })}
-            />
-            <Button styledType="login" type="submit">
-              {'확인'}
-            </Button>
-          </StytledLoginInput>
+          <FindInput
+            label="이름"
+            id="name"
+            type="text"
+            error={errors.name ? errors.name.message : ''}
+            register={register('name', { required: '이름은 필수 입력입니다.' })}
+          />
+          <FindInput
+            label="이메일"
+            id="email"
+            type="email"
+            error={errors.email ? errors.email.message : ''}
+            register={register('email', {
+              required: '이메일은 필수 입력입니다.',
+            })}
+          />
+          <Button styledType="login" type="submit">
+            {'확인'}
+          </Button>
         </Form>
       </StyledLoginForm>
     </>
