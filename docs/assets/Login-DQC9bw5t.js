@@ -1,1 +1,0 @@
-import{j as o}from"./index-BQNV57zS.js";import{r}from"./react-Cu9bd8lq.js";import{a as s,O as n}from"./reactRouter-C8XkI_Et.js";import"./reactDom-CkgO_r3j.js";function e(){const{pathname:t}=s();return r.useEffect(()=>{window.scrollTo(0,0)},[t]),null}function c(){return o.jsxs(o.Fragment,{children:[o.jsx(e,{}),o.jsx(n,{})]})}export{c as default};
