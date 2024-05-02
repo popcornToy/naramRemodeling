@@ -25,7 +25,7 @@ function Login() {
       // 로그인 요청
       const apiUrl = import.meta.env.VITE_API_URL;
       await axios.post(`${apiUrl}/login`, formData, { headers: { 'Content-Type': 'multipart/form-data' } });
-      alert('로그인에 성공했습니다.');
+      localStorage.setItem('isAuth', 'true');
       navigate('/');
     } catch (error) {
       console.error('Error logging in:', error);
