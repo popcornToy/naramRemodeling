@@ -45,7 +45,7 @@ export default function NaviBar({ isMain }: NaviBarProps) {
           <NaviButton text="인재채용" isMain={isMain} route="/Recruitment" />
         </li>
         <li>
-          <NaviButton text="고객센터" isMain={isMain} route="CustomerService" />
+          <NaviButton text="고객센터" isMain={isMain} route="/CustomerCenter/QnA" />
         </li>
         {isLogin ? (
           <GNBLi>

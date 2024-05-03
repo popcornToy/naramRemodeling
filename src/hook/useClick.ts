@@ -9,8 +9,14 @@ export default function useClick() {
     setIsClick((prev) => !prev);
   };
 
+  const handleLogout = async () => {
+    localStorage.removeItem('isAuth');
+    window.location.reload();
+  };
+
   return {
     isClick,
     handleToggle,
+    handleLogout,
   };
 }
