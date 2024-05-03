@@ -19,11 +19,17 @@ function Login() {
       formData.append('username', username);
       formData.append('password', password);
 
+      console.log(formData.get('username'));
+      console.log(formData.get('password'));
+
       // 로그인 요청
-      await axios.post('https://ip:10000/user/login', formData);
+      const apiUrl = import.meta.env.VITE_API_URL;
+      await axios.post(`${apiUrl}/login`, formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+      localStorage.setItem('isAuth', 'true');
       navigate('/');
     } catch (error) {
       console.error('Error logging in:', error);
+      alert(error);
       setIsError(true);
     }
   };

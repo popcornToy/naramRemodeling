@@ -66,10 +66,10 @@ function LoginForm({ onSubmit, isError }: LoginFormProps) {
         />
 
         <div className="ButtonGap">
+          {isError && <p className="text-red-500">{'아이디 또는 비밀번호를 확인해주세요.'}</p>}
           <Button styledType={'login'} type="submit">
             {'로그인'}
           </Button>
-          {isError && <p className="text-red-500">{'아이디 또는 비밀번호를 확인해주세요.'}</p>}
           <div className="divider"></div>
           <Link to="/Join">
             <Button styledType="signUp" type="button">
