@@ -7,15 +7,25 @@ import useBackground from '@/hook/useBackground';
 import { useEffect, useRef } from 'react';
 
 type NaviButtonProps = {
-  route?: string;
+  route: string;
   text: string;
   isMain: boolean;
   isLoginButton?: boolean;
   isLogoutButton?: boolean;
+  hasImage?: boolean;
+  onClick?: () => void;
 };
 
-export default function NaviButton({ route, text, isMain, isLoginButton, isLogoutButton }: NaviButtonProps) {
-  const buttonRef = useRef<HTMLButtonElement>(null);
+export default function NaviButton({
+  route,
+  text,
+  isMain,
+  isLoginButton,
+  isLogoutButton,
+  hasImage,
+  onClick,
+}: NaviButtonProps) {
+  const buttonRef = useRef<HTMLAnchorElement>(null);
   const [, setIsClick] = useAtom(isClicked);
   const [, setIsAnimated] = useAtom(animate);
   const { textColor, iconColor } = useBackground(isMain);
@@ -49,14 +59,10 @@ export default function NaviButton({ route, text, isMain, isLoginButton, isLogou
 
   return (
     <GNBTitle color={textColor}>
-      {route ? (
-        <NaviImageLink to={route}>
-          {renderButtonContent()}
-          {text}
-        </NaviImageLink>
-      ) : (
-        <button ref={buttonRef}>{text}</button>
-      )}
+      <NaviImageLink to={route} ref={buttonRef} onClick={onClick}>
+        {hasImage && renderButtonContent()}
+        {text}
+      </NaviImageLink>
     </GNBTitle>
   );
 }

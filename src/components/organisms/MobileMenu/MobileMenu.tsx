@@ -7,6 +7,8 @@ import {
 } from '@/styles/components/MobileMenu/MobileMenu';
 
 import useClick from '../../../hook/useClick';
+import { useAtom } from 'jotai';
+import { loginCheck } from '@/store/store';
 
 const INTRODUCTION = {
   '1': {
@@ -69,11 +71,13 @@ const CUSTOMER_CENTER = {
 
 export default function MobileMenu({ isClicked }: { isClicked: boolean }) {
   const { isClick } = useClick();
+  const [isLogin] = useAtom(loginCheck);
+
   return (
     <MobileMenuBackground isClick={isClick}>
       <MobileMenuButtonContainer isClick={isClicked}>
         <MobileMenuContainer>
-          <MobileMenuHeader isLogin={false} />
+          <MobileMenuHeader isLogin={isLogin} />
           <MobileMenuTitleText title="회사소개" items={INTRODUCTION} />
           <MobileMenuTitleText title="정보센터" items={INFORMATION} />
           <MobileMenuTitleText title="제품정보" items={PRODUCT} />

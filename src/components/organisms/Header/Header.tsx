@@ -11,11 +11,10 @@ import useClick from '@/hook/useClick';
 
 type HeaderProps = {
   isMain: boolean;
-  isLogin: boolean;
   children?: React.ReactNode;
 };
 
-export default function Header({ isLogin, isMain, children }: HeaderProps) {
+export default function Header({ isMain, children }: HeaderProps) {
   const headerRef = useRef<HTMLElement>(null);
   const [, setIsClick] = useAtom(isClicked);
   const { changeColor, isClick } = useBackground(isMain);
@@ -43,7 +42,7 @@ export default function Header({ isLogin, isMain, children }: HeaderProps) {
       <HeaderContainer backgroundColor={changeColor} ref={headerRef}>
         <HeaderFlexContainer>
           <LogoLink />
-          <NaviBar isLogin={isLogin} isMain={isMain} />
+          <NaviBar isMain={isMain} />
         </HeaderFlexContainer>
         <DropdownMenuNav isClicked={isClick} />
       </HeaderContainer>
