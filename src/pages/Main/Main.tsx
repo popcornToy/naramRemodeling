@@ -24,7 +24,7 @@ export default function Main() {
 
   return (
     <>
-      <Header isLogin={true} isMain>
+      <Header isMain>
         <MainBannerContainer>
           <img src={Banner} alt="메인 이미지" />
           <div>
@@ -37,18 +37,18 @@ export default function Main() {
         </MainBannerContainer>
         <MainContentsBox>
           <MainContentsOneFlexBox>
-            <MainBoardBox title="공지사항" path="/Information/notice" isNotice />
+            <MainBoardBox title="공지사항" path="/Information/Notice" isNotice />
             <MainBoxFlexBox>
-              <MainBox alt="고객센터" img="/cs.png" path="/CS" />
-              <MainBox alt="제품정보" img="/product.png" path="/product" />
+              <MainBox alt="고객센터" img="/cs.png" path="/CustomerService" />
+              <MainBox alt="제품정보" img="/product.png" path="/Product/pork" />
             </MainBoxFlexBox>
           </MainContentsOneFlexBox>
           <MainContentsTwoFlexBox>
             <MainBoxFlexBox>
               <MainBox alt="오시는길" img="/path.png" path="/Introduction/Location" />
-              <MainBox alt="인재채용" img="/recruit.png" path="/recruit" />
+              <MainBox alt="인재채용" img="/recruit.png" path="/Recruitment" />
             </MainBoxFlexBox>
-            <MainBoardBox title="나람 홍보 게시물" path="/ad" isNotice={true} />
+            <MainBoardBox title="나람 홍보 게시물" path="/Information/Promotion" isNotice={true} />
           </MainContentsTwoFlexBox>
         </MainContentsBox>
         <MainPathContainer>

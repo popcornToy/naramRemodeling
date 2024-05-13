@@ -1,10 +1,12 @@
 import BoardDetailLayout from '@/components/organisms/BoardDetailLayout/BoardDetailLayout';
 import PageLayout from '@/components/organisms/PageLayout/PageLayout';
 import mainImage from '/Notice_main.svg';
+import ScrollToTop from '@/hook/ScrollToTop';
 
 function BoardDetail() {
   return (
     <div>
+      <ScrollToTop/>
       <PageLayout
         alt="문의사항 페이지"
         mainImage={mainImage}

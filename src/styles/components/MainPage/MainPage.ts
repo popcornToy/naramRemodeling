@@ -163,6 +163,7 @@ export const MainBoxTitleContainer = styled.span.withConfig({
 export const MainBoxImgContainer = styled.div`
   width: 23.5625rem;
   height: 18.75rem;
+
   background-color: #7b7b7b;
   border-radius: 1rem;
   & img {
@@ -172,18 +173,8 @@ export const MainBoxImgContainer = styled.div`
   }
 
   @media (max-width: 1200px) {
-    width: calc(23.5625rem * 0.9);
-    height: calc(18.75rem * 0.9);
-  }
-
-  @media (max-width: 768px) {
-    width: calc(23.5625rem * 0.5);
-    height: calc(18.75rem * 0.5);
-  }
-
-  @media (max-width: 500px) {
-    width: calc(23.5625rem * 0.4);
-    height: calc(18.75rem * 0.4);
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -287,7 +278,7 @@ export const MainBoxHeader = styled.div`
   justify-content: space-between;
 `;
 
-// MainPage
+// 메인페이지 컨텐츠 박스
 export const MainContentsBox = styled.div`
   display: flex;
   flex-direction: column;
