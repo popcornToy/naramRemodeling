@@ -145,14 +145,12 @@ export const StyledBoardTable = styled.table<{ isQnAPage: boolean }>`
   }
 
   & .BoardTableList {
-    height: 70px;
-    /* display: grid; */
-    display: flex;
-
-    justify-content: space-around;
-    line-height: 70px;
     text-align: center;
     border-bottom: 1px solid #d1d1d1;
+    word-break: break-all;
+    padding: 20px 10px;
+    overflow: hidden;
+    height: 70px;
   }
 `;
 

@@ -23,7 +23,7 @@ export const StyledImageFromTop = styled.div`
 // Q&A, 회사소개, Notice 등 페이지에 쓰이는 PageLayout 위치 또는 스타일 조절
 //  PageLayout 전체 가로 넓이는 styles > PageSubTitle.ts 에 위치
 export const StyledFlexCenter = styled.div`
-  width: auto;
+  inline-size: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;

@@ -47,25 +47,26 @@ function BoardTable({ to }: BoardTableProps): React.ReactNode {
     const endIndex = Math.min(startIndex + itemsPerPage, data.length);
     return data.slice(startIndex, endIndex).map((item) => (
       <StyledBoardTable isQnAPage key={item.id} className="BoardTableList">
-        <td style={{ width: 56 }} className="postNum">
+        <td style={{ width: '5%' }} className="postNum">
           {item.id}
+          {console.log(item)}
         </td>
-        <td style={{ width: 812, textAlign: 'left' }} className="title">
+        <td style={{ width: '55%', textAlign: 'left' }} className="title">
           <Link to={`/BoardDetail/${item.id}`}>{item.title}</Link>
         </td>
         {/* QnA 페이지에서만 상태 열을 표시 */}
         {isQnAPage && (
-          <td style={{ width: 104 }} className="status">
+          <td style={{ width: '15%' }} className="status">
             {item.id}
           </td>
         )}
-        <td style={{ width: 103 }} className="date">
+        <td style={{ width: '15%' }} className="date">
           {item.id}
         </td>
-        <td style={{ width: 56 }} className="id">
+        <td style={{ width: '5%' }} className="id">
           {item.id}
         </td>
-        <td style={{ width: 56 }} className="view">
+        <td style={{ width: '5%' }} className="view">
           {item.id}
         </td>
       </StyledBoardTable>
@@ -77,13 +78,13 @@ function BoardTable({ to }: BoardTableProps): React.ReactNode {
       <StyledBoardTable isQnAPage>
         <thead>
           <tr className="BoardTableTitle">
-            <th style={{ width: 56 }}>번호</th>
-            <th style={{ width: 812 }}>제목</th>
+            <th style={{ width: '5%' }}>번호</th>
+            <th style={{ width: '60%' }}>제목</th>
             {/* QnA 페이지에서만 상태 열 추가 */}
             {isQnAPage && <th style={{ width: 104 }}>상태</th>}
-            <th style={{ width: 103 }}>작성일</th>
-            <th style={{ width: 56 }}>작성자</th>
-            <th style={{ width: 56 }}>조회수</th>
+            <th style={{ width: '10%' }}>작성일</th>
+            <th style={{ width: '5%' }}>작성자</th>
+            <th style={{ width: '5%' }}>조회수</th>
           </tr>
         </thead>
         <tbody>{renderData()}</tbody>
