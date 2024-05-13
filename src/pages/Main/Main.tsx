@@ -8,8 +8,8 @@ import {
   MainPathContainer,
   MainPathSpan,
 } from '@/styles/components/MainPage/MainPage';
-import mainBanner from '/mainBanner.png';
-import mobileBanner from '/mobileMain.png';
+import mainBanner from '/mainBanner.jpg';
+import mobileBanner from '/mobileMain.jpg';
 import Header from '@/components/organisms/Header/Header';
 import MainBoardBox from '@/components/moleclues/MainBoard/MainBoardBox';
 import MainBox from '@/components/moleclues/MainMenuBox/MainBox';
@@ -45,7 +45,7 @@ export default function Main() {
           </MainContentsOneFlexBox>
           <MainContentsTwoFlexBox>
             <MainBoxFlexBox>
-              <MainBox alt="오시는길" img="/path.png" path="/Introduction/Location" />
+              <MainBox alt="오시는길" img="/path.jpg" path="/Introduction/Location" />
               <MainBox alt="인재채용" img="/recruit.png" path="/Recruitment" />
             </MainBoxFlexBox>
             <MainBoardBox title="나람 홍보 게시물" path="/Information/Promotion" isNotice={true} />
