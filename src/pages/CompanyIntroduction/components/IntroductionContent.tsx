@@ -1,10 +1,6 @@
 import { StyledDiscription, StyledDivFlex } from '@/styles/components/IntroductionPage/Introduction';
-import GREETING from '/introduction_GREETING.svg';
-import History from '/introduction_HISTORY.svg';
-import ORGANIZATION from '/introduction_ORGANIZATION.svg';
-import image_01 from '/introduction_image_01.svg';
-import image_02 from '/introduction_image_02.svg';
-import table from '/introduction_table.svg';
+import image_01 from '/introduction_image_01.jpg';
+import image_02 from '/introduction_image_02.jpg';
 import { StyledContent } from '@/styles/components/PageSubTitle/PageSubTitle';
 
 function IntroductionContent() {
@@ -12,7 +8,7 @@ function IntroductionContent() {
     <StyledContent gap="51px">
       <StyledDivFlex>
         <div className="flexColumn">
-          <img src={GREETING} alt="회사소개 페이지에 GREETING 배경 이미지" />
+          {/* <img src={GREETING} alt="회사소개 페이지에 GREETING 배경 이미지" /> */}
           <img src={image_01} alt="회사소개 페이지에 날씨 좋은 섬으로 이어진 다리 사진" />
         </div>
         <StyledDiscription textPosition="right">
@@ -78,15 +74,13 @@ function IntroductionContent() {
           </div>
         </StyledDiscription>
         <div className="flexColumn02">
-          <img src={History} alt="회사소개 페이지에 HISROTY 배경 이미지" />
+          {/* <img src={History} alt="회사소개 페이지에 HISROTY 배경 이미지" /> */}
           <img src={image_02} alt="회사소개 페이지에 숲속으로 이어진 사진" />
         </div>
       </StyledDivFlex>
 
-      <img src={ORGANIZATION} alt="회사소개 페이지에 ORGANIZATION 배경 이미지" />
-      <StyledDivFlex paddingBottom="274">
-        <img src={table} alt="회사소개 페이지에 조직도 사진" />
-      </StyledDivFlex>
+      {/* <img src={ORGANIZATION} alt="회사소개 페이지에 ORGANIZATION 배경 이미지" /> */}
+      <StyledDivFlex paddingBottom="274">{/* <img src={table} alt="회사소개 페이지에 조직도 사진" /> */}</StyledDivFlex>
     </StyledContent>
   );
 }

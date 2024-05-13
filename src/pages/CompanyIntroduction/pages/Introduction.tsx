@@ -1,5 +1,5 @@
 import PageLayout from '@/components/organisms/PageLayout/PageLayout';
-import mainImage from '/introduction_main.svg';
+import mainImage from '/introduction_main.jpg';
 import IntroductionContent from '../components/IntroductionContent';
 
 //회사소개 첫 페이지 - CEO, 연혁 등등
