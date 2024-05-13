@@ -12,7 +12,7 @@ interface TextfontProps {
 
 // Q&A, 회사소개, Notice 등 페이지에 쓰이는 PageLayout 전체 가로 넓이
 export const StyledContent = styled.div<TextfontProps>`
-  width: 81.25rem;
+  width: 100%;
   height: auto;
   display: flex;
   padding-left: 1.25rem;

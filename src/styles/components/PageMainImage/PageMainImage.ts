@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledPageMainImage = styled.div`
-  & .mainImage {
-    max-width: 1920px;
-  }
+  inline-size: 100%;
+  height: 500px;
+  background-size: cover;
+  background-image: url(${(props) => props.bgURL});
 `;
